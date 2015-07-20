@@ -1,0 +1,29 @@
+/* CSS box */
+.module_box_normal{position:absolute;
+z-index:30;border:1px solid #AD2424;background-color:#FAFDFF;-webkit-box-shadow:5px 5px 0 #D9D9D9;box-shadow:10px 10px 5px #D9D9D9;
+_zoom:1;}
+.module_box_normal .box_title{
+background:url(images/icon_thinkbox.png) 0 -32px repeat-x;
+border-bottom:1px solid #AD2424;font-family:"宋体";font-size:14px;font-weight:bold;height:33px;
+line-height:33px;padding-left:10px;text-align:left;color:#FFF;}
+.module_box_normal .box_title h4{float:left;margin:0;padding:0}
+.module_box_normal .box_title .bt_close{float:right;width:45px;height:16px;margin:0 10px 0 0;background:url(images/icon_thinkbox.png);font-size:0;}
+.module_box_normal .box_title .bt_close:hover{background-position:0 -16px;}
+.module_box_normal .box_content{line-height:1.5em;font-size:12px;text-align:left;font-family:Arial, Helvetica, sans-serif;}
+.module_box_normal .box_content a{text-decoration:underline;}
+.module_box_normal .box_content a:hover{text-decoration:none;}
+.thinktitle{height:33px;line-height:33px;border:1px solid #blue;padding-left:10px;background:url(images/icon_thinkbox.png) 0 -32px repeat-x;
+color:#FFF;font-size:14px;font-weight:bold;}
+.thinktitle h4{float:left;padding:0;margin:0}
+.thinktitle a{float:right;width:45px;height:16px;margin:0px 10px 0 0;background:url(images/icon_thinkbox.png);font-size:0;}
+.thinktitle a:hover{background-position:0px -16px;}
+.thinkcontent{overflow:hidden;background:#FFF;border:1px solid #A9A9A9;border-top:0;}
+.note_alert{background:url(images/icon_tips.png) no-repeat 20px 20px;padding:20px 0 20px 120px;height:65px;}
+.note_alert b{color:#0066cc;font-size:14px;}
+.note_alert em{color:red;font-style:normal;}
+
+.bd_payinfo{margin-top:20px;background:#FFF;}
+.bd_payinfo img{padding:0 10px 0 10px}
+.bd_payinfo .bd_infosend{padding-bottom:40px}
+.bd_payinfo .button_send{margin:0 10px 0 0;background:url(images/btn_common_s.png) 0 -30px no-repeat;line-height:25px;display:inline-block;width:90px;height:25px;border:0;cursor:pointer;color:#FFF;}
+.bd_payinfo .button_back{border:0;background:url(images/btn_common_s.png) 0 0 no-repeat;line-height:25px;display:inline-block;width:90px;height:25px;cursor:pointer;}

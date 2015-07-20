@@ -1,0 +1,69 @@
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd"> 
+<dwr>
+	<allow>
+		<create creator="spring" javascript="SSQManage">
+			<param name="beanName" value="ssqSaleManageController" /> 
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="WELFARE3DManage">
+			<param name="beanName" value="welfare3dSaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="DCZCManage">
+			<param name="beanName" value="dczcSalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="SFZCManage">
+			<param name="beanName" value="sfzcSalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="LCZCManage">
+			<param name="beanName" value="lczcSalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="SCZCManage">
+			<param name="beanName" value="sczcSalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="PLManage">
+			<param name="beanName" value="plSaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="DLTManage">
+			<param name="beanName" value="dltSaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		
+		<create creator="spring" javascript="TC22TO5Manage">
+			<param name="beanName" value="tc22to5SaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		<create creator="spring" javascript="SEVENManage">
+			<param name="beanName" value="sevenSaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		<create creator="spring" javascript="SEVENSTARManage">
+			<param name="beanName" value="sevenstarSaleManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		<create creator="spring" javascript="WELFARE36To7Manage">
+			<param name="beanName" value="welfare36to7SalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		<create creator="spring" javascript="JCZQManage">
+			<param name="beanName" value="jczqSalesManageController" />
+			<include method="runWork"/><!-- 只允许通过dwr访问runWork -->
+		</create>
+		<create creator="spring" javascript="JCLQManage">
+			<param name="beanName" value="jclqSalesManageController" />
+			<include method="runWork"/> 
+		</create>
+	</allow>
+</dwr>

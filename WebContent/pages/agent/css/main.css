@@ -1,0 +1,16 @@
+body{padding:0; margin:0; font-family:Verdana, Geneva, sans-serif; font-size:12px; color:#424242;}
+ul{padding:0; margin:0;}
+img{border:0;}
+a{ text-decoration:none; color:#424242;}
+.top_r{height:89px; background:url(../images/top_bg02.jpg) no-repeat left top; width:880px;} 
+.user_top , .top_text_nav{color:#FFF;}
+.f_r{float:right;}
+.user_top{padding-top:22px;}
+.top_text_nav a{ color:#FFF;}
+.top_text_nav{text-align:right; padding-right:10px; padding-top:20px;}
+.top_text_nav a:hover{text-decoration:underline;}
+.top_nav{padding-top:15px;;}
+.top_nav ul{padding-left:10px;}
+.top_nav li{height:65px; width:61px; float:right; display:inline; margin-right:20px;}
+.top_notice{line-height:31px; height:31px; padding-left:18px;}
+.top_notice strong{ color:#02517c;}

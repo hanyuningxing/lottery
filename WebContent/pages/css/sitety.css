@@ -1,0 +1,74 @@
+@charset "utf-8";/* CSS Document */
+/* 主要样式表，公共样式开始 */
+body{margin:0px;padding:0px;font-size:12px;color:#333333;background-color:#FFFFFF;font-family:tahoma,Verdana, Arial,Helvetica,sans-serif,"宋体";font-size:12px;}
+div,form,img,ul,li,dl,dt,dd{margin:0;padding:0;border:0;}
+input,select{vertical-align:middle;}
+table,td,tr,th{font-size:12px;}
+a{color:#2232FF;text-decoration:none;}
+a:hover{color:#FF3300;text-decoration:underline;}
+<!--输入框垂直居中对齐  http://fed.renren.com/2009/10/46-->
+label{vertical-align:middle}
+.inputcheckbox{vertical-align:middle;}
+
+.top5px{ padding-top:5px; }
+.top10px{ padding-top:10px; }
+.kong10{height:10px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.kong20{height:20px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.kong5{height:5px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.left10{padding-left:10px;}
+.rig10{padding-right:10px;}
+.floatrig{float:right;}
+.floatleft{float:left;}
+.cleanboth{clear:both;}
+.all10px{ padding:10px; }
+.all20px{ padding:20px; }
+.all8px{ padding:8px; }
+.all5px{ padding:5px; }
+.main{width:980px;margin:0px auto;display:table;}
+/*字体颜色 字号 段落 input框 样式*/
+h1{margin:0px;padding:0px;font-size:12px;font-weight:bold;}
+.bluechar{color:#0000CC;}
+.graychar{color:#666666;}
+.redboldchar{font-weight:bold;color:#D62F2F;}
+.greenchar{color:#009900;font-family:Arial,"宋体";}
+.bluechar{color:#0033CC;}
+.bluelightchar{color:#0000FF;}
+.whitechar{color:#ffffff;}
+.boldchar{font-weight:bold;}
+.lgraychar{color:#A6A6A6;}
+.font14char{font-size:14px;}
+.orgchar{ color:#FF3300;}
+.redc{ color:#FF0000;}
+.lineh20{line-height:20px;}
+.lineh25{line-height:25px;}
+.textcenter{text-align:center;}
+.trw{background:#FFF;text-align:center;}
+.trgray{background:#F5F5F5;text-align:center;}
+.tbbge5{background:#e5e5e5;text-align:center;}
+.trgrayf0f0f0{background:#F0F0F0;text-align:center; color:#010000;}
+.trhover{background:#FFEACF;}
+.trlightblue{background:#EEF7FB;}
+.kuangb1gray{ border:solid 1px #BABABA; color:#787878; padding:1px;}
+.kuanginput{ border:solid 1px #BABABA; color:#787878; padding:1px; height:16px;}
+/* 红球蓝球 */
+.kjball ul{}
+.kjball li{margin:0px; padding-right:2px; float:left;}
+.redballsingle{background:url(../tyimages/ballred26.gif) no-repeat;height:26px;width:26px;font-size:14px;font-family: Arial, Helvetica,"宋体";color:#FFFFFF;font-weight:bold;text-align:center;line-height:26px; display:block;}
+.blueballsingle{background:url(../tyimages/ballblue26.gif) no-repeat;height:26px;width:26px;font-size:14px;font-family: Arial, Helvetica,"宋体";color:#FFFFFF;font-weight:bold;text-align:center;line-height:26px;display:block;}
+.grayballsingle{background:url(../tyimages/grayball2626.gif) no-repeat;height:26px;width:26px;font-size:14px;font-family: Arial, Helvetica,"宋体";color:#7B7B7B;font-weight:bold;text-align:center;line-height:26px;display:block;}
+/*翻页list*/
+.pagelist{text-align:center;padding:6px 0px 6px 0px;font-family:Verdana,Arial;word-spacing:5px;font-size:12px;background:#F9F9F9;}
+.nowpage{font-weight:bold;color:#FF3300;}
+A.pagenum{padding:3px 5px 2px 5px;color:#0033CC;text-decoration:none;background-color:#FFFFFF;border:1px solid #DDDDDD;font-family:"宋体";}
+A.pagenum:hover{padding:3px 5px 2px 5px;color:#FFFFFF;text-decoration:none;background:#FFFEB1;border:1px solid #DDDDDD;}
+.linebg1{height:1px;background-image:url(../images/line.gif);font-size:0px;background-repeat:repeat-x;margin:2px 0px;line-height:1px;}
+
+
+
+.title_new_list ul{}
+.title_new_list li{list-style-type:none;display:block;background:url(../images/icon_dot.gif) no-repeat;background-position:0px 9px;padding-left:8px;}
+.title_new_list li a{color:#333333;}
+.title_new_list li a:hover{color:#cc0000;}
+.rebchar{color:#CC0000;}
+<!--新闻列表标题超出长度隐藏-->
+.title_hidden{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:300px;}

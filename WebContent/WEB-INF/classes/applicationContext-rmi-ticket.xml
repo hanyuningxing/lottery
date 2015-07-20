@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="true">
+	
+	<bean id="ticketEntityManagerRMI" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.url}/TicketService"/>   
+        <property name="serviceInterface" value="com.cai310.lottery.service.rmi.TicketEntityManagerRMI"/>
+        <property name="refreshStubOnConnectFailure" value="${rmi.refreshStubOnConnectFailure}" />
+        <property name="lookupStubOnStartup" value="${rmi.lookupStubOnStartup}" /> 
+        <property name="remoteInvocationFactory">
+			<bean class="com.miracle.rmi.SecurityRemoteInvocationFactory">
+				<property name="username" value="${rmi.username}" />
+				<property name="password" value="${rmi.password}" />
+			</bean>
+		</property>
+    </bean>
+    
+    <bean id="lotterySupporterEntityManagerRMI" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.url}/TicketSupporterService"/>   
+        <property name="serviceInterface" value="com.cai310.lottery.service.rmi.LotterySupporterEntityManagerRMI"/>
+        <property name="refreshStubOnConnectFailure" value="${rmi.refreshStubOnConnectFailure}" />
+        <property name="lookupStubOnStartup" value="${rmi.lookupStubOnStartup}" /> 
+        <property name="remoteInvocationFactory">
+			<bean class="com.miracle.rmi.SecurityRemoteInvocationFactory">
+				<property name="username" value="${rmi.username}" />
+				<property name="password" value="${rmi.password}" />
+			</bean>
+		</property>
+    </bean>
+    
+    <bean id="queryServiceRMI_Ticket" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.url}/QueryService"/>
+        <property name="serviceInterface" value="com.cai310.lottery.service.rmi.QueryServiceRMIOfTicket"/>
+        <property name="refreshStubOnConnectFailure" value="${rmi.refreshStubOnConnectFailure}" />
+        <property name="lookupStubOnStartup" value="${rmi.lookupStubOnStartup}" /> 
+        <property name="remoteInvocationFactory">
+			<bean class="com.miracle.rmi.SecurityRemoteInvocationFactory">
+				<property name="username" value="${rmi.username}" />
+				<property name="password" value="${rmi.password}" />
+			</bean>
+		</property>
+    </bean>
+    
+    <bean id="remoteDataQueryRMI_Ticket" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.url}/RemoteDataQueryService"/>
+        <property name="serviceInterface" value="com.cai310.lottery.service.rmi.RemoteDataQueryRMIOfTicket"/>
+        <property name="refreshStubOnConnectFailure" value="${rmi.refreshStubOnConnectFailure}" />
+        <property name="lookupStubOnStartup" value="${rmi.lookupStubOnStartup}" /> 
+        <property name="remoteInvocationFactory">
+			<bean class="com.miracle.rmi.SecurityRemoteInvocationFactory">
+				<property name="username" value="${rmi.username}" />
+				<property name="password" value="${rmi.password}" />
+			</bean>
+		</property>
+    </bean>
+</beans>

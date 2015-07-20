@@ -1,0 +1,6 @@
+.dlsb_main{ margin:0 auto; width:480px; height:260px; }
+.dlsb_content{ margin:0 auto;border:1px solid #ffb974; background:#fefbec;width:480px; height:180px; margin:20px 0 ; padding:25px; }
+.dlsb_left{ float:left; width:100px; padding:5px;}
+.dlsb_right{ float:right; width:310px; padding:20px 0 ; line-height:36px; font-size:20px; font-weight:bold;}
+.dlsb_right span{ color:#FF0000; }
+.dlsb_right .dlsb_img{ clear:both; margin-top:-33px; margin-left:96px;}

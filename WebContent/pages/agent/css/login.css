@@ -1,0 +1,11 @@
+*{padding:0; margin:0;}
+from{padding:0; margin:0;}
+body{ background-color:#0c3d8d; *text-align:center; color:#FFFFFF; font-family:"宋体",Arial, Helvetica, sans-serif; font-size:12px; }
+input{font-size:12px;} 
+h4{font-size:14px;}
+.t_r{text-align:right;}
+.main{ width:1194px; margin:0 auto; text-align:left; height:701px; background:url(../images/login_bg.jpg) no-repeat center top;}
+.login{padding:317px 0 0 540px;}
+.login_t{line-height:32px; padding-bottom:3px; padding-left:16px;}
+.inputsytle{height:19px; width:138px; border:1px #1f4761 solid; line-height:19px;}
+.login_button{width:76px; height:22px; line-height:22px; color:#0b2858; background:url(../images/login_button.jpg) no-repeat left top; border:none;}

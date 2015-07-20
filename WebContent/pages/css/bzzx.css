@@ -1,0 +1,381 @@
+@charset "utf-8";
+/* 帮助中心样式 */
+#bzzx_banner{
+  width:980px;
+  height:85px;
+  margin-bottom:1px;}
+
+#bzzx_left{
+	float:left;
+	width:191px;
+	background-image: url(../images/bzzx_left_bg.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	padding-bottom:15px;
+}
+
+#bzzx_right{
+    float:left;
+	width:789px;
+	padding-bottom:10px;}
+	
+	
+/*左边栏样式*/	
+#bzzx_left .sy{
+	width:191px;
+	height:51px;
+	background-position: left top;
+	background-image: url(../images/bzzx_sy.gif);
+	background-repeat: no-repeat;
+	cursor:pointer;
+	}
+	
+#bzzx_left .zbl{
+    padding-top:11px;
+	padding-bottom:35px;
+    }
+	
+.zbl ul,.zbl ul li{
+    margin:0px;
+	padding:0px;
+	list-style:none;}
+	
+.zbl ul li{
+    font-size:14px;
+	width:191px;
+	height:42px;
+	display:block;
+	line-height:42px;
+	}
+	
+.zbl ul li ce_sp{
+    background:url(../images/bzzx_xzs.gif) no-repeat;
+	width:191px;
+	height:42px;
+	font-weight:bold;
+	color:#FFFFFF;
+	display:block;
+	}
+	
+.zbl ul li span a,.zbl ul li span a:hover{
+    font-weight:bold;
+	color:#FFFFFF;}
+	
+.zbl ul li a{
+    padding-left:47px;
+	text-decoration:none;
+	color:#000000;}
+	
+.zbl ul li a:hover{
+    text-decoration:none;
+	color:#FF3300;}
+	
+.bzzx_kf_fgx{
+    width:191px;
+	height:1px;
+	background:url(../images/bzzx_kf_03.gif) no-repeat;
+	background-position: left top;
+	background-repeat: no-repeat;
+	margin-bottom:15px;
+	overflow:hidden;
+	}
+	
+.bzzx_kfrx{
+    width:191px;
+	height:64px;
+	background:url(../images/bzzx_kf_06.gif) no-repeat;
+	background-position: left top;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	margin-bottom:15px;}
+	
+.bzzx_zxzx{
+    width:171px;
+	padding-top:8px;
+	padding-bottom:15px;
+	padding-left:20px;}
+	
+.bzzx_mmk{
+    margin-bottom:22px;}
+	
+.bzzx_zxzx_bt{
+    font-weight:bold;
+	font-size:14px;
+	margin-bottom:11px;}
+	
+.bzzx_zxmm{
+    float:left;
+	margin-right:5px;    
+}
+
+.bzzx_kf1{
+    float:left;
+    margin-top:7px;
+	margin-bottom:10px;
+    }
+
+
+
+/*右边样式*/
+.right_bt{
+    width:780px;
+	height:30px;
+	font-size:16px;
+	font-weight:bold;
+	padding-top:20px;
+	border-bottom:#fc973d 2px solid;}
+	
+.wtlb{
+    margin-top:15px;
+	padding-bottom:11px;
+}
+	
+.wtlb ul {
+   list-style:none; 
+   margin:0px; 
+   padding:0px; 
+   padding-left:0px; 
+   margin-left:0px;
+   padding-left:5px;}
+   
+.wtlb ul li{
+	padding-left:13px;
+	background-image: url(../images/c_jiantou.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 50%;
+	line-height:23px;
+	float:left;
+	width:375px;
+	font-size:12px;
+}
+
+.wtlb ul li a{color:#000; text-decoration:none;}
+.wtlb ul li a:hover{color:#FF3300;text-decoration:none;}
+
+.wtlb_xuxian{
+    clear:both;
+    width:780px;
+	height:1px;
+	border-bottom:#d1d1d1 1px dotted;
+	overflow:hidden;
+	margin-bottom:9px;}
+	
+.bzzx_wt{
+    width:780px;
+	height:39px;
+	line-height:39px;
+    }	
+	
+.bzzx_wt .wt_left{
+    float:left;
+	font-size:14px;
+	font-weight:bold;}	
+	
+.bzzx_wt .wt_right{
+    float:right;
+	background:url(../images/fhdd_tubiao.gif) no-repeat 1px 14px;
+	padding-left:15px;}	
+	
+.wt_right a{ color:#333333;}	
+	
+.bzzx_wt_xia{
+   width:765px;
+   padding-top:8px;
+   padding-bottom:10px;
+   padding-left:15px;
+   line-height:23px;
+   font-size:12px;}	
+	
+.bzzx_a_right{
+   margin-top:5px;}	
+	
+
+.zczn_img{
+   width:780px;
+   padding-bottom:5px;
+   padding-top:7px;}	
+	
+.zczn_img1{
+   margin-left:40px;
+   margin-right:5px;}	
+	
+.czzn_f{
+   float:right;
+   margin-right:25px;
+   margin-top:2px;}	
+	
+.tkzn_f{
+   float:right;   
+   margin-right:70px;
+   margin-top:2px;}	
+   
+   
+.tkzn_table{
+   border:#d5d5d5 1px solid;
+   border-collapse:collapse;
+   margin-left:22px;
+   margin-top:10px;
+   margin-bottom:10px;
+   text-align:center;
+   }   
+   
+.tkzn_table tr td{
+   height:20px;
+   border:#d5d5d5 1px solid;}   
+   	
+.tkzn_table th{
+   height:24px;
+   font-weight:bold;
+   background:#f8f8f8;
+   border:#d5d5d5 1px solid;}
+   
+.czjs{
+   width:765px;
+   padding-left:15px;
+   padding-bottom:15px;}
+   
+.czjs_mz{
+   font-size:16px;
+   font-weight:bold;
+   height:30px;}
+   
+.czjs img{
+   padding-right:4px;}
+   
+.czjs a{ 
+   text-decoration:none;
+   color:#333;}
+   
+.czjs a:hover{ 
+   text-decoration:underline;
+   color:#FF3300;}
+   
+   
+/*如何开通网上银行样式*/
+/*左边栏*/
+#bzzx_left .wb{
+	width:191px;
+	height:51px;
+	background-position: left top;
+	background-image: url(../images/rhktwy_wb.gif);
+	background-repeat: no-repeat;
+	cursor:pointer;
+	}
+	
+#bzzx_left .lb{
+	width:191px;
+	height:52px;
+	background-position: left top;
+	background-image: url(../images/rhktwy_lb.gif);
+	background-repeat: no-repeat;
+	cursor:pointer;
+	}
+
+#bzzx_left .ktlb{
+    padding-top:9px;
+	padding-bottom:15px;
+    }
+	
+.ktlb ul,.ktlb ul li{
+    margin:0px;
+	padding:0px;
+	list-style:none;}
+	
+.ktlb ul li{
+    font-size:14px;
+	width:191px;
+	height:38px;
+	display:block;
+	line-height:38px;
+	}
+	
+.ktlb ul li span{
+    background:url(../images/bzzx_xzs1.gif) no-repeat;
+	width:191px;
+	height:38px;
+	font-weight:bold;
+	color:#FFFFFF;
+	display:block;
+	}
+	
+.ktlb ul li span a,.ktlb ul li span a:hover{
+    font-weight:bold;
+	color:#FFFFFF;}
+	
+.ktlb ul li a{
+    padding-left:20px;
+	text-decoration:none;
+	color:#000000;}
+	
+.ktlb ul li a:hover{
+    text-decoration:none;
+	color:#FF3300;}
+	
+	
+/*右边栏*/
+.ktyh_bank{
+	width:714px;
+	background-image: url(../images/ktyh_bg.gif);
+	background-repeat: repeat-x;
+	background-position:top;
+	padding-top:27px;
+	padding-bottom:10px;
+	margin-top:15px;
+	padding-left:66px;
+	height:541px;
+	}
+	
+.bank_d{
+    float:left;
+    width:125px;
+	line-height:20px;
+	margin-bottom:27px;
+	font-size:12px;}
+	
+.bank_d img{
+    cursor:pointer;
+	margin-bottom:7px;}
+
+.hx_jg40{
+    float:left;
+    width:40px;
+	height:10px;}
+	
+.zxtw_anniu{
+	margin-top:25px;
+	text-align:center;
+	height:40px;
+}
+	
+.zxtw_anniu input{
+    width:134px;
+	height:39px;}	
+	
+.zxtw_anniu a{
+    font-weight:bold;
+	padding-top:9px;
+	color:#666666;
+	text-decoration:underline;}
+	
+.zxtw_anniu a:hover{
+    color:#FF3300;}
+	
+.ktyh_wt{
+    width:760px;
+	line-height:27px;
+	padding-left:20px;
+	padding-top:5px;
+	padding-bottom:15px;
+    }	
+		
+.yhmingzi{
+    color:#CC0000;
+	font-size:16px;
+	font-weight:bold;}
+	
+.ktyh_wt .yh_img{
+	text-align:center;}	
+	
+	
+	
+	

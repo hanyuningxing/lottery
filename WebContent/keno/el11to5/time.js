@@ -1,0 +1,1 @@
+{"periodId":996626,"lastResultIssue":"2011053060","lastIssueId":996625,"lastResultTime":"2011-05-30 21:00","leftTime":"05/30/2011 21:09:00","endTime":1306761120000,"stateValue":0,"nowTime":"05/30/2011 21:07:07","issueNumber":"2011053061","lastResult":"01,02,03,04,05","stateName":"预售期","beforeTime":3,"resultTime":"05/30/2011 21:12:00"}

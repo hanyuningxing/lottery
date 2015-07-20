@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="true">
+	<description>JCaptcha验证码配置</description>
+
+	<bean id="captchaEngine" class="com.octo.captcha.engine.image.gimpy.SimpleListImageCaptchaEngine" />
+
+	<bean id="imageCaptchaService" class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService" scope="singleton">
+		<property name="captchaEngine" ref="captchaEngine" />
+	</bean>
+</beans>

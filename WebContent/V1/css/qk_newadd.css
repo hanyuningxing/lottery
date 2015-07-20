@@ -1,0 +1,15 @@
+/*20131105 add*/
+.newadd_tzrig{width:280px;float:right; font-size:12px;}
+.newadd_tzxx {height:26px; background:#D50408; color:#FFF; font-size:14px; font-weight:bold; line-height:26px; padding:0 10px;}
+.newadd_border01 {border:1px solid #d3d1d1; margin-bottom:10px;}
+.newadd_trb1{}
+.newadd_trb1 td{ border-bottom:1px solid #C4CEDA; background:#FFFAF5; margin:0 2px;}
+.newadd_r8{ padding-right:8px;}
+
+.newadd_input{ border:1px solid #7F9DB9; color:#C6C6C6; height:18px;}
+.newadd_bt01{ width:112px; height:32px; background:url(../images/newadd_bt.gif) no-repeat 0 0; display:block; cursor:pointer;}
+a.confirmpaln:link,a.confirmpaln:visited,a.confirmpaln:hover{background :url(../images/newadd_bt.gif) no-repeat 0 0px;width:112px;height:34px;cursor:pointer;border:none;display:inline-block;;}
+
+.newadd_bt02{ width:112px; height:32px; background:url(../images/newadd_bt.gif) no-repeat 0 -42px; display:block; cursor:pointer;}
+.newadd_fr{ float:right;}
+.newadd_char14red{ font-size:14px; color:#ff0000;}

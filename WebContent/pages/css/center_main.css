@@ -1,0 +1,21 @@
+@charset "utf-8";/*会员中心专用样式*/
+#center_main{ margin:0 auto; width:980px; display:table; background:url(../images/center_bg980.gif) repeat-y; border:1px solid #F2C0C7; border-left:none; border-right:none;}
+/*左边*/
+#center_main .cleft{ width:180px; float:left; display:block;}
+#center_main .topban{ width:150px; height:28px;display:table; background:url(../images/center_top.gif) no-repeat; line-height:28px; font-size:14px; font-weight:bold; color:#ffffff; padding-left:30px;}
+#center_main .cleftmenu ul{}
+#center_main .cleftmenu li{list-style-type:none; margin:0px; line-height:29px; font-weight:bold; }
+#center_main .cleftmenu li a{color:#714142; display:block;padding:0px 0px 0px 35px;height:29px; background: url(../images/center_navnor.gif) no-repeat;font-size:14px; width:145px;}
+#center_main .cleftmenu li a:hover{color:#D71C1C; display:block;padding:0px 0px 0px 35px;height:29px; background: url(../images/center_navnow.gif) no-repeat;font-size:14px; width:145px; text-decoration:none;}
+#center_main .cleftmenu li a.now,#center_main .cleft li a.now:hover{color:#FF201F; display:block;padding:0px 0px 0px 35px;height:29px; background: url(../images/center_navnow.gif) no-repeat;font-size:14px; width:145px;text-decoration:none;}
+/*右边*/
+#center_main .cright{ width:778px; float:left; padding:0 10px;}
+#center_main .crighttop{ height:32px; background: url(../images/center_grayt.gif) repeat-x; display:block;  padding:9px 10px 0 10px;}
+/*右边表格*/
+#center_main .center_tablegray{background:#F1EEE7;}
+#center_main .center_trgray{background:#F9F9F9;}
+#center_main .center_trgray td{border-bottom:1px solid #EAEAEA;}
+#center_main .center_trw{ background:#fff;  }
+#center_main .center_trw td{border-bottom:1px solid #EAEAEA;}
+#center_main .center_trhover{ background:#FDF5E5;}
+#center_main .center_trhover td{border-bottom:1px solid #EAEAEA;}

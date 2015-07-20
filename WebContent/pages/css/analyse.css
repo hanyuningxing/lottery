@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* 布局*/
+body {margin: 0px;padding: 0px;	font-size: 12px;color: #333333;	background-color: #FFFFFF;font-family:arial,"";	font-size:12px; }
+div,form,img,ul,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+table,td,tr,th{font-size:12px;}
+a{color: #0033CC;text-decoration: none;}
+a:hover{color: #CC0000;	text-decoration: underline;}
+/* 常用*/
+.kong10{ height:10px; display:block; clear:both; line-height:1px; font-size:1px; clear:both;}
+.kong5{ height:5px; display:block; clear:both; line-height:1px; font-size:1px; clear:both;}
+.hang5bggray{ background:#ADADAD;height:1px; display:block; clear:both; line-height:1px; font-size:1px; clear:both;}
+
+
+.all5px{ padding:5px; display:table;}
+.all10px{ padding:10px; display:table;}
+.textcenter{ text-align:center;}
+.lineh20{ line-height:20px;}
+.left10{ padding-left:10px;}
+.left5{ padding-left:10px;}
+.rig10{ padding-right:10px;}
+.floatrig{ float:right;}
+.floatleft{ float:left;}
+.cleanboth{ clear:both;}
+.redchar{color:#ff0000;}
+.bluecharnor{color:#3300FF;}
+
+.main980{width:980px; clear:both; margin:0 auto;}
+.tybanbg{ width:968px; background:url(../images/tybanbg.gif) repeat-x; display:block; height:28px; border:1px solid #DFD5D5; border-top:none;  padding-left:10px;}
+.zstopleft0{ padding-top:6px;float:left;color:#666666; font-size:12px; font-weight:bold; width:200px;}
+.zstopleft1{ padding:4px 0 0 5px; float:left;}
+.zstopleft2{ padding:3px 0 0 10px; float:left;}
+.btgray{background:url(../images/btgraybg.gif) repeat-x; height:19px; border:1px solid #CDCDCD; cursor:hand; font-size:12px; }
+.btnow{background:url(../images/btn_bluebg.gif) repeat-x; height:19px; border:1px solid #CDCDCD; cursor:hand; font-size:12px; }
+.inputh18{ line-height:14px; height:14px;}
+.zstablegraybg{ background:#DCDCDC;color:#A6A6A6; font-family:Arial,"宋体";}
+.trtitlebg{ background:#FFF3AC; text-align:center; color:#000000;}
+.trtitlebg td{ border-top:1px solid #fff;  border-left:1px solid #fff;}
+.zsttrpinklig{ background:#FFFADB; text-align:center; color:#4D3030;}
+.trw{ background:#FFF; text-align:center;}
+.trgray{ background:#F5F5F5; text-align:center; }
+.graychar333{color:#333333;}
+.font14{ font-size:14px;}
+.tdjiange01{background:#F6FFE5;border-top:2px solid #fff;  border-left:1px solid #fff;}
+.redredbchar{color:#ff0000; font-weight:bold;}
+/* 球状态*/
+.nballred{ background:url(../images/newrball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.bluedot{ background:url(../images/lblue.gif) no-repeat; display:block;  width:12px; height:12px; margin:0 auto; margin-top:3px;}
+.reddot{ background:url(../images/lred.gif) no-repeat; display:block;  width:12px; height:12px; margin:0 auto; margin-top:3px;}
+.greendot{ background:url(../images/lgreen.gif) no-repeat; display:block;  width:12px; height:12px; margin:0 auto; margin-top:3px;}
+.blackdot{ background:url(../images/lblack.gif) no-repeat; display:block;  width:12px; height:12px; margin:0 auto;  margin-top:3px;}
+.ballred{ background:url(../images/rball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.ballgreen{ background:url(../images/ball_2.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.ballblue{ background:url(../images/ball_3.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.bball{ background:url(../images/bball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.rball{ background:url(../images/rball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.gball{ background:url(../images/gball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+/* 球可点击状态*/
+a.gball{ background:url(../images/gball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+a.gball:hover{ background:url(../images/rball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px; text-decoration:none;}
+a.nowball,a.nowball:hover{ background:url(../images/rball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px; text-decoration:none;}
+.ballredone{ background:url(../images/ball_1.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:25px; height:18px; line-height:18px;margin-left:7px;_margin-left:-1px;*+margin-left:-1px;
+}
+.ballredone1{ background:url(../images/ball_2.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:20px; height:18px; line-height:18px;}
+.ballredone2{ background:url(../images/ball_3.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:20px; height:18px; line-height:18px;}
+.ballredone3{ background:url(../images/ball_7.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:20px; height:18px; line-height:18px;}
+.ballredone0{ background:url(../images/ball_0.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:12px; height:12px; line-height:18px;}
+
+.ballclickKeno{ background:url(../images/chartball_b.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:25px; height:18px; line-height:18px;}
+
+
+
+/* 球可点击状态*/
+a.gballblue{ background:url(../images/gball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+a.gballblue:hover{ background:url(../images/bball.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px; text-decoration:none;}
+
+
+.topbgty{ width:978px; background:url(../images/new_topbg.gif) repeat-x; height:83px; border:1px solid #F5D9C5;}
+.toptylogo3d{ width:89px; background:url(../images/logo_3d.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.title_c_orange{ font-size:14px; font-weight:bold; color:#F35201;}
+.toptylogodlt{ width:89px; background:url(../images/logo_dlt.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogossq{ width:89px; background:url(../images/logo_ssq.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogopl3{ width:89px; background:url(../images/logo_pl3.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogopl5{ width:89px; background:url(../images/logo_pl5.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogoqyh{ width:89px; background:url(../images/logo_qyh.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogojx115{ width:89px; background:url(../images/logo_jx_115.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogosd115{ width:89px; background:url(../images/logo_sd_115.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogotc22to5{ width:89px; background:url(../images/logo225.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogotcqlc{ width:89px; background:url(../images/logoqlc.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogotcssc{ width:89px; background:url(../images/ssc.gif) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+.toptylogohcy{ width:89px; background:url(../images/logo_hcy.png) no-repeat; height:23px; padding-top:60px; text-align:center; color:#866232; font-weight:bold;}
+
+/*按钮*/
+.navt_menu ul{}
+.navt_menu li{list-style-type:none; float:left; margin:0px; padding-right:5px; line-height:20px;}
+.navt_menu li a{color:#7A3303; display:block;}
+.navt_menu li a:hover{color:#CC0000; display:block;}
+.navt_menu li a.now,.navt_menu li a.now:hover{color:#ffffff;display:block; background:#cc0000; padding:0 7px;}
+.navt_menu li span{ margin:0 4px; color:#929292;}
+
+.w320{ width:320px; float:left; display:block; padding-right:10px;}
+/*按钮*/
+.trchosegrayd {
+    background: none repeat scroll 0 0 #A6A6A6;
+    color: #FFFFFF;
+    text-align: center;
+}
+.b1redpx {
+    border-left: 1px solid #EA8A8A;
+}
+.trchoseredd {
+    background: none repeat scroll 0 0 red;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.cabg1{ background:#F35201; text-align:center; color:#000000;}
+.cabg2{ background:#FFEFD9; text-align:center; color:#B82E2E;}
+.trchoseo{ background:#F04B58; text-align:center; color:#ffffff; }
+.trrrs{ background:#65dbf8; text-align:center; color:#ffffff; }
+
+.bgr1{background:#BF0404;color:#fff;}
+.bggr1{background:#339900;color:#fff;}
+.bluebg{ background:#286CE9; color:#fff;}
+
+
+.tablegraybg{ background:#DCDCDC;}
+.zs_bgligyellow{ background:#FFFFF7; color:#333333;}
+.bglyellow{ background:#FFFFCB; color:#6C413D;}
+
+.bor1{  text-align:left; width:980px;}

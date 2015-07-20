@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+/* 主要样式表，公共样式开始 */
+body {margin: 0px;padding: 0px;	font-size: 12px;color: #333333;	background-color: #FFFFFF;font-family:arial,"宋体";	font-size:12px; }
+div,form,img,ul,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+table,td,tr,th{font-size:12px;}
+a{color: #0033CC;text-decoration: none;}
+a:hover{color: #CC0000;	text-decoration: underline;}
+
+.clearfix{}
+
+.rebchar{color: #CC0000;}
+.bluechar{color: #0000CC;}
+.graychar{color:#666666;}
+.greenchar{color:#006600;}
+.fc3d_fs_txt3{color:#cc0000;font-weight:bold;}
+.darkoranges12{color:#cc3300;}
+
+.charlblue{ color:#AAB0B6;}
+.chargraytitle{ color:#525252; font-weight:bold; font-size:14px; line-height:28px;}
+.charredbold{ font-weight:bold; color:#CC0000;}
+
+.adminMenu{ color:#525252; font-weight:bold; font-size:14px; line-height:28px;}
+
+.cleanboth{ clear:both;}
+
+.hide{display: none;}
+
+.header_searchinput{ border:solid 1px #BABABA; color:#787878; padding:2px;}
+.header_searchclick{ border:solid 1px #f0b478; color:#333333; padding:2px;background-color:#FFFFE8;}
+
+form ul {position: relative;list-style: none;padding: 0;margin-left: 0;}
+form li {line-height: 2em;margin: 0;padding: 1px 1px 6px 5px;}
+form .info{display: inline-block;margin: 0 0 8px 0;padding: 0;border-bottom: 1px dotted #ccc !important;text-align: left;}
+
+.nowpalce{height: 18px;border-bottom: 1px dotted #ccc !important;margin: 0 0 5px 0;}
+
+/* 分页 */
+.pagelist{margin-top:10px;text-align:center; background:#f5f5f5;padding: 10px 0px 10px 0px;font-family: Verdana,Arial;word-spacing: 5px;font-size: 12px;}
+.nowpage{font-weight: bold;color: #FF3300;}
+A.pagenum{padding: 3px 5px 2px 5px;color: #0033CC;text-decoration: none;background-color: #FFFFFF;border: 1px solid #DDDDDD;font-family:"宋体";}
+A.pagenum:hover{padding: 3px 5px 2px 5px;color: #FFFFFF;text-decoration: none;background-color: #498FEC;border: 1px solid #DDDDDD;}
+
+.pagebox{height:25px;margin-top:10px;text-align:center; background:#f5f5f5;padding: 10px 0px 10px 0px;font-family: Verdana,Arial;word-spacing: 5px;font-size: 12px;}
+.pagebox .page{margin:0px;padding:0px;}
+.pagebox .page li{list-style-type:none;float:left;margin:0px 5px 0px 5px;}
+.pagebox .page li a{border:1px solid #ccc;background:#fff;padding:3px 4px 3px 4px;display:block;}
+.nowpage{font-weight: bold;color: #FF3300;}

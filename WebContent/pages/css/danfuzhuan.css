@@ -1,0 +1,4 @@
+a.graydownmenu{color:#393939; display:block;padding:0px 6px; margin:0px 5px;text-align:center; font-size:12px; float:left; height:32px; line-height:32px;}
+a.graydownmenu:hover{color:#393939; display:block;padding:0px 6px; margin:0px 4px;text-align:center; font-size:12px; float:left; height:32px;border-width:0px 1px 0px 1px; border-style:solid; border-color:#DCDCDC;  line-height:32px; background:url(../images/navtwo_btbg.gif) repeat-x; text-decoration:none;}
+a.graydownmenunow,a.graydownmenunow:hover{color:#FF3300; display:block;padding:0px 6px; margin:0px 4px;text-align:center; font-size:12px; float:left; height:32px;border-width:0px 1px 0px 1px; border-style:solid; border-color:#DCDCDC;  line-height:32px; background:url(../images/navtwo_btbg.gif) repeat-x;text-decoration:none;}
+.qiehuan{margin-top: 5px;}

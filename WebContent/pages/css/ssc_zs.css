@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+.trendCharts{ margin:0px auto; padding:0px; width:px;background:#FFFEF1;border:1px solid #444;border-collapse:separate;border-spacing:0;color:#666;font:12px "宋体",Arial,Tahoma;text-align:center;}
+
+.trendCharts td{height:1.8em;padding:0;border:1px solid;border-color:#fff #ccc #ddd #fff;}
+.trendCharts .tr-first th{height:23px;border:1px solid;background:#d8e5ff;border-color:#fff #777f8d #777f8d #fff;color:#000;font-weight:normal}
+.trendCharts .tr-first .td-first{height:23px;background:#e2eafc}
+.trendCharts .tr-segment td{border-bottom:1px solid #99B4F4;}
+.trendCharts .tr-last td{border-bottom:1px solid #5a7ebc;}
+.trendCharts td.td-first{padding:0 1px;background:#e2eafc;border-color:#fff #777f8d #777f8d #fff;color:#000;font-weight:normal}
+.trendCharts td.td-last{border-right:1px solid #5a7ebc;}
+.trendCharts th.td-last{border-right:1px solid #5a7ebc;}
+.trendCharts .tr-last .td-first{border-bottom:1px solid #5a7ebc;}
+
+.gball1{  background:#DCDCDC; display:block; color:#ffffff; text-align:center; width:18px; height:18px; line-height:18px;}
+.sss {color:#8E8E8E; text-decoration:none;}
+.sss:hover{color:#DD0000; text-decoration:none;}
+/*.sss a:hover{color:#fff; text-decoration:none;}*/
+.topbgty1{margin:0px auto;  width:978px; background:url(../images/new_topbg.gif) repeat-x; height:83px; border:1px solid #F5D9C5;}
+.tybanbg1{ margin:0px auto;width:968px; background:url(../images/tybanbg.gif) repeat-x; display:block; height:28px; border:1px solid #DFD5D5; border-top:none;  padding-left:10px;}
+
+/*分组*/
+	.trendCharts .group1{background:#FFFEE9;}
+	.trendCharts .group2-1, .trendCharts .group2-2, .trendCharts .group2-3, .trendCharts .group2-4, .trendCharts .group2-5, .trendCharts .group2-6{width:2em;background:#edf9ef;border-right:1px solid #e4e4d5;color:#666}
+	.trendCharts .group2-1,.trendCharts .group2-4{background:#E9FAD8;}
+	.trendCharts .group2-2,.trendCharts .group2-5{background:#DAE5F8;}
+	.trendCharts .group2-3,.trendCharts .group2-6{background:#FFEFC5;}
+	.trendCharts .group3{background:#ECF6FF;border-right:1px solid #e4e4d5;color:#666}
+	.trendCharts .group4{background:#f9f0d5;border-right:1px solid #e4e4d5;color:#666}
+	.trendCharts .group1-2,.trendCharts .group3-2,.trendCharts .group2-6-2, .trendCharts .group4-7{border-right:1px solid #ADC4F7}
+	.trendCharts .group5 .td-last{background:#fbfbfb;border-right:1px solid #e5badf}
+
+	/*高亮样式*/
+	.n-small, .n-big{display:block;padding:1px 0;margin:3px;border:1px solid #999;color:#fff;}
+	.group2-1 .n-small, .group2-1 .n-big, .group2-4 .n-small, .group2-4 .n-big{border-color:#fff #999 #999 #fff;background:#8FCE52;}
+	.group2-2 .n-small, .group2-2 .n-big, .group2-5 .n-small, .group2-5 .n-big{border-color:#fff #999 #999 #fff;background:#2788FA;}
+	.group2-3 .n-small, .group2-3 .n-big, .group2-6 .n-small, .group2-6 .n-big{border-color:#fff #999 #999 #fff;background:#FF8101;}	
+	
+	.trendCharts .f-small{color:#1d5900}
+	.trendCharts .f-big{color:#8b0009}
+	.trendCharts .lger{color:#d00;}	
+	
+	/*旧斜孤*/
+	.trendCharts .groupjxg2{background:#ECF6FF;border-right:1px solid #e4e4d5;color:#666}
+	.trendCharts .groupjxg2-4{border-right:1px solid #99B4F4}
+	.trendCharts .td-segment-r{border-right:1px solid #99B4F4;}
+	
+	.f-xie{color:#006A05}
+	.f-jiu{color:#004B90}
+	.f-gu{color:#860072}
+	
+	.n-xie{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#006A05;}
+	.n-jiu{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#004B90;}
+	.n-gu{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#860072;}
+	
+	.f-rs-null{display:block;padding:2px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#004B90;}
+	
+	.nn-xie{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#8FCE52;font-weight:bold}
+	.nn-jiu{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#26B7FA;font-weight:bold}
+	.nn-gu{display:block;padding:2px 1px;margin:0;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#FFBA01;font-weight:bold}
+	
+	/*五行*/
+	.trendCharts .td-tu{background:#f9f9f9;color:#999;border-right:2px solid #bbb;}
+	.trendCharts .td-jin{background:#f9f9f9;color:#999}
+	.trendCharts .td-mu{background:#f9f9f9;color:#999}
+	.trendCharts .td-shui{background:#f9f9f9;color:#999}
+	.trendCharts .td-huo{background:#f9f9f9;color:#999}
+	.trendCharts .td-tu{background:#f9f9f9;color:#999}
+	
+	.f-jin{color:#FAAB00}
+	.f-mu{color:#37A52F}
+	.f-shui{color:#2788FA}
+	.f-huo{color:#FF2C09}
+	.f-tu{color:#9E5600}
+	
+	.td-jin span{display:block;padding:1px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#FFC001;}
+	.td-mu span{display:block;padding:1px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#37A52F;}
+	.td-shui span{display:block;padding:1px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#2788FA;}
+	.td-huo span{display:block;padding:1px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#FF2C09;}
+	.td-tu span{display:block;padding:1px 0;margin:2px;border:1px solid #999;color:#fff;border-color:#fff #999 #999 #fff;background:#9E5600;}
+	
+	.trendCharts .groupwx2{background:#ECF6FF;border-right:1px solid #e4e4d5;color:#666}
+	.trendCharts .groupwx2-2{border-right:1px solid #99B4F4}
+	.trendCharts .td-segment-r{border-right:2px solid #ccc;}	
+	
+	/*遗漏*/ 
+	.trendCharts .drop td{padding-top:4px;padding-bottom:4px;background:#F3F7FF;border-right:1px solid #c9daff;border-bottom:1px solid #c9daff;color:#666}
+	.trendCharts .drop .td-first{background:#e2eafc;border-color:#fff #777f8d #777f8d #fff;color:#000;font-weight:normal}
+	.trendCharts .drop .td-last{border-right:1px solid #5A7EBC;}
+	.trendCharts .getNum-td-last .td-first{border-bottom:1px solid #f49604;}
+	.trendCharts .tr-segment td{border-bottom:1px solid #99B4F4;}
+	.trendCharts .drop .td-segment-r{border-right:1px solid #99B4F4;}
+	
+	.trendCharts .progress{position:relative;top:-1px;_top:-4px;display:inline-block;width:40px;height:3px;margin-right:5px;border:1px solid #ff2b01;background:#fff;overflow:hidden;text-align:left}
+	.trendCharts .progress strong{position:absolute;top:0;left:0;display:block;width:60%;height:1px;border-top:1px solid #FF9C01;border-bottom:1px solid #FF6B31;background:#FF4B01;}
+	.trendCharts .f-red, .trendCharts .f-green{font-weight:bold}
+		
+	/*双色球*/ 
+	.trendSSQ td{/*border-right:1px solid #fff;border-bottom:1px solid #fff;*/background-color:#FFFEE9;color:#8E8E8E}
+	.trendSSQ .td-blue{color:#b6cae4}
+	.trendSSQ .tr-even td{background-color:#fff}
+	.trendSSQ .tr-even .td-first{background:#e2eafc}
+	.trendCharts tr .tfl, .trendCharts .tr-even .tfl{border-bottom:1px solid #EDA7A7;border-right:1px solid #EDA7A7;background:#FBDDDD;color:#666;} /* .tfl选号连线背景 */
+	.trendCharts tr .ffl, .trendCharts .tr-even .ffl{border-bottom:1px solid #9DD189;border-right:1px solid #9DD189;background:#E2F2DC;color:#666;} /* .ffl无选号背景 */
+	
+	.n-ssq{ background:url(../images/ball_1.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:20px; height:18px; line-height:18px;}
+	
+	.n-cxt{display:block;padding:1px;margin:0;color:#fff;font-family:Arial;font-weight:bold;background:url(../images/lred.gif) no-repeat center -185px}
+	.n-lj{display:block;padding:1px;margin:0;color:#fff;font-family:Arial;font-weight:bold;background:url(../images/lred.gif) no-repeat center -208px}
+	.td-blue .n-ssq{background-position:center -162px}
+	
+	.td-blue .n-ssq{ background:url(../images/ball_3.gif) no-repeat center center; display:block; color:#ffffff; text-align:center; width:20px; height:18px; line-height:18px;}
+	
+	/*柱状图*/ 
+	.trendCharts .histogram td{height:50px;background:#fbfcff;border-right:1px solid #c9daff;border-bottom:1px solid #c9daff;color:#666;vertical-align:bottom}
+	.trendCharts .histogram .td-first{background:#e2eafc;border-color:#fff #777f8d #777f8d #fff;color:#000;font-weight:normal;vertical-align:middle}
+	.trendCharts .histogram .td-last{border-right:1px solid #5A7EBC;}
+	.trendCharts .tr-segment td{border-bottom:2px solid #ccc;}
+	/*
+	.trendCharts .histogram i{position:relative;display:block;width:6px;height:5px;margin:0 auto;background:#FF6701;overflow:hidden;}
+	.trendCharts .histogram i em{position:absolute;left:1px;top:0;display:block;width:2px;height:100%;background:#FFCB99}
+	*/ 
+
+	.trendCharts .histogram i{position:relative;display:block;width:6px;height:5px;margin:0 auto;border:1px solid #9A3A00;border-bottom:0;border-top-color:#FA9900;background:#FA9900;overflow:hidden;}
+	.trendCharts .histogram i em{position:absolute;left:1px;top:0;display:block;width:4px;height:100%;border-top:1px solid #FFF3D3;background:#FFBB39}
+
+	.trendCharts .histogram2 td{background:#f3f7ff;border-right:1px solid #c9daff;border-bottom:1px solid #c9daff;}
+	/*
+	.trendCharts .histogram2 i{background:#087CD6;}
+	.trendCharts .histogram2 i em{background:#8BC0FB}
+	*/
+	.trendCharts .histogram2 i{border:1px solid #1b1b1b;border-top-color:#46A5EE;border-bottom:0;background:#087CD6;}
+	.trendCharts .histogram2 i em{border-top:1px solid #D0E6FE;background:#8BC0FB}
+		
+	.trendCharts .histogram .td-first-1{border-bottom:1px solid #5a7ebc;}
+	.trendCharts .getNum-td-last td{border-bottom:1px solid #f49604;}
+	.trendCharts .getNum-td-last-none td{border-bottom:0;}
+	.trendCharts .tr-last td{border-bottom:1px solid #5a7ebc;}
+	.trendCharts .tr-last .td-first{border-bottom:1px solid #5a7ebc;}
+	.trendCharts .histogram .td-segment-r{border-right:1px solid #99B4F4;}
+
+	
+	#ga{ margin:0px auto; padding:0px; width:980px;}
+	
+	.trchoseo1{ background:#Fed1a1; text-align:center; color:#DD0000; }
+	
+	.main_wz{margin:0px auto;width:980px;}
+	.main_wz .shaix_cuti_btwz a{ color:#666;text-decoration:none;}
+	.main_wz .shaix_cuti_btwz a:hover{color:#333;text-decoration:none;}

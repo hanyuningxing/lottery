@@ -1,0 +1,199 @@
+/*左侧菜单样式*/
+#help .left_menu{ 
+   width:180px; 
+   float:left; 
+   display: table; 
+   border-bottom: #f2d8c0 1px solid;
+   }
+   
+#help .left_menu_ban{ 
+   width:150px; 
+   height:29px; 
+   padding-left:30px; 
+   font-size:14px; 
+   font-weight:bold; 
+   color:#fff; 
+   /*display: table;*/
+    background:url(../images/wfgz_top.gif) no-repeat; 
+	line-height:29px;
+	}
+
+	
+#help .left_menu_detail{
+   width:150px; 
+   height:29px; 
+   padding-left:30px; 
+   font-size:14px; 
+   font-weight:bold; 
+   color:#d64500;
+   background: url(../images/wfgz_bthead.gif) no-repeat; 
+   line-height:29px; 
+   font-weight:bold;
+   }
+
+   
+/*帮助中心左边NAV*/
+#help .left_menu ul li {list-style:none;}
+
+#help .left_menu ul li li{ 
+   margin:0px; 
+   padding:0px; 
+   list-style:none;
+   line-height:29px;
+   }
+   
+#help .left_menu ul li li a{
+   color:#8a6b52; 
+   display:block;
+   padding:0px 0px 0px 30px;
+   height:29px; 
+   background: url(../images/help_btnoww.gif) no-repeat;
+   font-size:12px; 
+   width:150px;
+   }
+   
+#help .left_menu ul li li a:hover{
+   color:#FFE6C2; 
+   display:block;
+   padding:0px 0px 0px 30px;
+   height:29px; 
+   background: url(../images/help_btdown.gif) no-repeat;
+   font-size:12px; 
+   width:150px; 
+   text-decoration:none;
+   }
+   
+#help .left_menu ul li li a.now,#help .main_left li a.now:hover{
+   color:#Fff; 
+   display:block;
+   padding:0px 0px 0px 30px;
+   height:29px; 
+   background: url(../images/help_btdown.gif) no-repeat;
+   font-size:12px;
+   width:150px;
+   text-decoration:none;
+   } 
+
+
+/*右侧文本样式*/
+#help .wfgz_main_right{
+	width:788px;
+	float:right;
+	display: table;
+	background-image: url(../images/wfgz_bg_03.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	border:#f2d8c0 1px solid;
+   }
+   
+#help .wfgz_main_right .name_top{
+    margin:0px;
+	padding:0px;
+	text-align:left;
+	padding-top:7px;
+	padding-left:10px;
+	padding-bottom:4px;
+	}
+   
+#help .wfgz_main_right .right_detail{ 
+    width:765px; 
+	display: table; 
+	margin:0px auto;
+	padding:0px;
+	margin-top:10px;
+	margin-bottom:10px;
+	}
+	
+#help .wfgz_main_right .right_detail .right_banner_head{
+    margin:0px;
+	padding:0px;
+    width:8px; 
+	height:31px; 
+	float:left; 
+	background: url(../images/help_right_head.gif) no-repeat;
+	}
+	
+#help .wfgz_main_right .right_detail .right_banner_body{
+    margin:0px;
+	padding:0px;
+     padding:9px 0px 0px 0px;
+	 height:22px; 
+	 float:left; 
+	 background: url(../images/help_right_body.gif) repeat-x; 
+	 font-size: 14px; 
+	 color: #bf3d00; 
+	 font-weight: bold;
+	 }
+	 
+#help .wfgz_main_right .right_detail .right_banner_bottom{
+     width:8px; 
+	 height:31px; 
+	 float:left; 
+	 background: url(../images/help_right_bottom.gif) no-repeat;
+	 }
+	 
+#help .wfgz_main_right .right_detail .right_detail_content{
+     margin:0px;
+	 padding:0px;
+     width:741px; 
+	 display: table; 
+	 border:1px solid #e4be97; 
+	 background:#fef6ea;
+	 text-align:left;
+	 padding-left:12px;
+	 padding-right:12px;
+	 padding-top:8px;
+	 padding-bottom:6px;
+	 color:#6b5858;
+	 font-size:12px;
+	 line-height:20px; 
+	 }
+	 
+.right_detail_content_table{
+     margin:0px auto;
+	 padding:0px;
+	 width:742px;
+	 border:#cccccc 1px solid;
+	 border-collapse:collapse;
+	 word-warp:break-word;
+	 }
+	 
+.right_detail_content_table td{
+	 text-align: center; 
+	 font-size: 12px;
+	 color:#004499;  
+	 padding: 3px 0px 3px 0px;
+	 border:#cccccc 1px solid;
+	 background:#FFFFFF;
+	 }
+	 
+.right_detail_content_table .table_head{ 
+	 font-size: 12px;
+	 font-weight: bold;
+	 padding: 5px 0px 5px 0px;
+	 }
+	 
+.right_detail_content p span{ color:#FF0000;}
+
+
+
+#help .wfgz_main_right .right_detail .right_detail_content1{
+     margin:0px;
+	 padding:0px;
+     width:725px; 
+	 display: table; 
+	 border:1px solid #e4be97; 
+	 background:#fef6ea;
+	 text-align:left;
+	 padding-left:20px;
+	 padding-right:20px;
+	 padding-top:8px;
+	 padding-bottom:6px;
+	 color:#6b5858;
+	 font-size:12px;
+	 line-height:24px; 
+	 }
+	 
+.shisict{
+     font-size:14px;
+	 font-weight:bold;}

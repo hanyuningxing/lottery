@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="false">
+	<!-- 首页 -->
+	<bean id="indexTask" class="com.cai310.lottery.web.controller.admin.info.IndexController" />
+	<!-- 赔率 -->
+	<bean id="oddsTask" class="com.cai310.utils.OddsUtil" />
+	
+	<!-- 竞彩足球 篮球 -->
+	<bean id="jczqFetchTask" class="com.cai310.lottery.task.jczq.JczqFetchTask" />
+	<bean id="jclqFetchTask" class="com.cai310.lottery.task.jclq.JclqFetchTask" />
+	<bean id="jczqMatchHistoryCacheTask" class="com.cai310.lottery.task.jczq.JczqMatchHistoryCacheTask" />
+	<bean id="jczqAutoHandleTransactionTask" class="com.cai310.lottery.task.jczq.AutoHandleTransactionTask" />
+	<bean id="jclqAutoHandleTransactionTask" class="com.cai310.lottery.task.jclq.AutoHandleTransactionTask" />
+	<!-- 自动生成首页线程 -->
+	<bean id="makeIndexTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="indexTask" />
+							<property name="targetMethod" value="makeIndexTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="5000" />
+	</bean>
+	
+	<!-- 获取竞彩足球赔率 线程-->
+	<bean id="oddsTaskTrigger_jczq"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="oddsTask" />
+							<property name="targetMethod" value="getJczqOdds" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+		<bean id="asiaOddsTaskTrigger_jczq"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="oddsTask" />
+							<property name="targetMethod" value="getJczqAsiaOdds" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	<!-- 获取北京单场赔率 线程-->
+	<bean id="oddsTaskTrigger_dczc"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="oddsTask" />
+							<property name="targetMethod" value="getDczcOdds" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	
+    <!-- 自动完成交易线程 -->
+	<bean id="jczqAutoHandleTransactionTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jczqAutoHandleTransactionTask" />
+							<property name="targetMethod" value="runTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	<!-- SP线程 -->
+	<bean id="jczqAutoSpTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jczqAutoHandleTransactionTask" />
+							<property name="targetMethod" value="runSpTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	<!--捉去对阵,即时sp线程 -->
+	<bean id="jczqFetchTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jczqFetchTask" />
+							<property name="targetMethod" value="fetch" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="20000" />
+	</bean>
+	<bean id="jczqMatchHistoryCacheTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jczqMatchHistoryCacheTask" />
+							<property name="targetMethod" value="hitCache" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="220000" />
+	</bean>
+	<!--篮球-->
+	<!-- 自动完成交易线程-->
+	<bean id="jclqAutoHandleTransactionTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jclqAutoHandleTransactionTask" />
+							<property name="targetMethod" value="runTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="30000" />
+	</bean> 
+	<!-- SP线程 -->
+	<bean id="jclqAutoSpTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jclqAutoHandleTransactionTask" />
+							<property name="targetMethod" value="runSpTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	<!--捉去对阵,即时sp线程 -->
+	<bean id="jclqFetchTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="jclqFetchTask" />
+							<property name="targetMethod" value="fetch" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="10000" />
+					<property name="repeatInterval" value="20000" />
+	</bean>
+	<!-- 北京单场 -->
+    <bean id="dczcAutoHandleTransactionTask" class="com.cai310.lottery.task.dczc.AutoHandleTransactionTask" />
+	<bean id="dczcFetchTask" class="com.cai310.lottery.task.dczc.DczcFetchTask" />
+	<!-- 自动完成交易线程 -->
+	<bean id="dczcAutoHandleTransactionTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="dczcAutoHandleTransactionTask" />
+							<property name="targetMethod" value="runTask" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="30000" />
+	</bean>
+	<!-- SP抓取线程 -->
+	<bean id="dezcFetchSpTaskTrigger"  class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="dczcFetchTask" />
+							<property name="targetMethod" value="fetchSp" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="30000" />
+					<property name="repeatInterval" value="10000" />
+	</bean>
+	<!-- SP持久化线程-->
+	<bean id="dezcPersistenceSpTaskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="dczcFetchTask" />
+							<property name="targetMethod" value="persistenceSp" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="60000" />
+					<property name="repeatInterval" value="300000" />
+	</bean> 
+	<!-- 自动跟单 -->
+	<bean id="autoFollowTask" class="com.cai310.lottery.task.AutoFollowTask" />
+	<bean id="autoFollowTaskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="autoFollowTask" />
+							<property name="targetMethod" value="autoFollow" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="20000" />
+					<property name="repeatInterval" value="2000" />
+	</bean>
+
+	<!-- 11选5销售线程 -->
+	<bean id="el11to5SaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="el11to5SaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="el11to5SaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="el11to5SaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="15000" />
+	</bean>
+
+
+	<!-- 山东11选5销售线程 	-->
+	<bean id="sdel11to5SaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sdel11to5SaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="sdel11to5SaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="sdel11to5SaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="15000" />
+	</bean>
+	
+	<!-- 快乐扑克销售线程 	-->
+	<bean id="klpkSaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="klpkSaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="klpkSaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="klpkSaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="15000" />
+	</bean>
+		<!-- 新疆11选5销售线程 	-->
+	<bean id="xjel11to5SaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="xjel11to5SaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="xjel11to5SaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="xjel11to5SaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="5000" />
+	</bean>
+	
+	<!-- 群英会销售线程 -->
+	<bean id="qyhSaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="qyhSaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="qyhSaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="qyhSaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="15000" />
+	</bean>
+
+  	<!--  时时彩 开始-->
+	<bean id="sscSaleWorkerJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sscSaleWorkerTimerTask" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="sscSaleWorkerJobSimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="sscSaleWorkerJobDetail" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="15000" />
+	</bean>
+	<!-- 时时彩 结束-->
+
+	
+	<!-- 前台方案出票状态同步任务 -->
+	<bean id="transactionTask_syan" class="com.cai310.lottery.task.ticket.TicketStateSynchronizationTask" />
+	<bean id="transactionTaskJob_syan" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="transactionTask_syan" />
+		<property name="targetMethod" value="runTask" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="jobSimpleTrigger_syan" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="transactionTaskJob_syan" />
+		<property name="startDelay" value="10000" />
+		<property name="repeatInterval" value="10000" />
+	</bean>
+
+	<!-- 触发任务 -->	
+	<bean name="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 竞彩足球-->
+				<ref local="jczqFetchTaskTrigger" />
+			    <ref local="jczqAutoSpTrigger" />
+			    <ref local="jczqAutoHandleTransactionTrigger" /> 
+			    <!-- 竞彩篮球-->
+			    <ref local="jclqFetchTaskTrigger" />
+			    <ref local="jclqAutoSpTrigger" />
+			    <ref local="jclqAutoHandleTransactionTrigger" />
+			    
+			    <!-- 首页生成
+			   <ref local="makeIndexTaskTrigger"/> -->
+			    
+			    <!-- 单场-->
+			    <ref local="dezcPersistenceSpTaskTrigger" />
+			    <ref local="dezcFetchSpTaskTrigger" />
+			    <ref local="dczcAutoHandleTransactionTaskTrigger" /> 
+			    <!-- 自动跟单
+			    <ref local="autoFollowTaskTrigger" /> -->
+			    <!-- 江西11选5	 
+			    <ref local="el11to5SaleWorkerJobSimpleTrigger" />-->
+			    <!-- 群英会 
+			    <ref local="qyhSaleWorkerJobSimpleTrigger" />-->
+			    <!-- 山东11选5
+				<ref local="sdel11to5SaleWorkerJobSimpleTrigger" />-->
+				<!-- 时时彩 
+				<ref local="sscSaleWorkerJobSimpleTrigger" />-->
+				
+				<!-- 新疆11选5
+				<ref local="xjel11to5SaleWorkerJobSimpleTrigger" />-->
+				 <!--快乐扑克
+				<ref local="klpkSaleWorkerJobSimpleTrigger" />-->
+				<!-- 同步出票-->
+				<ref local="jobSimpleTrigger_syan" />
+				
+			</list> 
+		</property>
+		 <!-- zhuhui add 2011-04-04  连接线程池配置文件 -->
+        <property name="configLocation" value="classpath:quartz.properties" />
+	</bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="true">
+	<description>用户账号验证配置</description>
+ 	<!-- 注意:这里的参数(如用户名、密码)都是针对邮件发送者的 -->  
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+        <property name="host">  
+            <value>smtp.163.com</value>  
+        </property>  
+        <property name="username">  
+            <value>childs312@163.com</value>  
+        </property>  
+        <property name="password">  
+            <value>*******</value>  
+        </property>  
+    </bean>  
+
+	<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">   
+        <property name="templateLoaderPath" value="/WEB-INF/content/user/" />   
+        <property name="freemarkerSettings">   
+            <props>   
+                <prop key="template_update_delay">0</prop>   
+                <prop key="default_encoding">utf-8</prop>    
+                <prop key="locale">zh_CN</prop>    
+            </props>    
+        </property>   
+    </bean>   
+	
+</beans>

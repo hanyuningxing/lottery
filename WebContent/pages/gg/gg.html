@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<style type="text/css">
+<!--
+*{ padding:0; margin:0;}
+body {font-size:12px; font-family:Arial, "宋体"; color:#010000;}
+img{ border:0px; display:block;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.adsWrap{ width:430px; height:150px; overflow:hidden;}
+.slider{width:430px; margin:0 auto;}
+.imgSlider{width:300px; height:150px; float:left;}
+.imgSlider p{}
+.imgSlider a{display:none;}
+.imgSlider img{width:300px;height:148px;display:block; border:1px solid #972622; vertical-align:bottom;}
+.slider ul{float:right;width:171px;height:151px;overflow:hidden;background:url(../images/ads_ul_topbg.png) repeat-x left top;}
+.slider li a{display:block;width:165px;padding-left:5px;}
+.slider li{height:36px;background:url(../images/all_index.png) 0px -135px repeat-x;border-right:1px solid #dbdbdb;border-bottom:1px solid #dbdbdb;line-height:37px;text-align:left;cursor:pointer;overflow:hidden;}
+.slider li.adsHover0{border:1px solid #8d7a2e; height:37px;border-left:0px;background:url(../images/all_index.png) left -298px repeat-x;}
+.slider li.adsHover1{border:1px solid #8301bb; height:37px;border-left:0px;background:url(../images/all_index.png) left -256px repeat-x;}
+.slider li.adsHover2{border:1px solid #00720d; height:37px;border-left:0px;background:url(../images/all_index.png) left -214px repeat-x;}
+.slider li.adsHover3{border:1px solid #1867a0; height:37px;border-left:0px;background:url(../images/all_index.png) left -172px repeat-x;}
+
+.slider li.adsHover4{border:1px solid #8d7a2e; height:37px;border-left:0px;background:url(../images/all_index.png) left -298px repeat-x;}
+.slider li.adsHover5{border:1px solid #8301bb; height:37px;border-left:0px;background:url(../images/all_index.png) left -256px repeat-x;}
+.slider li.adsHover6{border:1px solid #00720d; height:37px;border-left:0px;background:url(../images/all_index.png) left -214px repeat-x;}
+.slider li.adsHover7{border:1px solid #1867a0; height:37px;border-left:0px;background:url(../images/all_index.png) left -172px repeat-x;}
+.slider li.adsHover8{border:1px solid #8d7a2e; height:37px;border-left:0px;background:url(../images/all_index.png) left -298px repeat-x;}
+
+.slider li a{ color:#000; text-decoration:none; }
+.slider li a:hover{color:#fff;text-decoration:none;}
+.slider li.adsHover0 a:link,.slider li.adsHover0 a:visited{ color:#fff;}
+.slider li.adsHover1 a:link,.slider li.adsHover1 a:visited{ color:#fff;}
+.slider li.adsHover2 a:link,.slider li.adsHover2 a:visited{ color:#fff;}
+.slider li.adsHover3 a:link,.slider li.adsHover3 a:visited{ color:#fff;}
+
+.slider li.adsHover4 a:link,.slider li.adsHover4 a:visited{ color:#fff;}
+.slider li.adsHover5 a:link,.slider li.adsHover5 a:visited{ color:#fff;}
+.slider li.adsHover6 a:link,.slider li.adsHover6 a:visited{ color:#fff;}
+.slider li.adsHover7 a:link,.slider li.adsHover7 a:visited{ color:#fff;}
+.slider li.adsHover8 a:link,.slider li.adsHover8 a:visited{ color:#fff;}
+-->
+</style>
+</head>
+
+<body>
+                <div class="slider">
+                        <div class="imgSlider" id="homePushShow">
+                        <a href='# target='_blank' id='push_show0' title='广告4' ><img src='../images/20101110045014140.jpg' border='0' alt=''></a>
+                        <a href='#' target='_blank' id='push_show1' title='广告3' ><img src='../images/20101112101839348.jpg' border='0' alt=''></a>
+                        <a href='#' target='_blank' id='push_show2' title='广告2' ><img src='../images/20101203035044358.jpg' border='0' alt=''></a>
+                        <a href='#' target='_blank' id='push_show3' title='广告1' ><img src='../images/20101206021318665.jpg' border='0' alt=''></a>                           
+                        </div>
+                </div>
+    <script type="text/javascript">
+	       if(!document.all){
+				HTMLElement.prototype.__defineGetter__("children", 
+					 function () { 
+						 var returnValue = new Object(); 
+						 var number = 0; 
+						 for (var i=0; i<this.childNodes.length; i++) { 
+							 if (this.childNodes[i].nodeType == 1) { 
+								 returnValue[number] = this.childNodes[i]; 
+								 number++; 
+							 } 
+						 } 
+						 returnValue.length = number; 
+						 return returnValue; 
+					 } 
+				 );
+				
+			}
+			function randomInt(num1){
+			     return Math.floor(Math.random()*num1);
+	        };
+//函数每隔t毫秒执行一次
+Function.prototype.runEach = function(t){
+var A = this;
+var B = Array.prototype.slice.call(arguments,1);
+var f = function(){
+A.apply(null,B);
+};
+return setInterval(f, t);
+};
+//函数在t毫秒延时后执行
+Function.prototype.runAfter = function(t){
+var A = this;
+var B = Array.prototype.slice.call(arguments,1);
+var f = function(){
+A.apply(null, B);
+};
+return setTimeout(f,t);
+};
+//var picCount=document.getElementById("homePushName").children.length;
+        //2010-0104 var picCount=document.getElementById("homePushShow").children.length;
+        //var picCount=4;
+        var picCount=document.getElementById("homePushShow").children.length;
+        
+var canRoll=true;
+//var rollId=randomInt(picCount);
+        var rollId=3;
+var timeTag=0;
+var newHtml = "";
+for(var i=0;i<picCount;i++)
+{
+        var e=picCount-i-1;
+var linkinfo = document.getElementById("push_show"+e);
+newHtml += "<li id=\"homeAd"+e+"\"><a href=\""+linkinfo.href+"\" target=\"_blank\">"+linkinfo.title+"</a></li>";
+}
+document.getElementById("homePushName").innerHTML = newHtml;
+function doRoll(){
+//是否符合计时条件，如果不符合直接进入下一次等待,设置状态值
+if(canRoll){
+timeTag+=10;
+if(timeTag>2500){
+timeTag=0;
+rollId=(rollId>picCount-2)?0:(rollId+1);
+}
+}
+//显示当前的图片
+for(var i=0;i<picCount;i++){
+
+if(document.getElementById("push_show"+i).style.display != ((i==rollId)?"block":"none")){
+document.getElementById("push_show"+i).style.display = ((i==rollId)?"block":"none");
+};
+if(document.getElementById("homeAd"+i).className!=((i==rollId)?"adsHover" + i:"")){
+document.getElementById("homeAd"+i).className=(i==rollId)?"adsHover" + i:"";
+};
+}
+}
+for(var i=0;i<picCount;i++){
+document.getElementById("homeAd"+i).onmouseover=function(){
+canRoll=false;
+rollId=parseInt(this.id.replace("homeAd",""));
+timeTag=0;
+}
+document.getElementById("homeAd"+i).onmouseout=function(){
+canRoll=true;
+timeTag=0;
+}
+}
+ 	doRoll.runEach(20);
+      </script>
+</body>
+</html>

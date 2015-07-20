@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* Ð¡µÇÂ¼¿òÑùÊ½ */
+a{color:#2232FF;text-decoration:none;}
+a:hover{color:#FF3300;text-decoration:underline;}
+img{ border:none;}
+
+*{ font-size:12px;}
+.main_content{
+margin:0;
+padding:0;
+	width:470px;
+	
+	padding-bottom:5px;
+	background:#fdfbf5;
+	border:#d4d4d4 1px solid;
+	}
+.main_content .bz_menu{
+    margin:0px;
+	padding:0px;
+	height:32px;
+	width:470px;
+	background:url(../images/shaix_bg.gif) repeat-x;	
+	}
+.main_content .top_font{
+    float:left;
+    font-size:14px;
+	color:#272c32;
+	font-weight:bold;
+	line-height:32px;
+	padding-left:12px;
+	}
+.main_content .x_tc{
+    float:right;
+	padding-top:7px;
+	padding-right:8px;
+	cursor:pointer;
+	}	
+.main_content .sm_content{ padding:10px;   line-height:20px;
+}
+.sm_content .sm_txt{ padding:3px 0;
+}
+.sm_content  .line{ padding:0px;
+   margin:0px auto;
+   height:1px;
+   border-bottom:#e7cdae 1px dashed;
+   width:98%;
+   overflow:hidden;
+   margin-bottom:2px;
+   margin-top:2px;}
+  .sm_content span{ color:#FF0000; font-weight:bold;} 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<diskStore path="java.io.tmpdir/lottery/application" />
+
+	<!-- DefaultCache setting. -->
+	<defaultCache maxElementsInMemory="500"
+		memoryStoreEvictionPolicy="LRU" diskPersistent="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="1800" overflowToDisk="true" />
+		
+	<cache name="CLIENT_HISTORY_CACHE" maxElementsInMemory="500" eternal="true"
+		memoryStoreEvictionPolicy="LRU" overflowToDisk="true" />
+
+	<!-- Scheme QueryCache setting. -->
+	<cache name="A_SCHEME_QUERY_CACHE" maxElementsInMemory="20"
+		eternal="false" timeToLiveSeconds="5" overflowToDisk="true" />
+
+	<!-- Common QueryCache setting. -->
+	<cache name="A_COMMON_QUERY_CACHE" maxElementsInMemory="100"
+		eternal="false" timeToLiveSeconds="5" overflowToDisk="true" />
+	<!-- AGENT QueryCache setting. -->
+	<cache name="A_AGENT_QUERY_CACHE" maxElementsInMemory="100"
+		eternal="false" timeToLiveSeconds="5" overflowToDisk="true" />
+		
+	<!-- 永远不过期/持久磁盘/先进先出 -->
+	<cache name="A_COMMON_ETERNAL_CACHE" maxElementsInMemory="100" 
+		eternal="true" memoryStoreEvictionPolicy="FIFO"  diskPersistent="true"  overflowToDisk="true" />
+		
+	<!-- USER LOGIN Cache setting. -->
+	<cache name="A_USER_LOGIN_CACHE" maxElementsInMemory="1000" 
+		timeToIdleSeconds="30" eternal="false" overflowToDisk="true" />
+		
+    <!-- USER REGIST Cache setting. -->
+	<cache name="A_USER_REGIST_CACHE" maxElementsInMemory="500" 
+		timeToIdleSeconds="7200"  timeToLiveSeconds="14400" memoryStoreEvictionPolicy="LFU" eternal="false" overflowToDisk="true" />
+		
+	<!-- USER POPU Cache setting. -->
+	<cache name="A_USER_POPU_CACHE" maxElementsInMemory="500" 
+		timeToIdleSeconds="7200"  timeToLiveSeconds="14400" memoryStoreEvictionPolicy="LFU" eternal="false" overflowToDisk="true" />
+			
+	<!-- DCZC_MATCH Cache setting. -->
+	<cache name="A_DCZC_MATCH_CACHE" maxElementsInMemory="2"
+		timeToIdleSeconds="10" eternal="false" overflowToDisk="false" />
+		
+	<!-- SFZC_MATCH Cache setting. -->
+	<cache name="A_SFZC_MATCH_CACHE" maxElementsInMemory="2"
+		timeToIdleSeconds="10" eternal="false" overflowToDisk="false" />	
+		
+	<!-- LCZC_MATCH Cache setting. -->
+	<cache name="A_LCZC_MATCH_CACHE" maxElementsInMemory="2"
+		timeToIdleSeconds="10" eternal="false" overflowToDisk="false" />
+		
+	<!-- SCZC_MATCH Cache setting. -->
+	<cache name="A_SCZC_MATCH_CACHE" maxElementsInMemory="2"
+		timeToIdleSeconds="10" eternal="false" overflowToDisk="false" />
+		
+	<!--持久磁盘/先进先出 -->
+	<cache name="A_COMMON_ETERNAL_SCHEME_CACHE" maxElementsInMemory="300"
+		  memoryStoreEvictionPolicy="FIFO"  diskPersistent="true"  overflowToDisk="true" />
+
+		<!-- MatchHistory Cache setting. -->
+	<cache name="A_MATCH_HIS_CACHE" maxElementsInMemory="500" 
+		timeToIdleSeconds="17200"  timeToLiveSeconds="144000" memoryStoreEvictionPolicy="LFU" eternal="false" overflowToDisk="true" />
+
+</ehcache>

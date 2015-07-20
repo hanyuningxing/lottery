@@ -1,0 +1,28 @@
+/* 主要样式表，公共样式开始 */
+
+/* 弹出框开始 */
+.tlogin{width:408px;border:1px solid #B6BAB8;display:table;margin:0 auto;}
+.tlogintop{height:26px;background:url(../images/loginwindows.png) repeat-x;padding:0 10px;line-height:26px;color:#F0F9FC;font-size:14px;letter-spacing:1px;}
+.tlogintwbg{padding:35px 30px 45px 30px;background:#F6FBFC;display:table;clear:both;width:348px;}
+.tloginclose{width:14px;height:14px;cursor:pointer;position:relative;top:5px;right:0px;background:url(../images/loginwindows.png) no-repeat -5px -31px;display:block;float:right;} 
+a.tloginlink,a.tloginlink:visited{color:#1B89BC;text-decoration:none;font-size:12px;}
+a.tloginlink:hover{color:#FF6600;text-decoration:underline;font-size:12px;}
+.tlogininput{border-left:2px solid #BFBFBF;border-top:2px solid #BFBFBF;border-right:1px solid #CACACA;border-bottom:1px solid #CACACA;background:#FAFAFA;height:32px;width:198px;line-height:32px; color:#A0A7A9; padding-left:5px; font-size:14px; }
+.tdr8px{padding-right:8px;text-align:right;color:#4F5253;font-size:14px;}
+.loginusericon{background:url(../images/loginwindows.png) 0 -89px; display:block; width:20px; height:20px; float:right;}
+.loginpassicon{background:url(../images/loginwindows.png) 0 -116px; display:block; width:20px; height:20px;float:right;}
+.logintbt{height:40px;width:206px;background:url(../images/loginwindows.png) 0 -193px;display:block;margin:8px 10px 0 0; cursor:pointer;}
+/* 弹出框end */
+
+
+
+/* new add 131129新加的样式 */
+.redloginbt{width:100px;height:32px;line-height:30px;color:#fff;text-align:center;background:url(../images/loginwindows.png) no-repeat 0 -245px;display:inline-block;text-decoration:none;cursor:pointer;margin:0 auto;}
+a.redloginbt,a.redloginbt:visited,a.redloginbt:hover{color:#fff;text-decoration:none;}
+.loginbackyel{padding:5px;border:1px solid #CEC09B;background:#FEFDE8;color:#8F3E2B;font-size:13px;line-height:24px;margin-bottom:8px;}
+.char12{font-size:12px;color:#646E83;}
+.mobilechar{text-align:center;line-height:33px;font-size:16px;color:#646E83;font-weight:bold;}
+.bc{font-weight:bold;}
+.tlogintwbg1{padding:35px 30px 45px 0px;background:#F6FBFC;display:table;clear:both;width:508px;}
+.tlogintwbg2{padding:35px 30px 45px 30px;background:#F6FBFC;display:table;clear:both;width:508px;}
+.sendyzm{height:34px;line-height:34px;cursor:pointer;}

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* 注册成功与失败的页面 */
+.cyy_zcxxwaikang{
+	margin:0px auto;
+	padding:0px;
+	width:471px;
+	height:220px;
+	border:#fcdea3 3px solid;
+	margin-bottom:63px;
+	margin-top:40px;
+	background-image: url(../images/cyy_xsk_bg_03.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	}
+
+.cyy_biaoqing{
+    margin:0px;
+	padding:0px;
+	float:left;
+	margin-top:27px;
+	margin-left:24px;
+	display:inline;
+	margin-right:5px;
+	}
+	
+.cyy_zcxxwaikang .bigfont{
+    margin:0px auto;
+	padding:0px;
+	font-size:24px;
+	font-weight:bold;
+	margin-top:38px;
+	line-height:40px;
+	text-align:center;
+	color:#000000;
+	}	
+	
+.cyy_zcxxwaikang .bigfont span{color:#d50000;}
+
+.cyy_chongzhi1{
+    margin:0px auto;
+	padding:0px;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:23px;
+    }	

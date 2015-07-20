@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE decorators>
+<decorators defaultdir="/decorators">
+	<excludes>
+		<pattern>/40*.jsp</pattern>
+		<pattern>/adminLogin.jsp*</pattern>
+		<pattern>/css/**</pattern>
+		<pattern>/images/**</pattern>
+		<pattern>/js/**</pattern>
+		<pattern>/html/**</pattern>
+		<pattern>/index.html</pattern>
+		<pattern>/center*.html*</pattern>
+		<pattern>/center*.jsp*</pattern>
+		<pattern>/WEB-INF/content/ticket/create.jsp*</pattern>
+	</excludes>
+
+	<decorator name="default" page="default.ftl"/>
+	<decorator name="adminDefault" page="adminDefault.ftl">
+		<pattern>/admin/*</pattern>
+	</decorator>
+	<decorator name="adminJquery" page="adminDefaultJquery.ftl"/>
+	<decorator name="none" page="none.ftl" />
+	<decorator name="trade" page="trade.ftl" />
+	<decorator name="analyse" page="analyse.ftl" />
+	<decorator name="news" page="news.ftl" />
+	<decorator name="result" page="result.ftl" />
+	<decorator name="passcount" page="passcount.ftl" />
+	<decorator name="rule" page="rule.ftl" />
+	<decorator name="help" page="help.ftl" />
+	<decorator name="phone" page="phone.ftl" />
+	<decorator name="agent" page="agent.ftl" />
+		
+	<decorator name="tradeV1" page="V1/trade.ftl" />
+	<decorator name="ruleV1" page="V1/rule.ftl" />
+	<decorator name="resultV1" page="V1/result.ftl" />
+	<decorator name="passcountV1" page="V1/passcount.ftl" />
+	<decorator name="newsV1" page="V1/news.ftl" />
+	<decorator name="helpV1" page="V1/help.ftl" />
+</decorators>

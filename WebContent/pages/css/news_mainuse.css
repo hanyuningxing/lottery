@@ -1,0 +1,56 @@
+@charset "utf-8";
+/*列表左边*/
+#list {}
+#list .listleft{float:left;border:1px solid #DBDBDB;display:table;width:698px;background:#FFFEF9;}
+#list .listlefttopban{  height:26px; line-height:31px; padding:5px 0 0 15px;display:block; background:url(../images/tbanbg.gif) repeat-x; color:#666666; width:683px; line-height:26px;}
+.charr{ color:#AA1313;}
+#list .wzpadding{padding:15px 25px 10px 25px; display:block;}
+.list ul{}
+.list li{list-style-type: none; line-height:30px; font-size:14px; height:30px; display:table; background:url(../images/dotdot.gif) no-repeat 0 13px; padding-left:10px; width:635px;}
+.list a:link{color: #333333;}
+.list a:visited{color: #333333;}
+.list a:hover {color: #CC0000;}
+.list span{float:right; font-family: Arial,"宋体";font-size:12px; padding-right:10px; color:#999999;}
+.xuline{height:1px;background-image:url(../images/xline.gif);font-size:0px;background-repeat:repeat-x;line-height:1px;}
+/*列表右边*/
+.main_rig{width:268px;float:right;display:table;border:1px solid #DBDBDB;background:#FCFCFC;}
+.rigbanbg{ height:31px; display:block; background:url(../images/rig268banbg.gif) no-repeat; font-weight:bold; color:#C81010; padding-left:20px; line-height:31px;}
+.rigbanbg span{ float:right; padding-right:10px; font-weight:normal;}
+.riglist ul{}
+.riglist li{list-style-type: none; line-height:24px; font-size:12px; height:24px; display:table; background:url(../images/dtlist.gif) no-repeat 0 8px; padding-left:10px;}
+.riglist a:link{color: #333333;}
+.riglist a:visited{color: #333333;}
+.riglist a:hover {color: #CC0000;}
+
+.detailwz{padding:30px 25px 10px 25px; display:block;}
+.titlec{ font-size:18px; font-family:"黑体","宋体"; text-align:center;}
+.tcdatetimeuser{ color:#4D4A3E; text-align:center; height:25px; line-height:25px; border-bottom:1px solid #ECEBDF; background:#F8F7EE;}
+.dteil_text{ width:650px; font-size:14px; line-height:26px; color:#4D4A3E;text-align:justify;text-justify:inter-ideograph;word-break:break-all;  }
+/*首页*/
+.index_left{ width:700px; float:left; display:table;}
+.left_box1{width:343px; float:left; display:table; border:1px solid #DBDBDB; background:#FFFEF9;}
+.box_ban{ width:320px; background: url(../images/indexbanbg.gif) no-repeat; height:31px; padding-left:23px; color:#F55604; line-height:31px;font-size:14px; font-weight:bold;}
+.box_ban span{ float:right; padding-right:10px; color:#93431A;font-size:12px; font-weight:normal;}
+.box_tbg{ height:27px; background: url(../images/indexbtbg.gif) repeat-x; display:block; left:27px; padding-left:5px;}
+.titlecz ul{}
+.titlecz li{list-style-type:none;margin:0px;line-height:27px; float:left; text-align:center;}
+.titlecz li a{color:#4F0C08; height:27px; display:block;padding:0px;width:55px;}
+.titlecz li a:hover{color:#C00B00; display:block;padding:0px;height:27px; background:url(../images/indexbtnow.gif) repeat-x;width:55px; text-decoration:none;}
+.titlecz li a.now, .titlecz li a.now:hover{color:#C00B00; display:block;padding:0px;height:27px; background:url(../images/indexbtnow.gif) repeat-x;width:55px; text-decoration:none; border:1px solid #F7D09F; border-width:0 1px;}
+.inbox_list ul{}
+.inbox_list li{list-style-type: none; line-height:25px; font-size:12px; height:25px; display:table; background:url(../images/dotdot.gif) no-repeat 0 13px; padding-left:10px; width:310px;}
+.inbox_list a:link{color: #4F4D4D;}
+.inbox_list a:visited{color: #4F4D4D;}
+.inbox_list a:hover {color: #CC0000;}
+.inbox_list span{float:right; font-family: Arial,"宋体";font-size:12px;color:#999999;}
+.boxdown{height:25px; background: url(../images/indexkbottom.gif) repeat-x; display:block; line-height:25px; padding-right:10px; text-align:right; }
+.boxdown_charr{ color:#93431A;}
+
+.rig_box1{width:343px; float:right; display:table; border:1px solid #DBDBDB; background:#FFFEF9;}
+
+.downboxb1{width:978px;display:table; border:1px solid #DBDBDB; background:#FFFEF9;}
+.downbgbox{ width:945px; display:block; background:url(../images/978banbg.gif) no-repeat; height:31px; padding:0px 10px 0px 23px; line-height:31px; font-size:14px; font-weight:bold; color:#F55604;}
+.downbgbox span{ float:right;font-size:12px; font-weight:normal;}
+
+.index_rig{ width:270px; float:right; display:table;}
+

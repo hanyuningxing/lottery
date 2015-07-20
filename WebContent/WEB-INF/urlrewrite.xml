@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN"
+    "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
+
+<!-- 类_方法-参数.html -->
+<!-- 类_方法_页码.html -->
+<!-- 类-参数-参数.html(默认打开购彩页面-editNew.action) -->
+
+<urlrewrite>
+   
+     <rule>
+	  <from>^/([0-9]+)/index$</from>
+	  <to type="forward">/user/user!introduction.action?i=$1</to>
+	 </rule>
+	 <rule>
+	  <from>^/blog/([0-9]+)/$</from>
+	  <to type="forward">/user/scheme!findUserScheme.action?id=$1</to>
+	 </rule>
+	 <rule>
+	  <from>^/(\w+)/scheme-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!show.action?schemeNumber=$2</to>
+	 </rule>	 
+	 <rule>
+	  <from>^/(\w+)/wonList-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!wonList.action?playType=$2</to>
+	 </rule>
+	 <rule>
+	  <from>^/info/rule/(\w+).html$</from>
+	  <to type="forward">/info/rule/rule.action?lottery=$1</to>
+	 </rule>
+	 <rule>
+	  <from>^/info/rule/(\w+)-([0-9]*).html$</from>
+	  <to type="forward">/info/rule/rule.action?lottery=$1&amp;type=$2</to>
+	 </rule>
+	 <rule>
+	  <from>^/info/news-([0-9]*).html$</from>
+	  <to type="forward">/info/news!info.action?id=$1</to>
+	 </rule>
+	 <rule>
+	  <from>^/(sfzc)/scheme_subList-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!subList.action?playType=$2</to>
+	 </rule>
+	 
+	 <!-- 混合过关使用了下划线做特殊处理 -->
+	 <rule>
+	  <from>^/(\w+)/MIX_PASS.html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?passMode=MIX_PASS</to>
+	 </rule>
+	 
+	 <!-- 传统简化重写,适用于全站 -->
+	 <rule>
+	  <from>^/(\w+)/(\w+)_(\w+).html$</from>
+	  <to type="forward">/$1/$2!$3.action</to>
+	 </rule>
+	 <rule>
+	  <from>^/(\w+)_(\w+).html$</from>
+	  <to type="forward">/$1!$2.action</to>
+	 </rule>
+	 
+	 <!-- 竞彩 -->
+	 <rule>
+	  <from>^/jczq/RENJIU.html$</from>
+	  <to type="forward">/jczq/scheme!matchNine.action</to>
+	 </rule>
+	 <rule>
+	  <from>^/jczq/new/(\w+).html$</from>
+	  <to type="forward">/jczq/scheme!editNew.action?playTypeWeb=$1</to>
+	 </rule>	 
+	 <rule>
+	  <from>^/(jczq|jclq)/(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?passMode=$2</to>
+	 </rule>
+	 <rule>
+	  <from>^/(jczq|jclq)/(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?passMode=$3&amp;playType=$2</to>
+	 </rule>
+	 <rule>
+	  <from>^/(jczq|jclq)/(\w+)-(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?playType=$2&amp;salesMode=$3&amp;shareType=$4</to>
+	 </rule>
+	 
+	 <!-- 足彩六场,四场 -->
+	 <rule>
+	  <from>^/(lczc|sczc)/(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?salesMode=$2&amp;shareType=$3</to>
+	 </rule>
+	 <rule>
+	  <from>^/(lczc|sczc)/(\w+)-(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?salesMode=$2&amp;shareType=$3&amp;aheadOfUpload=$4</to>
+	 </rule>	 
+	 
+	 <!-- 相关彩种 -->
+	 <rule>
+	  <from>^/(\w+)/$</from>
+	  <to type="forward">/$1/scheme!editNew.action</to>
+	 </rule>
+	 <rule>
+	  <from>^/(\w+)/(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?playType=$2</to>
+	 </rule>
+	 <rule>
+	  <from>^/(\w+)/(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?playType=$2&amp;shareType=$3</to>
+	 </rule>	 
+	 <rule>
+	  <from>^/(\w+)/(\w+)-(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?playType=$2&amp;salesMode=$3&amp;shareType=$4</to>
+	 </rule>
+	 <rule>
+	  <from>^/(\w+)/(\w+)-(\w+)-(\w+)-(\w+).html$</from>
+	  <to type="forward">/$1/scheme!editNew.action?playType=$2&amp;salesMode=$3&amp;shareType=$4&amp;aheadOfUpload=$5</to>
+	 </rule>
+</urlrewrite>
+

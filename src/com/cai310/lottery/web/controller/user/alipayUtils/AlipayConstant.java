@@ -1,0 +1,20 @@
+package com.cai310.lottery.web.controller.user.alipayUtils;
+
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.sql.Types;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+import com.cai310.lottery.common.CostMinUnits;
+
+public class AlipayConstant {
+	public static final String PARTNER = "2088011357040117";
+	public static final String SELLER = "2088011357040117";
+	public static final String RSA_PRIVATE ="MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMtIcUUEoadEXqs9JuHAZDhWZmO8UEvxGZ+t/zedBWBJ/sBFy8oHC5hCg+ZzYxNWvcOQciInaGhSuFwG+RFMnLgk+eI+7K3JnB2WPU105i3Y1Hm1aLGJ7VrSPYAm6Xfaayma5sZCBklUwmRLwSSSzHJwUswCQIioDvoLvVL4zTflAgMBAAECgYByJ91L99zbtL5BBVdHYSYmqQZYrdCdxOgxzqFK1sfFGeiQiuF1M12khH3TtSqHGqf4Ia6mVWEBbKqRK21E9LPwh8wlt5cQ/RUM7y7Y8FT7GCHgvqLO9kAxwYhlVI203bP5aeQjOHf6wLshCjRlx4bEAIsbf1q1/TB3MyisiuVbYQJBAPjZXlkjWlsPciBh806DoXmkCsHY7/ALsGDTZ83esplFD6/NheKr8y1FRDV/1SK8BR15Cb2JOBHDiT3eSHGmz1kCQQDRH98nk82B/4Fo9kceAOslW4pRzAaDaaXP8BavigNMey+IDIkCYNFlGTYrdfXE4Zwbc9/s5xQ1yNxaUd9CB4dtAkEAtOCqp3f+8Tlk5wzLYUJkWJpYB1a78GtOpNKFHSrF/oooQMzOiFgbxcgXMBvevASWYznbTp0y2Bac5w9u8M0i4QJAQ72MPri88ChA1iw4mzp28TH220o4rebSBEpkPtZ4/RRGME7HLtMH4TTKfEeIpg7iz224knfD7ywyXLt6k1v2/QJBAJA/MgNLhn5NtaLtkuuZs7WWW4jTh1rxdjWk2/0T1wPobtc9W40WyTFiTbkijk0vnuraUoKy0izRAH1l6oXtrYM=";
+	
+	public static final String RSA_ALIPAY_PUBLIC ="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCW+fL6TpLJjhftshP7DSdyqEXTaG+IOxIhyhCXEKIvI0Prz3VNuaA36HKV4xrOsDU7OlyQJwruY0Gl04UhP0St3DCv0DSWAEl0wUxdEJY7nrQfkLVfEPi51hGXaORXh/rzjWEtjkcqwBIAd9HLfcuQd0zrhifaYSI95iWYPHiRmQIDAQAB";
+	
+	public static final String ALIPAY_RETURN ="http://www.qiu310.com";
+	
+}

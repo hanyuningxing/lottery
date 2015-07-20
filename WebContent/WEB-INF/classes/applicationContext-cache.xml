@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="false">
+
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation">
+			<value>classpath:/ehcache/ehcache-application.xml</value>
+		</property>
+	</bean>
+	
+	<bean id="clientHistoryCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="CLIENT_HISTORY_CACHE" />
+	</bean>
+	
+	<bean id="schemeQueryCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_SCHEME_QUERY_CACHE" />
+	</bean>
+
+	<bean id="userLoginCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_USER_LOGIN_CACHE" />
+	</bean>
+	
+	<bean id="userRegistCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_USER_REGIST_CACHE" />
+	</bean>
+	
+	<bean id="popuCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_USER_POPU_CACHE" />
+	</bean>
+	<bean id="commonQueryCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_COMMON_QUERY_CACHE" />
+	</bean>
+	<bean id="agentQueryCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_AGENT_QUERY_CACHE" />
+	</bean>
+	<bean id="commonEternalCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_COMMON_ETERNAL_CACHE" />
+	</bean>
+	<bean id="commonEternalSchemeCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_COMMON_ETERNAL_SCHEME_CACHE" />
+	</bean>
+	
+
+
+	<bean id="dczcMatchCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_DCZC_MATCH_CACHE" />
+	</bean>
+
+	<bean id="sfzcMatchCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_SFZC_MATCH_CACHE" />
+	</bean>
+
+	<bean id="lczcMatchCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_LCZC_MATCH_CACHE" />
+	</bean>
+
+	<bean id="sczcMatchCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_SCZC_MATCH_CACHE" />
+	</bean>
+	
+	<bean id="matchHisCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="A_MATCH_HIS_CACHE" />
+	</bean>
+</beans>

@@ -1,0 +1,1 @@
+Dltdata={"100001":"01 02 03 04 06-05 12","100002":"11 10 04 18 35-01 03"};function getdata(){return Dltdata;}

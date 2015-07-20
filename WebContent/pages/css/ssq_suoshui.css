@@ -1,0 +1,73 @@
+@charset "utf-8";/* CSS Document */
+div,form,img,ul,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+.lc_t_td01{background:#FFF4E3;text-align:center;}
+.lc_t_td01 td{border-bottom:1px solid #F2E1C6;border-left:1px solid #fff;}
+.lc_t_td02{background:#fff;text-align:center;}
+.lc_t_td02 td{border-bottom:1px solid #E1E1E1;border-top:1px solid #fff;border-left:1px solid #fff; padding-left:8px;}
+.lc_t_td03{background:#FAFAFA;text-align:center;}
+.lc_t_td03 td{border-bottom:1px solid #E1E1E1;border-top:1px solid #fff;border-left:1px solid #fff; padding-left:8px;}
+.lc_t_td04{background:#FFFFE0;text-align:center;}
+.lc_t_td04 td{border-bottom:1px solid #E1E1E1;border-left:1px solid #fff;}
+.lc_t_t{border:1px solid #E1E1E1;background:#fff; }
+.lc_t_left{border:1px solid #F2E1C6;background:#FFF4E3; border-left:none; }
+
+.btblue{background:url(../images/btbg.gif) repeat-x; line-height:30px; font-size:14px; color:#fff; font-weight:bold; text-align:center; height:30px; padding:0 10px; border:none; display:block; cursor:hand;}
+
+
+
+body{margin:0px;padding:0px;font-size:12px;color:#333333;background-color:#FFFFFF;font-family:tahoma,Verdana, Arial,Helvetica,sans-serif,"宋体";font-size:12px;}
+div,form,img,ul,li,dl,dt,dd{margin:0;padding:0;border:0;}
+input,select{vertical-align:middle;}
+table,td,tr,th{font-size:12px;}
+a{color:#2232FF;text-decoration:none;}
+a:hover{color:#FF3300;text-decoration:underline;}
+<!--输入框垂直居中对齐  http://fed.renren.com/2009/10/46-->
+label{vertical-align:middle}
+.inputcheckbox{vertical-align:middle;}
+
+.top5px{ padding-top:5px; }
+.top10px{ padding-top:10px; }
+.kong10{height:10px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.kong20{height:20px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.kong5{height:5px;display:block;clear:both;line-height:1px;font-size:1px;clear:both;}
+.left10{padding-left:10px;}
+.rig10{padding-right:10px;}
+.rig5{padding-right:10px;}
+.floatrig{float:right;}
+.floatleft{float:left;}
+.cleanboth{clear:both;}
+.all10px{ padding:10px; }
+.all20px{ padding:20px; }
+.all8px{ padding:8px; }
+.all5px{ padding:5px; }
+.lineh22px{ line-height:22px;}
+
+.mainsuoshui{width:980px;margin:0px auto;display:table;}
+.b3px{ border:3px solid #FBE49D; border-top:none; width:974px;}
+.ssq_sst1{width:974px; height:30px; line-height:30px; font-weight:bold; color:#D93014; text-align:center; background:url(../images/bg.jpg) no-repeat;display:table; font-size:14px;}
+.ssqss_d{ width:980px; height:75px; background:url(../images/downjtbg.gif) center no-repeat; text-align:center;}
+
+.ssqss_d1{ width:661px; height:60px; background:url(../images/ssq_d.gif) center no-repeat; margin:0 auto; text-align:center; line-height:37px; color:#E35500; font-weight:bold;}
+
+.ssqss_sm{margin:10px 0px; padding:8px 12px; background:#FFFFE9; border:1px solid #E3E3C4; line-height:20px; color:#696941;}
+
+/*投注区*/
+#touzzhuqu{margin:0px; }
+#touzzhuqu .redc1{ color:#DB1111; font-size:14px; font-weight:bold;}
+#touzzhuqu .grayc1{ color:#A7A7A7;}
+#touzzhuqu .bluec1{ color:#2E2FFE; font-size:14px; font-weight:bold;}
+#touzzhuqu .left{float:left; display:block; width:430px; }
+#touzzhuqu .right{float:right; display:block; width:232px; }
+
+#touzzhuqu .redfieldset{border:1px  solid #E65858;display:block;margin:0px;padding:0 6px 10px 6px;}
+#touzzhuqu .cdownjl{ padding-bottom:2px;}
+#touzzhuqu .bluefieldset{border:1px  solid #5298C6;display:block;margin:0px;padding:0 6px 10px 6px;}
+#touzzhuqu .ssqball ul{}
+#touzzhuqu .ssqball li{ list-style:none; margin:8px 0 0px 4px; padding:0; float:left;background:url(../images/grayball3030.gif) no-repeat;width:30px; height:30px;line-height:30px; color:#444444;}
+#touzzhuqu .ssqball a{ text-align:center;text-decoration: none; font-family:Arial,"宋体";font-weight: bold;font-size:14px;color:#444444;display:block;width:30px; height:30px; }
+#touzzhuqu .ssqball a:hover{ text-align:center;text-decoration: none; font-family:Arial,"宋体";font-weight: bold;font-size:14px;color:#444444;display:block;width:30px; height:30px; }
+#touzzhuqu .ssqball a.blue,#touzzhuqu .ssqball a:hover.blue{ text-align:center;text-decoration: none; font-family:Arial,"宋体";font-weight: bold;font-size:14px;color:#ffffff;display:block;width:30px; height:30px; background:url(../images/blueball3030.gif) no-repeat;}
+#touzzhuqu .ssqball a.red,#touzzhuqu .ssqball a:hover.red{ text-align:center;text-decoration: none; font-family:Arial,"宋体";font-weight: bold;font-size:14px;color:#ffffff;display:block;width:30px; height:30px; background:url(../images/redball3030.gif) no-repeat;}
+
+
+

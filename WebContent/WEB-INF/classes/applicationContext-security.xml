@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/security 
+    http://www.springframework.org/schema/security/spring-security-2.0.4.xsd"
+	default-autowire="byType" default-lazy-init="true">
+
+	<description>SpringSecurity安全配置</description>
+	<!-- 密码 -->
+	<bean id="passwordEncoder" class="org.springframework.security.providers.encoding.ShaPasswordEncoder" />
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="com.cai310.lottery.service.security.UserDetailsServiceImpl" />
+
+	<!-- 项目实现的URL-授权查询服务 -->
+	<bean id="resourceDetailsService" class="com.cai310.lottery.service.security.ResourceDetailsServiceImpl" />
+
+	<!-- DefinitionSource工厂,使用resourceDetailsService提供的URL-授权关系. -->
+	<bean id="databaseDefinitionSource" class="com.cai310.security.springsecurity.DefinitionSourceFactoryBean">
+		<property name="resourceDetailsService" ref="resourceDetailsService" />
+	</bean>
+
+	<!-- 重新定义的FilterSecurityInterceptor,使用databaseDefinitionSource提供的url-授权关系定义 -->
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<s:custom-filter before="FILTER_SECURITY_INTERCEPTOR" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="objectDefinitionSource" ref="databaseDefinitionSource" />
+	</bean>
+
+	<!-- 登录增加验证码验证 -->
+	<bean id="captchaValidationProcessingFilter" class="com.cai310.security.springsecurity.jcaptcha.CaptchaAuthenticationProcessingFilter">
+		<property name="captchaService" ref="imageCaptchaService" />
+		<property name="authenticationFailureUrl" value="${security.authentication-failure-url}" />
+		<s:custom-filter before="AUTHENTICATION_PROCESSING_FILTER" />
+	</bean>
+
+	<!-- 认证配置 -->
+	<s:authentication-provider user-service-ref="userDetailsService">
+		<!-- 可设置hash使用sha1或md5散列密码后再存入数据库 -->
+		<s:password-encoder ref="passwordEncoder" />
+	</s:authentication-provider>
+
+	<!-- 授权判断配置, 将授权名称的默认前缀由ROLE_改为A_. -->
+	<bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.vote.RoleVoter">
+					<property name="rolePrefix" value="${security.role-prefix}" />
+				</bean>
+				<bean class="org.springframework.security.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- http安全配置 -->
+	<s:http auto-config="true" access-decision-manager-ref="accessDecisionManager">
+		<s:form-login login-page="${security.login-page}" default-target-url="${security.default-target-url}"
+			authentication-failure-url="${security.authentication-failure-url}" />
+		<s:logout logout-success-url="${security.logout-success-url}" />
+		<s:remember-me key="${security.remember-me-key}" />
+	</s:http>
+
+</beans>

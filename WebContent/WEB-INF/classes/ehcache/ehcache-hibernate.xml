@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<diskStore path="java.io.tmpdir/lottery/hibernate" />
+
+	<!-- DefaultCache setting. -->
+	<defaultCache maxElementsInMemory="1000"
+		memoryStoreEvictionPolicy="LRU" eternal="true" diskPersistent="false"
+		overflowToDisk="true" />
+
+	<!-- Hibernate DefaultQueryCache setting. -->
+	<cache name="org.hibernate.cache.StandardQueryCache"
+		maxElementsInMemory="100" eternal="false" timeToLiveSeconds="120"
+		overflowToDisk="true" />
+
+	<!-- Scheme Cache setting. -->
+	<cache name="H_SCHEME_CACHE" maxElementsInMemory="3000" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Period Cache setting. -->
+	<cache name="H_PERIOD_CACHE" maxElementsInMemory="50" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Period QueryCache setting. -->
+	<cache name="H_CURRENT_PERIOD_QUERY_CACHE" maxElementsInMemory="20"
+		eternal="true" overflowToDisk="true" />
+
+	<!-- Period QueryCache setting. -->
+	<cache name="H_PERIOD_QUERY_CACHE" maxElementsInMemory="20"
+		eternal="true" overflowToDisk="true" />
+
+	<!-- PeriodSales Cache setting. -->
+	<cache name="H_PERIOD_SALES_CACHE" maxElementsInMemory="100"
+		eternal="true" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- User Cache setting. -->
+	<cache name="H_USER_CACHE" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- DCZC MATCH Cache setting. -->
+	<cache name="H_DCZC_MATCH_CACHE" maxElementsInMemory="500"
+		eternal="true" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- DCZC MATCH QueryCache setting. -->
+	<cache name="H_DCZC_MATCH_QUERY_CACHE" maxElementsInMemory="5"
+		eternal="true" overflowToDisk="true" />
+		
+	<!-- ZC MATCH Cache setting. -->
+	<cache name="H_ZC_MATCH_CACHE" maxElementsInMemory="100"
+		eternal="true" overflowToDisk="true" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- ZC MATCH QueryCache setting. -->
+	<cache name="H_ZC_MATCH_QUERY_CACHE" maxElementsInMemory="5"
+		eternal="true" overflowToDisk="true" />
+		
+	<!-- KENO QueryCache setting. -->
+	<cache name="H_KENO_QUERY_CACHE" maxElementsInMemory="1000" timeToLiveSeconds="5"
+		eternal="true" overflowToDisk="true" />
+		
+	<!-- JCZQ MATCH Cache setting. -->
+	<cache name="H_JCZQ_MATCH_CACHE" maxElementsInMemory="500" eternal="true" overflowToDisk="true"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- JCZQ MATCH QueryCache setting. -->
+	<cache name="H_JCZQ_MATCH_QUERY_CACHE" maxElementsInMemory="5" eternal="true" overflowToDisk="true" />
+	
+	<!-- JCLQ MATCH Cache setting. -->
+	<cache name="H_JCLQ_MATCH_CACHE" maxElementsInMemory="500" eternal="true" overflowToDisk="true"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- JCZQ MATCH QueryCache setting. -->
+	<cache name="H_JCLQ_MATCH_QUERY_CACHE" maxElementsInMemory="5" eternal="true" overflowToDisk="true" />
+		
+		
+	<!-- LetGoal Cache setting. -->
+	<cache name="H_LETGOAL_CACHE" maxElementsInMemory="500" eternal="true" overflowToDisk="true"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<!-- JCZQ MATCH QueryCache setting. -->
+	<cache name="H_LETGOAL_QUERY_CACHE" maxElementsInMemory="5" eternal="true" overflowToDisk="true" />
+	
+</ehcache>

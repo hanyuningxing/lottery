@@ -1,0 +1,24 @@
+body{margin:0; padding:0; color:#484848; font-family:Verdana, Geneva, sans-serif; font-size:12px}
+p{padding:0; margin:0;}
+a{color:#484848; text-decoration:none}
+img{border:none;}
+table{ border-collapse:collapse;}
+.left_title{height:37px; line-height:37px; background:url(../images/zjmx.png) repeat-x left top; font-weight:bold; color:#ffffff; font-size:14px;}
+.notice_c{ line-height:40px; color:#f75000; font-size:14px; width:923px; margin:0 auto; padding-top:70px;}
+.right_c{padding:0;}
+.input_01{width:84px; height:18px; line-height:18px;}
+.button{color:#343745; width:73px; height:26px; background:url(../images/button_bg.jpg) repeat-x left top; border:1px solid #a5a9af;}
+.con_table{border:1px solid #a5a9af; border-top:none;}
+.con_table th , .con_table td{ border-bottom:1px solid #c3cdd5; border-right:1px solid #c3cdd5;}
+.con_table th{height:29px; background:url(../images/right_01.jpg) repeat-x left top; line-height:29px;}
+.con_table td{padding:10px 0; text-align:center}
+.login{width:800px; height:auto; background-color:#FFFFE3; border:1px solid #c0c0c0; margin:10px 0 0 30px}
+.login_c{padding:10px 10px 10px 10px;}
+.login_c th{ text-align:right;padding-right:5px;}
+.login_c td{padding:12px 0px}
+.input_03{height:26px; background:url(../images/right_03.jpg) repeat-x left top; color:#fff; border:1px solid #fe4b28; width:68px;}
+.form_table th , .form_table td{padding:10px 0;}
+.form_table th{text-align:right; padding-right:5px;}
+.form_table th, .form_table td{border:1px solid #c3cdd5; padding-left:5px}
+.tx{padding:20px 0px 0px 20px;}
+.but_b{text-align:center; padding-right:20px}

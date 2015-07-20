@@ -1,0 +1,51 @@
+﻿/* CSS Document */
+/* 主要样式表，公共样式开始 */
+body{margin:0;padding:0;background:#fff;font-family:"宋体";font-size:12px;color:#333333;}
+form,input,select,ul,li,p,h1,h2,h3,h4,h5,h6,p,dd,dt,dl{margin:0;padding:0;}
+ul,ol,li{list-style:none;}
+body,table,select,input,div{font-size:12px;color:#333;}
+img{border:none;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#c00;text-decoration:underline;}
+.nl,.nl a,.nl a:hover,a.nl,a.nl:hover{text-decoration:none;}
+.ul,.ul a,.ul a:hover,a.ul,a.ul:hover{text-decoration:underline;}
+#car .top .topMore{float:left;height:30px;background:url(../images/q/topmore2.png) no-repeat;line-height:30px;width:660px;color:#666;}
+#warp2 .hd{height:52px;background:url(../images/q/hd1.png) no-repeat;}
+#warp2 .bd{border-left:1px solid #e0e0e0;overflow:hidden;zoom:1;}
+/* 内容区 */
+.box{width:960px;margin:0 auto;}
+.left{float:left;width:689px;}
+.top{height:50px;background:url(../images/q/top.png) no-repeat;padding:20px 0 0 20px;}
+.top .topName{float:left;line-height:30px;font-family:"微软雅黑","黑体";color:#ff6800;font-size:25px;width:90px;}
+#house .top .topMore{float:left;height:30px;background:url(../images/q/topmore.png) no-repeat;line-height:30px; color:#666; }
+.top .topMore a{color:#666;}
+.top .topMore a:hover{color:#c00;}
+.top .topMore span{color:#fff; display:block;font-size:14px; text-align:center; font-weight:bold; width:110px; float:left; padding-right:10px;}
+.cont1{padding-left:16px;}
+.pic1{width:235px;float:left;height:217px;background:#efefef;}
+.picfilter{width:235px;height:158px;overflow:hidden;position:relative;}
+.picfilter img{border:1px solid #d5d5d5;}
+.picfilter p{text-align:center;line-height:30px;position:absolute;bottom:0;left:0;height:30px;width:233px;z-index:999;}
+.picfilter p a{color:#fff;}
+.filterbg{background:#000;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;position:absolute;left:1px;bottom:1px;height:30px;width:233px;}
+.o{padding:9px 0 0 12px;line-height:21px;}
+.o span,.o span a{color:#e26f37;}
+.o2{background:url(../images/q/o2.png) 0 2px no-repeat;padding-left:20px;}
+.text1{float:left;padding-left:20px;width:418px;}
+.text1 h3{text-align:center;height:28px;}
+.text1 h3 a{color:#e24a00;}
+.text1 .hl1 p{height:27px;border-bottom:1px dashed #d9d9d9;}
+.text1 .hl3{padding-top:15px;}
+.text1 .hl2 li,.text1 .hl3 li{float:left;width:209px;line-height:24px;height:24px;font-size:14px;overflow:hidden;}
+.right{float:right;width:249px;background:#F2F5FD;overflow:hidden;border-right:1px solid #D9E0F1;margin-top:20px;}
+.cxk .cont{padding:12px 12px 0 12px;background:url(../images/q/bd.png) no-repeat;}
+.cxk .cont .pic{width:102px;height:113px;line-height:30px;text-align:center;}
+.cxk .cont .pic img{border:1px solid #e6bea1;}
+.cxk .wbmr{padding:0 0 0 3px;height:92px;}
+.cxk .wbmr li{line-height:24px;height:24px;}
+.title1{height:29px;overflow:hidden;background:url(../images/q/title1.png) no-repeat;padding:0 13px 0 28px;line-height:31px;}
+.title1 a{float:right;}
+.title1 strong{font-size:14px;color:#1778BA;}
+.floatL{float:left;}
+.floatR{float:right;}
+.ft{font-size:0;overflow:hidden;background:url(../images/q/ft.png) no-repeat;height:1px;}

@@ -1,0 +1,49 @@
+package com.cai310.lottery.web.controller.admin.lottery.ssq;
+
+import javax.annotation.Resource;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+
+import com.cai310.lottery.common.Lottery;
+import com.cai310.lottery.service.lottery.DoAnalysisService;
+import com.cai310.lottery.service.lottery.NumberSalesControllerService;
+import com.cai310.lottery.service.lottery.PrizeControllerService;
+import com.cai310.lottery.service.lottery.SalesControllerService;
+import com.cai310.lottery.web.controller.admin.lottery.NumberSalesManageController;
+
+@Namespace("/admin/lottery/ssq")
+@Action("sales-manage")
+public class SsqSalesManageController extends NumberSalesManageController {
+	private static final long serialVersionUID = 2222279895637315134L;
+	// @Autowired
+	// private DoAnalysisService ssqDoAnalysisService;
+
+	@Resource
+	private PrizeControllerService ssqPrizeControllerService;
+
+	@Resource(name = "ssqSaleControllerService")
+	private SalesControllerService ssqSalesControllerService;
+
+	@Override
+	protected DoAnalysisService getDoAnalysisService() {
+		// return ssqDoAnalysisService;
+		return null;
+	}
+
+	@Override
+	public Lottery getLotteryType() {
+		return Lottery.SSQ;
+	}
+
+	@Override
+	protected PrizeControllerService getPrizeControllerService() {
+		return ssqPrizeControllerService;
+	}
+
+	@Override
+	protected NumberSalesControllerService getSalesControllerService() {
+		return (NumberSalesControllerService) ssqSalesControllerService;
+	}
+
+}

@@ -1,0 +1,95 @@
+/* CSS Document */
+.yhzxleft {width:200px; padding-right:10px; _padding-right:10px; overflow:hidden; float:left;}
+.yhzxright {width:786px; float:left; border:1px solid #ccc; padding:1px; overflow:hidden;}
+.yhzxmenu {border:1px solid #CCC; border-top:none;}
+.yhzxmenu ul {list-style:none; padding:0; margin:0;}
+.yhzxmenu ul li {height:38px; line-height:38px; border-bottom:1px dashed #d3d3d3; padding:0 36px;}
+.yhzxmenu ul li a {color:#666; font-size:14px;}
+.yhzxmenu ul li a:hover {color:#333; text-decoration:none;}
+.yhzxmenutit {height:40px; background:#0ca3d2;}
+.yhmenutit01 {background:url(../images/yhzx.png) no-repeat 0 0; width:39px; height:40px; float:left;}
+.yhmenutit02 {background:url(../images/yhzx.png) no-repeat -49px 0; width:39px; height:40px; float:left;}
+.yhmenutit03 {background:url(../images/yhzx.png) no-repeat -98px 0; width:39px; height:40px; float:left;}
+.yhmenutit04 {background:url(../images/yhzx.png) no-repeat -147px 0; width:39px; height:40px; float:left;}
+.yhmenutitwz {float:left; padding-top:12px; color:#FFF; font-size:14px; font-weight:bold;}
+.yhmenutit {float:right; margin:14px 10px; width:12px; height:12px; background:url(../images/yhzx.png) -196px 0 no-repeat;}
+
+.yhzxzh {height:65px; background:#fffdea; padding:20px 30px; border-bottom:1px dashed #d3d3d3; margin-bottom:1px;}
+.yhzxtx {width:58px; height:58px; border:1px solid #ccc; padding:1px; background:#FFF url(../images/yhzx.png) 1px -50px no-repeat; float:left;}
+.yhzxzhwz {padding-left:15px; float:left; line-height:22px;}
+.yhzxaq {height:113px; border-bottom:1px dashed #d3d3d3; background:#E3F9FF; margin:1px 0;}
+.yhzxaql {float:left; padding:20px 30px; width:430px;}
+.yhzxaql01 {display:block; overflow:hidden; padding-bottom:5px;}
+.yhzxaql02 {float:left; width:185px; padding:13px 0 0 10px;}
+.yhzxaqr {float:right; width:296px; height:113px; background:url(../images/yhzx.png) -68px -51px no-repeat;}
+
+.progress_bar {background: url(../images/yhzx.png) no-repeat 0 -174px; width:204px; height:12px; position:relative; z-index:1;}
+.progress_bar_blue {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:75%; height:12px; z-index:2;}
+.progress_bar_blue0 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:0%; height:12px; z-index:2;}
+.progress_bar_blue1 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:25%; height:12px; z-index:2;}
+.progress_bar_blue2 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:50%; height:12px; z-index:2;}
+.progress_bar_blue3 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:75%; height:12px; z-index:2;}
+.progress_bar_blue4 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:75%; height:12px; z-index:2;}
+.progress_bar_blue5 {background:url(../images/yhzx.png) no-repeat 0 -186px; position:absolute; left:0; table-layout:0; width:100%; height:12px; z-index:2;} 
+
+.yhzxdiv01 {color:#666; padding:20px 15px;}
+.yhzxdiv {display:block; overflow:hidden;}
+.yhzxdiv ul {list-style:none; padding:0; margin:0;}
+.yhzxdiv ul li {float:left; margin-bottom:10px;}
+.yhzxli01 {width:110px; text-align:center; height:13px; border-right:1px solid #666; font-size:14px; color:#333;}
+.yhzxli02 {width:500px; padding-left:25px;}
+.yhzxli03 {width:51px; height:18px; border:1px solid #b3b3b3; padding:1px 0 0 0; text-align:center; background:url(../images/yhzx.png) -218px 0 no-repeat; margin-right:10px; color:#333;}
+a.yhzxli04 {width:41px; height:18px; border:1px solid #2d83da; color:#FFF; text-decoration:none; line-height:19px; text-align:center; background:url(../images/yhzx.png) -332px 0 no-repeat; padding:1px 0 0 0;cursor:pointer; display:block;}
+.yhzxli05 {width:51px; height:18px; padding:1px 0 0 0; border:1px solid #b3b3b3; line-height:19px; text-align:center; background:url(../images/yhzx.png) -218px 0 no-repeat; margin-right:10px; color:#999;}
+.yhzxli06 {width:104px; height:18px; padding:1px 0 0 0; border:1px solid #b3b3b3; line-height:19px; text-align:center; background:url(../images/yhzx.png) -218px 0 no-repeat; margin-right:10px; color:#333;}
+a.yhzxli07 {width:77px; height:18px; border:1px solid #2d83da; float:left; color:#FFF; text-decoration:none; line-height:19px; text-align:center; background:url(../images/yhzx.png) -332px 0 no-repeat; padding:1px 0 0 0; cursor:pointer;display:block;}
+.yhzxdivtit {height:30px; background:#9bc7e8; line-height:30px; padding:0 15px; font-weight:bold; margin:1px 0;}
+.yhzxdivtit2 {height:30px; background:#d64320; line-height:30px; padding:0 15px; font-weight:bold; margin:1px 0;}
+
+
+.zjmxtit {height:36px; background:url(../images/zjmx.png) repeat-x;}
+.zjmxtit ul {list-style:none; padding:6px 15px 0 15px; margin:0; color:#FFF;}
+.zjmxtit ul a {text-decoration:none; line-height:30px; font-size:14px; font-weight:bold; color:#FFF;}
+.zjmxtit ul li {float:left; width:117px; height:30px; text-align:center; margin-right:10px; cursor:pointer;}
+.zjmxli01 {color:#000; background:url(../images/zjmx.png) 0 -46px; width:117px; text-align:center;}
+
+.zjmxtab tr td {padding:3px 10px;}
+.chaxun {background:url(../images/zjmx.png) 0 -86px; width:57px; height:22px; text-align:center; padding:0; margin:0; border:0;}
+.fenye01 {text-align:center; padding:10px 0 25px 0; color:#666;}
+.fyshuzi {color:#666; padding:4px 9px; border:1px solid #9a9899; text-decoration:none;}
+.zjmxrl {width:100px; height:21px; line-height:21px; border:1px solid #bbb; background:url(../images/zjmx.png) -67px -86px no-repeat; text-align:right; padding:0 5px;}
+
+.chongzhi tr td {border:1px dashed #CCC;border-right:none; border-bottom:none;}
+.czdiv {width:149px; height:45px; display:block; cursor:pointer;}
+.czyh01 {background:url(../images/chongzhi.jpg) 0 -55px no-repeat;}
+.czyh02 {background:url(../images/chongzhi.jpg) -150px -55px no-repeat;}
+.czyh03 {background:url(../images/chongzhi.jpg) -299px -55px no-repeat;}
+.czyh04 {background:url(../images/chongzhi.jpg) -449px -55px no-repeat;}
+.czyh05 {background:url(../images/chongzhi.jpg) 0 -102px no-repeat;}
+.czyh06 {background:url(../images/chongzhi.jpg) -150px -102px no-repeat;}
+.czyh07 {background:url(../images/chongzhi.jpg) -300px -102px no-repeat;}
+.czyh08 {background:url(../images/chongzhi.jpg) -450px -102px no-repeat;}
+.czyh09 {background:url(../images/chongzhi.jpg) 0 -148px no-repeat;}
+.czyh10 {background:url(../images/chongzhi.jpg) -150px -148px no-repeat;}
+.czyh11 {background:url(../images/chongzhi.jpg) -300px -148px no-repeat;}
+.czyh12 {background:url(../images/chongzhi.jpg) -450px -149px no-repeat;}
+.czyh13 {background:url(../images/chongzhi.jpg) 0 -194px no-repeat;}
+.czyh14 {background:url(../images/chongzhi.jpg) -150px -194px no-repeat;}
+.czyh15 {background:url(../images/chongzhi.jpg) -300px -194px no-repeat;}
+.czyh16 {background:url(../images/chongzhi.jpg) -450px -194px no-repeat;}
+.czyhon {background:url(../images/czbg.png) 0 0 no-repeat; width:142px; +width:146px; height:29px; +height:45px; line-height:45px; padding:16px 0 0 7px; +padding:0 0 0 3px; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="inke_dreamweaver.png")}
+.czyhoff {width:142px; +width:146px; height:29px; +height:45px; line-height:45px; padding:16px 0 0 7px; +padding:0 0 0 3px;}
+
+
+.tkxdjian {background:#FFFFFF url(../images/jian.gif) no-repeat 86px 11px;}
+.tkxdbd {height:26px; line-height:26px; border:1px solid #afbbc7; color:#333; font-size:14px; padding:0 5px;}
+.tkxdyzm {background:url(../images/yhzx.png) -218px 0 no-repeat; width:115px; height:24px; line-height:24px; border:1px solid #b3b3b3; padding:0; margin:0;}
+.sqtkan {width:147px; height:34px; background:url(../images/chongzhi.jpg) -361px 0 no-repeat; display:block;}
+.qrbdan {width:147px; height:34px; background:url(../images/chongzhi.jpg) -157px 0 no-repeat; display:block;}
+.zdgdan01 {width:147px; height:34px; background:url(../images/yhzxan.png) 0 0 no-repeat; display:block;}
+.zdgdan02 {width:147px; height:34px; background:url(../images/yhzxan.png) 0 -34px no-repeat; display:block;}
+
+
+
+
+.black_999 {color:#999;}

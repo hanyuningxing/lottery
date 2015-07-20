@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitemesh>
+<sitemesh>
+    <property name="decorators-file" value="/WEB-INF/decorators.xml"/>
+    <excludes file="${decorators-file}"/> 
+    <page-parsers>
+        <parser default="true" class="com.opensymphony.module.sitemesh.parser.FastPageParser"/>
+        <parser content-type="text/html" class="com.opensymphony.module.sitemesh.parser.FastPageParser"/>
+        <parser content-type="text/html;charset=UTF-8" class="com.opensymphony.module.sitemesh.parser.FastPageParser"/>
+    </page-parsers>
+
+    <decorator-mappers>
+    	<!-- 通过URL参数指定使用哪个装饰器，如：/foodeye/test.action?decorator=装饰器名称&confirm=true -->
+		<mapper class="com.opensymphony.module.sitemesh.mapper.ParameterDecoratorMapper">
+			<param name="decorator.parameter" value="decorator" />
+			<param name="parameter.name" value="confirm" />
+			<param name="parameter.value" value="true" />
+		</mapper>
+		
+    	<!-- 通过在页面定义meta标签来指定使用哪个装饰器，如：<meta name="decorator" content="装饰器名称"/> -->
+    	<mapper class="com.opensymphony.module.sitemesh.mapper.PageDecoratorMapper">
+			<param name="property.1" value="meta.decorator" />
+			<param name="property.2" value="decorator" />
+		</mapper>
+		
+		<!-- 通过配置文件定义装饰器  -->
+        <mapper class="com.opensymphony.module.sitemesh.mapper.ConfigDecoratorMapper">
+            <param name="config" value="${decorators-file}"/> <!-- 配置文件路径  -->
+        </mapper>
+    </decorator-mappers>
+</sitemesh>

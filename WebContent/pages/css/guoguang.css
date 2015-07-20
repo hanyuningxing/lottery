@@ -1,0 +1,43 @@
+@charset "utf-8";/*会员中心专用样式*/
+#gg_main{ margin:0 auto; width:980px; display:table; background:url(../images/gg_bg980.gif) repeat-y; border-bottom:1px solid #C2DCE5;}
+/*左边*/
+#gg_main .cleft{ width:180px; float:left; display:block;}
+#gg_main .ggtopban{ width:165px; height:29px;display:table; background:url(../images/gg_bg.gif) repeat-x; line-height:29px; font-size:14px; font-weight:bold; color:#ffffff; padding-left:15px;}
+#gg_main .ggt01{ width:142px; height:29px;display:table; background:url(../images/gg_zc.gif) no-repeat; line-height:29px; font-size:14px; font-weight:bold; color:#0C7697; padding-left:38px;}
+#gg_main .ggleftmenu ul{}
+#gg_main .ggleftmenu li{list-style-type:none; margin:0px; line-height:29px; }
+#gg_main .ggleftmenu li a{color:#333; display:block;padding:0px 0px 0px 35px;height:29px; background: url(../images/gg_btnor.gif) no-repeat; width:145px;}
+#gg_main .ggleftmenu li a:hover{color:#FF4000; display:block;padding:0px 0px 0px 35px;height:29px; background: url(../images/gg_btnow.gif) no-repeat;width:145px; text-decoration:none;}
+#gg_main .ggleftmenu li a.now,#gg_main .ggleft li a.now:hover{color:#FF4000; display:block;padding:0px 0px 0px 35px;height:29px;background: url(../images/gg_btnow.gif) no-repeat;width:145px;text-decoration:none;}
+/*右边*/
+#gg_main .cright{ width:788px; float:left; padding:0 0 0 10px;}
+#gg_main .crighttop{ height:32px; background: url(../images/center_grayt.gif) repeat-x; display:block;  padding:9px 10px 0 10px;}
+/*右边表格*/
+.center_tablegray{background:#F1EEE7;}
+.center_trgray{background:#F9F9F9;}
+.center_trgray td{border-bottom:1px solid #EAEAEA;}
+.center_trw{ background:#fff;  }
+.center_trw td{border-bottom:1px solid #EAEAEA;}
+.center_trhover{ background:#FDF5E5;}
+.center_trhover td{border-bottom:1px solid #EAEAEA;}
+
+/*切换*/
+.ggnavwz{ height:30px;background:url(../images/gg_lbg.gif) repeat-x; padding-left:10px;}
+.ggnav ul{}
+.ggnav li{margin:0px;padding:0px;list-style:none;padding-right:4px;float:left;text-align:center;font-size:12px;font-weight:bold;line-height:29px;}
+.ggnav li a{background:url(../images/gg_nor.gif) no-repeat;color:#666;width:80px;display:block;text-decoration:none;height:29px;display:block;border:1px solid #ccc;border-bottom:none;}
+.ggnav li a:hover{background:url(../images/gg_now.gif) no-repeat;color:#FF5F18;width:80px;display:block;text-decoration:none;height:29px;display:block;border:1px solid #ccc;border-bottom:none;}
+.ggnav li a.now,.ggnav li a.now:hover{background:url(../images/gg_now.gif) no-repeat;color:#4A93B2;width:80px;display:block;text-decoration:none;height:29px;display:block; border:1px solid #ccc;border-bottom:none;}
+
+.ggnavt{height:30px; background:#fff; border:1px solid #dcdcdc; border-top:none; border-bottom:none; padding:8px 0 0 10px;}
+
+.gg_k{ border:1px solid #DCD7D1; width:786px; background:#FAF7F3; display:table;}
+.gg_kj_top{ font-weight:bold; color:#666666; font-size:14px;width:776px; height:30px; background:url(../images/gg_rtbg.gif) repeat-x;line-height:29px; padding:4px 0 0 10px;}
+.gg_left{ width:480px; float:left; display:block;}
+.gg_rig{ width:262px; float:left; display:block; background:#FFFEED; border:2px solid #FBE399; line-height:22px; padding:5px 10px; height:87px;}
+.gg_t{background:#DCDCDC;}
+.gg_b{border-style:solid; border-width:1px; border-color:#D5C182; }
+.gg_tr1{background:#FFF7DE; text-align:center;}
+.gg_tr2{background:#FFF0D9; text-align:center;}
+
+

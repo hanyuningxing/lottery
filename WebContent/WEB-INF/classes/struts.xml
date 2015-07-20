@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<!-- 设置Struts2的后缀，默认为action -->
+	<constant name="struts.action.extension" value="action,,"/>
+	<!-- Convention搜索Action类的类名后缀，默认为Action -->
+    <constant name="struts.convention.action.suffix" value="Controller"/>
+    <!-- 设置即使没有@Action注释，依然创建Action映射。默认值为false -->
+    <constant name="struts.convention.action.mapAllMatches" value="true"/>
+    <!-- 这个常量表示缺省的包名是什么，然后其他的包继承自这个包。这个常量可以配也可以不配,我们这里配置下面的包lottery-default； -->
+	<constant name="struts.convention.default.parent.package" value="lottery-default"/>
+	<!-- Convention插件使用该常量指定的包作为搜索Action的根包。默认值为action,actions,struts,struts2 -->
+	<constant name="struts.convention.package.locators" value="controller" />
+	<!-- 制定action的包 -->
+	<constant name="struts.convention.package.locators.basePackage" value="com.cai310.lottery.web.controller" />
+	<!-- multipart请求信息的最大尺寸（文件上传用） -->
+	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<!-- struts.freemarker.manager.classname org.apache.struts2.views.freemarker.FreemarkerManager接口名 -->
+	<constant name="struts.freemarker.manager.classname" value="com.cai310.freemarker.ExtendedFreemarkerManager"  />
+	<!--返回的文件夹名字，因为struts2默认是返回/WEB-INF/content/，所以这里可以注释<constant name="struts.convention.result.path" value="/WEB-INF/content/"  />  -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+	<package name="lottery-default" extends="rest-default">
+		<interceptors>
+		  <!-- 自定义拦截器 -->
+			<interceptor name="auth" class="com.cai310.lottery.web.interceptor.AuthorityInterceptor"/>
+			<interceptor-stack name="lotteryStack">
+				<!-- 增加store interceptor保证actionMessage在redirect后不会丢失 -->
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				 <interceptor-ref name="auth"/>
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		  </interceptors>
+		<default-interceptor-ref name="lotteryStack" />
+		<global-results>
+		    <!-- 公共返回配置 -->
+			<result name="fwd_error">/common/error.jsp</result>
+			<result name="admin_fwd_error">/common/admin_error.jsp</result>
+			<result type="freemarker" name="fwd_chase_list">/WEB-INF/content/lottery/chase-show.ftl</result>
+			<result type="freemarker" name="fwd_subscription_list">/WEB-INF/content/scheme/subscription-list.ftl</result>
+		    <result type="freemarker" name="fwd_subscription_list">/WEB-INF/content/scheme/subscription-list.ftl</result>
+			<result type="freemarker" name="fwd_baodi_list">/WEB-INF/content/scheme/baodi-list.ftl</result>
+			<result type="freemarker" name="my_scheme_list">/WEB-INF/content/scheme/my-scheme-list.ftl</result>
+		    <result type="redirectAction" name="fwd_login">/user/user!login.action</result>
+		    <result name="single_download">/WEB-INF/content/lottery/single-content-download.jsp</result>
+		    <result type="freemarker" name="user_fwd_error">/WEB-INF/content/common/cyy-faild.ftl</result>
+		    <result type="freemarker" name="user_fwd_success">/WEB-INF/content/common/cyy-success.ftl</result>
+		    <result name="titckForwardURL" type="redirect">${titckForwardURL}</result>
+		</global-results>
+		<action name="index"> 
+		   <result>/index.html</result>
+		</action>
+	</package>
+	<!-- 
+		使用Convention插件,实现约定大于配置的零配置文件风格.
+	           特殊的Result路径在Action类中使用@Result设定. 
+	-->
+</struts>

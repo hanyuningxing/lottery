@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="true">
+
+	<!-- 双色球 -->
+	<bean id="ssqSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="ssqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="ssqSchemeServiceImpl" />
+		<property name="lotteryType" value="SSQ" />
+	</bean>
+	<bean id="ssqPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="ssqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="ssqSchemeServiceImpl" />
+		<property name="lotteryType" value="SSQ" />
+	</bean>
+	<bean id="ssqSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.ssq.SsqSalesManageController"
+		scope="prototype" />
+
+	<!-- 大乐透 -->
+	<bean id="dltSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="dltSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="dltSchemeServiceImpl" />
+		<property name="lotteryType" value="DLT" />
+	</bean>
+	<bean id="dltPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="dltSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="dltSchemeServiceImpl" />
+		<property name="lotteryType" value="DLT" />
+	</bean>
+	<bean id="dltSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.dlt.DltSalesManageController"
+		scope="prototype" />
+
+	<!-- 3D -->
+	<bean id="welfare3dSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="welfare3dSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="welfare3dSchemeServiceImpl" />
+		<property name="lotteryType" value="WELFARE3D" />
+	</bean>
+	<bean id="welfare3dPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="welfare3dSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="welfare3dSchemeServiceImpl" />
+		<property name="lotteryType" value="WELFARE3D" />
+	</bean>
+	<bean id="welfare3dSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.welfare3d.Welfare3dSalesManageController"
+		scope="prototype" />
+
+	<!-- 单场足彩 -->
+	<bean id="dczcSaleControllerService" class="com.cai310.lottery.service.lottery.dczc.impl.DczcSaleControllerServiceImpl">
+		<property name="schemeManager" ref="dczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="dczcSchemeServiceImpl" />
+		<property name="lotteryType" value="DCZC" />
+	</bean>
+	<bean id="dczcPrizeControllerService" class="com.cai310.lottery.service.lottery.dczc.impl.DczcPrizeControllerServiceImpl">
+		<property name="schemeManager" ref="dczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="dczcSchemeServiceImpl" />
+		<property name="lotteryType" value="DCZC" />
+	</bean>
+	<bean id="dczcSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.dczc.DczcSalesManageController"
+		scope="prototype" />
+
+	<!-- 胜负彩 -->
+	<bean id="sfzcSaleControllerService" class="com.cai310.lottery.service.lottery.impl.SaleControllerServiceImpl">
+		<property name="schemeManager" ref="sfzcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sfzcSchemeServiceImpl" />
+		<property name="lotteryType" value="SFZC" />
+	</bean>
+	<bean id="sfzcPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="sfzcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sfzcSchemeServiceImpl" />
+		<property name="lotteryType" value="SFZC" />
+	</bean>
+	<bean id="sfzcSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.sfzc.SfzcSalesManageController"
+		scope="prototype" />
+
+	<!-- 六场半全场 -->
+	<bean id="lczcSaleControllerService" class="com.cai310.lottery.service.lottery.impl.SaleControllerServiceImpl">
+		<property name="schemeManager" ref="lczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="lczcSchemeServiceImpl" />
+		<property name="lotteryType" value="LCZC" />
+	</bean>
+	<bean id="lczcPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="lczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="lczcSchemeServiceImpl" />
+		<property name="lotteryType" value="LCZC" />
+	</bean>
+	<bean id="lczcSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.lczc.LczcSalesManageController"
+		scope="prototype" />
+
+	<!-- 四场进球 -->
+	<bean id="sczcSaleControllerService" class="com.cai310.lottery.service.lottery.impl.SaleControllerServiceImpl">
+		<property name="schemeManager" ref="sczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sczcSchemeServiceImpl" />
+		<property name="lotteryType" value="SCZC" />
+	</bean>
+	<bean id="sczcPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="sczcSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sczcSchemeServiceImpl" />
+		<property name="lotteryType" value="SCZC" />
+	</bean>
+	<bean id="sczcSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.sczc.SczcSalesManageController"
+		scope="prototype" />
+
+	<!-- 排列3/5 -->
+	<bean id="plSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="plSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="plSchemeServiceImpl" />
+		<property name="lotteryType" value="PL" />
+	</bean>
+	<bean id="plPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="plSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="plSchemeServiceImpl" />
+		<property name="lotteryType" value="PL" />
+	</bean>
+	<bean id="plSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.pl.PlSalesManageController"
+		scope="prototype" />
+		
+	<!-- 22选5 -->
+	<bean id="tc22to5SaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="tc22to5SchemeEntityManagerImpl" />
+		<property name="schemeService" ref="tc22to5SchemeServiceImpl" />
+		<property name="lotteryType" value="TC22TO5" />
+	</bean>
+	<bean id="tc22to5PrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="tc22to5SchemeEntityManagerImpl" />
+		<property name="schemeService" ref="tc22to5SchemeServiceImpl" />
+		<property name="lotteryType" value="TC22TO5" />
+	</bean>
+	<bean id="tc22to5SaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.tc22to5.Tc22to5SalesManageController"
+		scope="prototype" />
+		
+    <!-- 七乐彩 -->
+	<bean id="sevenSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="sevenSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sevenSchemeServiceImpl" />
+		<property name="lotteryType" value="SEVEN" />
+	</bean>
+	<bean id="sevenPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="sevenSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sevenSchemeServiceImpl" />
+		<property name="lotteryType" value="SEVEN" />
+	</bean>
+	<bean id="sevenSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.seven.SevenSalesManageController"
+		scope="prototype" />
+		
+    <!-- 七星彩 -->
+	<bean id="sevenstarSaleControllerService" class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager" ref="sevenstarSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sevenstarSchemeServiceImpl" />
+		<property name="lotteryType" value="SEVENSTAR" />
+	</bean>
+	<bean id="sevenstarPrizeControllerService" class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager" ref="sevenstarSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="sevenstarSchemeServiceImpl" />
+		<property name="lotteryType" value="SEVENSTAR" />
+	</bean>
+	<bean id="sevenstarSaleManageController" class="com.cai310.lottery.web.controller.admin.lottery.sevenstar.SevenstarSalesManageController"
+		scope="prototype" />
+		
+				
+	<!-- 竞彩足球 -->
+	<bean id="jczqSaleControllerService" class="com.cai310.lottery.service.lottery.jczq.impl.JczqSaleControllerServiceImpl">
+		<property name="schemeManager" ref="jczqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="jczqSchemeServiceImpl" />
+		<property name="lotteryType" value="JCZQ" />
+	</bean>
+	<bean id="jczqPrizeControllerService" class="com.cai310.lottery.service.lottery.jczq.impl.JczqPrizeControllerServiceImpl">
+		<property name="schemeManager" ref="jczqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="jczqSchemeServiceImpl" />
+		<property name="lotteryType" value="JCZQ" />
+	</bean>
+	<bean id="jczqSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.jczq.JczqSalesManageController" scope="prototype" />
+
+	<!-- 竞彩篮球 -->
+	<bean id="jclqSaleControllerService" class="com.cai310.lottery.service.lottery.jclq.impl.JclqSaleControllerServiceImpl">
+		<property name="schemeManager" ref="jclqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="jclqSchemeServiceImpl" />
+		<property name="lotteryType" value="JCLQ" />
+	</bean>
+	<bean id="jclqPrizeControllerService" class="com.cai310.lottery.service.lottery.jclq.impl.JclqPrizeControllerServiceImpl">
+		<property name="schemeManager" ref="jclqSchemeEntityManagerImpl" />
+		<property name="schemeService" ref="jclqSchemeServiceImpl" />
+		<property name="lotteryType" value="JCLQ" />
+	</bean>
+	<bean id="jclqSalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.jclq.JclqSalesManageController" scope="prototype" />	
+    <!-- 36-7 -->
+    <!-- 南粤风采 -->
+	<bean id="welfare36to7SaleControllerService"
+		class="com.cai310.lottery.service.lottery.impl.NumberSaleControllerServiceImpl">
+		<property name="schemeManager">
+			<ref bean="welfare36to7SchemeEntityManagerImpl" />
+		</property>
+		<property name="schemeService">
+			<ref bean="welfare36to7SchemeServiceImpl" />
+		</property>
+		<property name="lotteryType">
+			<value>WELFARE36To7</value>
+		</property>
+	</bean>
+    <!-- 南粤风采 -->
+	<bean id="welfare36to7PrizeControllerServiceImpl"
+		class="com.cai310.lottery.service.lottery.impl.PrizeControllerServiceImpl">
+		<property name="schemeManager">
+			<ref bean="welfare36to7SchemeEntityManagerImpl" />
+		</property>
+		<property name="schemeService">
+			<ref bean="welfare36to7SchemeServiceImpl" />
+		</property>
+		<property name="lotteryType">
+			<value>WELFARE36To7</value>
+		</property>
+	</bean>
+    <bean id="welfare36to7SalesManageController" class="com.cai310.lottery.web.controller.admin.lottery.welfare36to7.Welfare36to7SalesManageController" scope="prototype" />
+</beans>
