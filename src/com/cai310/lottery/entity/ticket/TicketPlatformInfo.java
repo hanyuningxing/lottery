@@ -1,7 +1,9 @@
 package com.cai310.lottery.entity.ticket;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +20,7 @@ import com.cai310.entity.UpdateMarkable;
 import com.cai310.lottery.Constant;
 import com.cai310.lottery.common.UserWay;
 import com.cai310.lottery.exception.DataException;
+import com.cai310.lottery.utils.StringUtil;
 
 @Entity
 @Table(name = com.cai310.lottery.Constant.LOTTERY_TABLE_PREFIX + "TICKET_PLATFORM")
@@ -49,6 +52,9 @@ public class TicketPlatformInfo extends IdEntity implements CreateMarkable, Upda
 
 	/** 最后更新时间 */
 	private Date lastModifyTime;
+	
+	/** 开放投注的彩种 */
+	private String openLotterys;
 
 	@Column(nullable = false, length = 50)
 	public String getPassword() {
@@ -244,8 +250,22 @@ public class TicketPlatformInfo extends IdEntity implements CreateMarkable, Upda
 	public void setPlatformName(String platformName) {
 		this.platformName = platformName;
 	}
+	@Column
+	public String getOpenLotterys() {
+		return openLotterys;
+	}
 
-	
+	public void setOpenLotterys(String openLotterys) {
+		this.openLotterys = openLotterys;
+	}
+
+	@Transient
+	public List<String> getAllOpenList(){
+		if(StringUtil.isEmpty(openLotterys)){
+			return null;
+		}
+		return Arrays.asList(openLotterys.split(","));
+	}
 
 
 

@@ -774,8 +774,8 @@ public class DczcMatch extends IdEntity implements CreateMarkable, UpdateMarkabl
 	public Date getEndSaleTime() {
 		if(null==this.getMatchTime())return null;
 		Date matchTime = null;
-		Date starDate = DateUtil.strToDate(DateUtil.dateToStr(this.getMatchTime(),"yyyy-MM-dd")+" 4:50");
-		Date endDate = DateUtil.strToDate(DateUtil.dateToStr(this.getMatchTime(),"yyyy-MM-dd")+" 10:00");
+		Date starDate = DateUtil.strToDate(DateUtil.dateToStr(this.getMatchTime(),"yyyy-MM-dd")+" 06:00");
+		Date endDate = DateUtil.strToDate(DateUtil.dateToStr(this.getMatchTime(),"yyyy-MM-dd")+" 08:00");
 		if(this.getMatchTime().after(starDate)&&this.getMatchTime().before(endDate)){
 			matchTime = starDate;
 		}else{

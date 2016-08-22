@@ -17,9 +17,9 @@ import com.cai310.lottery.utils.BigDecimalUtil;
 @Embeddable
 public class Welfare3dPrize implements Serializable {
 	private static final long serialVersionUID = 4761360751476732484L;
-	private Integer unitPrize = 1000;// 直选中奖金额
-	private Integer g3UnitPrize = 320;// 组三中奖金额
-	private Integer g6UnitPrize = 160;// 组六中奖金额
+	private Integer unitPrize = 1040;// 直选中奖金额
+	private Integer g3UnitPrize = 346;// 组三中奖金额
+	private Integer g6UnitPrize = 173;// 组六中奖金额
 
 	
 	@Column(name = "unit_prize")

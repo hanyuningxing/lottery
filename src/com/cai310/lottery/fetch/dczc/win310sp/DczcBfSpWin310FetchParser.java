@@ -34,6 +34,9 @@ public class DczcBfSpWin310FetchParser extends OkoooAbstractFetchParser {
 				continue;
 			}
 			try {
+				if(row.getAttribute("id")==null){
+					continue;
+				}
 				String tr_id=row.getAttribute("id").split("_")[0];
 				if(tr_id.equals("tr")){
 					String row_table=row.getChildrenHTML();
@@ -65,7 +68,7 @@ public class DczcBfSpWin310FetchParser extends OkoooAbstractFetchParser {
 				continue;
 				
 			} catch (Exception e) {
-				logger.error(e.getMessage());
+				logger.info(e.getMessage()+"bf");
 				continue;
 			}
 		}
@@ -73,7 +76,7 @@ public class DczcBfSpWin310FetchParser extends OkoooAbstractFetchParser {
 	}
 	public static void main(String[] args) {
 		DczcBfSpWin310FetchParser fetch=new DczcBfSpWin310FetchParser();
-		List<ZunaoDczcSp> list=fetch.fetch("141204");
+		List<ZunaoDczcSp> list=fetch.fetch("151004");
 		System.out.println(list.size());
 		System.out.println(list.get(0).getSp());
 	}

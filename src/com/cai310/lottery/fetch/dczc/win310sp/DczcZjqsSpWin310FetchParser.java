@@ -34,9 +34,15 @@ public class DczcZjqsSpWin310FetchParser extends OkoooAbstractFetchParser {
 			try {
 				TableColumn[] columns = row.getColumns();
 				String matchId=columns[0].getChild(1).getText();
+				if(columns.length<3){
+					continue;
+				}
 				String matchTime=columns[2].getChild(0).getText();
 				StringBuffer sb=new StringBuffer();
 				String sp0Span=columns[9].getChildrenHTML();
+				if(getSpan(sp0Span, CHARSET, null, null).getChild(0)==null){
+					continue;
+				}
 				String sp0=getSpan(sp0Span, CHARSET, null, null).getChild(0).getText();
 				sb.append(sp0).append(",");
 				
@@ -74,7 +80,7 @@ public class DczcZjqsSpWin310FetchParser extends OkoooAbstractFetchParser {
 				zunaoDczcSp.setSp(sb.toString());
 				list.add(zunaoDczcSp);
 			} catch (Exception e) {
-				logger.error(e.getMessage());
+				logger.info(e.getMessage()+"zjq");
 				continue;
 			}
 		}
@@ -82,7 +88,7 @@ public class DczcZjqsSpWin310FetchParser extends OkoooAbstractFetchParser {
 	}
 	public static void main(String[] args) {
 		DczcZjqsSpWin310FetchParser fetch=new DczcZjqsSpWin310FetchParser();
-		List<ZunaoDczcSp> list=fetch.fetch("141204");
+		List<ZunaoDczcSp> list=fetch.fetch("151004");
 		System.out.println(list.size());
 		System.out.println(list.get(0).getSp());
 	}

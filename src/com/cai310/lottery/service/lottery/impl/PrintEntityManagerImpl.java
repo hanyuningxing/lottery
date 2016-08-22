@@ -88,6 +88,18 @@ public class PrintEntityManagerImpl implements PrintEntityManager {
 	
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+	public Long findPrintInterfaceIdBy(final String schemeNumber,final Lottery lotteryType){
+		
+		String sql = " select id from lottery_print_interface  where schemeNumber = '"+schemeNumber+"' and lotteryType = "+lotteryType.ordinal() +" order by id";
+		List list = printInterfaceDao.getSession().createSQLQuery(sql).list();
+		if(list!=null&&list.size()>0){
+			return Long.valueOf(list.get(0).toString());
+		}
+		return null;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 	public List<Long> findDisassembledNoSynPrintInterface(){
 		return (List<Long>)printInterfaceDao.execute(new CriteriaExecuteCallBack() {
 			public Object execute(Criteria criteria) {

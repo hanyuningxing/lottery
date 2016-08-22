@@ -20,6 +20,7 @@ import com.cai310.lottery.entity.lottery.dczc.DczcMatch;
 import com.cai310.lottery.entity.security.AdminUser;
 import com.cai310.lottery.fetch.dczc.DczcKaijiang;
 import com.cai310.lottery.fetch.dczc.DczcKaijiangFetchParser;
+import com.cai310.lottery.fetch.dczc.DczcKaijiangOkoooFetchParser;
 import com.cai310.lottery.fetch.dczc.DczcPassFetchParser;
 import com.cai310.lottery.fetch.dczc.DczcWin310ResultFetchParser;
 import com.cai310.lottery.service.ServiceException;
@@ -112,7 +113,8 @@ public class DczcPeriodController extends PeriodController {
     	   
 		   DczcWin310ResultFetchParser dczcWin310ResultFetchParser = new DczcWin310ResultFetchParser();
 		   matchs=dczcWin310ResultFetchParser.fetch(period.getPeriodNumber().trim());
-		   DczcKaijiangFetchParser _500FetchParser = new DczcKaijiangFetchParser();
+//		   DczcKaijiangFetchParser _500FetchParser = new DczcKaijiangFetchParser();
+		   DczcKaijiangOkoooFetchParser _500FetchParser = new DczcKaijiangOkoooFetchParser();
 		   Map matchMap = _500FetchParser.fetch(period.getPeriodNumber().trim());	
 		   DczcKaijiang dk =null;
 		   String key="";	 

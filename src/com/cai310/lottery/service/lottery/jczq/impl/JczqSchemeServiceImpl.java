@@ -753,13 +753,13 @@ public class JczqSchemeServiceImpl extends
 			}
 		} else {
 			// 出票回查
-			PrintInterface printInterface = printEntityManager
-					.findPrintInterfaceBy(scheme.getSchemeNumber(),
+			Long printInterfaceId = printEntityManager
+					.findPrintInterfaceIdBy(scheme.getSchemeNumber(),
 							scheme.getLotteryType());
 			List<Ticket> resetTicket = new ArrayList<Ticket>();
-			if (null != printInterface) {
+			if (null != printInterfaceId) {
 				List<Long> ticketIds = ticketEntityManager
-						.findTicketIdByPrintInterfaceId(printInterface.getId());
+						.findTicketIdByPrintInterfaceId(printInterfaceId);
 				Ticket ticket = null;
 				for (Long id : ticketIds) {
 					ticket = ticketEntityManager.getTicket(id);

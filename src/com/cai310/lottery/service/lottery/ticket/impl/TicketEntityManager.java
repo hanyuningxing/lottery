@@ -1,5 +1,6 @@
 package com.cai310.lottery.service.lottery.ticket.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +52,11 @@ public class TicketEntityManager {
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 	public Ticket getTicket(Long id) {
 		return this.ticketDao.get(id);
+	}
+	
+	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+	public Ticket loadTicket(Long id) {
+		return (Ticket)this.ticketDao.getSession().load(Ticket.class, id);
 	}
 
 	public Ticket saveTicket(Ticket entity) {
@@ -162,6 +168,7 @@ public class TicketEntityManager {
 				criteria.setProjection(propList);
 				criteria.setProjection(Projections.distinct(propList));
 				criteria.add(Restrictions.eq("synchroned", Boolean.FALSE));//未同步
+				criteria.add(Restrictions.isNotNull("ticketTime"));//
 				criteria.add(Restrictions.gt("stateModifyTime", DateUtil.getdecDateOfMinute(new Date(),24*60)));//前6小时
 				criteria.setMaxResults(200);
 				return criteria.list();
@@ -198,6 +205,21 @@ public class TicketEntityManager {
 				propList.add(Projections.property("id"), "id");
 				criteria.setProjection(propList);
 				criteria.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+				return criteria.list();
+			}
+		});		
+	}
+	
+	/**
+	 * 根据接口表printInterfaceId查ticketid记录
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+	public List<Ticket> findTicketListByPrintInterfaceId(final Long printinterfaceId){
+		return (List<Ticket>)ticketDao.execute(new CriteriaExecuteCallBack() {
+			public Object execute(Criteria criteria) {
+				criteria.add(Restrictions.eq("printinterfaceId", printinterfaceId));
 				return criteria.list();
 			}
 		});		

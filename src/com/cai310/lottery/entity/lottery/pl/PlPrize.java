@@ -19,9 +19,9 @@ public class PlPrize implements Serializable {
 
 	private static final long serialVersionUID = 4761360751476732484L;
 	private Integer p5UnitPrize = 100000;// 排五直选中奖金额
-	private Integer p3UnitPrize = 1000;// 直选中奖金额
-	private Integer p3G3UnitPrize = 320;// 组三中奖金额
-	private Integer p3G6UnitPrize = 160;// 组六中奖金额
+	private Integer p3UnitPrize = 1040;// 直选中奖金额
+	private Integer p3G3UnitPrize = 346;// 组三中奖金额
+	private Integer p3G6UnitPrize = 173;// 组六中奖金额
 
 	/**
 	 * @return the p5UnitPrize

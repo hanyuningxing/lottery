@@ -1,6 +1,7 @@
 package com.cai310.lottery.service.lottery.jclq.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cai310.lottery.JclqConstant;
 import com.cai310.lottery.cache.CacheConstant;
 import com.cai310.lottery.dao.lottery.jclq.JclqMatchDao;
-import com.cai310.lottery.entity.lottery.jclq.JclqMatch;
 import com.cai310.lottery.entity.lottery.jclq.JclqMatch;
 import com.cai310.lottery.exception.DataException;
 import com.cai310.lottery.service.lottery.jclq.JclqMatchEntityManager;
@@ -138,16 +138,35 @@ public class JclqMatchEntityManagerImpl implements JclqMatchEntityManager {
 
 	@SuppressWarnings("unchecked")
 	@Override
+//	public List<JclqMatch> findMatchs(final List<String> matchKeyList) {
+//		return (List<JclqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
+//			public Object execute(Criteria criteria) {
+//				criteria.setCacheable(true);
+//				criteria.setCacheRegion(CacheConstant.H_JCLQ_MATCH_QUERY_CACHE_REGION);
+//				criteria.add(Restrictions.in("matchKey", matchKeyList));
+//				criteria.addOrder(Order.asc("matchKey"));
+//				return criteria.list();
+//			}
+//		});
+//	}
 	public List<JclqMatch> findMatchs(final List<String> matchKeyList) {
-		return (List<JclqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
+		Collections.sort(matchKeyList);
+		List<JclqMatch> matchlist = new ArrayList<JclqMatch>();
+		List<JclqMatch> list =(List<JclqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
 			public Object execute(Criteria criteria) {
 				criteria.setCacheable(true);
 				criteria.setCacheRegion(CacheConstant.H_JCLQ_MATCH_QUERY_CACHE_REGION);
-				criteria.add(Restrictions.in("matchKey", matchKeyList));
+				criteria.add(Restrictions.between("matchKey", matchKeyList.get(0),matchKeyList.get(matchKeyList.size()-1)));
 				criteria.addOrder(Order.asc("matchKey"));
 				return criteria.list();
 			}
 		});
+		for (JclqMatch jclqMatch : list) {
+			if(matchKeyList.contains(jclqMatch.getMatchKey())){
+				matchlist.add(jclqMatch);
+			}
+		}
+		return matchlist;
 	}
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)

@@ -24,6 +24,7 @@ import org.springframework.security.providers.encoding.PasswordEncoder;
 import com.cai310.lottery.Constant;
 import com.cai310.lottery.common.DrawingOrderState;
 import com.cai310.lottery.common.FundDetailType;
+import com.cai310.lottery.common.Lottery;
 import com.cai310.lottery.common.PayWay;
 import com.cai310.lottery.common.PopuType;
 import com.cai310.lottery.common.UserWay;
@@ -88,6 +89,7 @@ public class UserController extends AdminBaseController {
 	private String email;
 	private String phoneNo;
 	private String adminMsg;
+	private List<String> checkedLotteryIds; // 页面中钩选的彩种id列表
 
 	public String getAdminMsg() {
 		return adminMsg;
@@ -283,6 +285,7 @@ public class UserController extends AdminBaseController {
 			platformInfo.setConsumptionMoney(BigDecimal.ZERO);
 			platformInfo.setLimitIp(limitIp);
 			platformInfo.setPlatformName(entity.getUserName());
+			platformInfo.setOpenLotterys(listToString(checkedLotteryIds));
 			ticketPlatform=userManager.saveTicketPlatformInfo(platformInfo);
 			return "save";
 		} else {
@@ -298,10 +301,28 @@ public class UserController extends AdminBaseController {
 			userTemp.setLocked(entity.isLocked());
 			userTemp.getInfo().setMobile(mobile);
 			ticketPlatform.setLimitIp(ipLimit);
+			ticketPlatform.setOpenLotterys(listToString(checkedLotteryIds));
 			userManager.saveTicketPlatformInfo(ticketPlatform);
 			userManager.saveUser(userTemp,userTemp.getInfo(),userTemp.getBank());
 			return "save";
 		}
+	}
+	
+	/**
+	 * @Description:把list转换为一个用逗号分隔的字符串
+	 */
+	private String listToString(List list) {
+		StringBuilder sb = new StringBuilder();
+		if (list != null && list.size() > 0) {
+			for (int i = 0; i < list.size(); i++) {
+				if (i < list.size() - 1) {
+					sb.append(list.get(i) + ",");
+				} else {
+					sb.append(list.get(i));
+				}
+			}
+		}
+		return sb.toString();
 	}
 
 	public String edit() throws Exception {
@@ -1217,6 +1238,14 @@ public class UserController extends AdminBaseController {
 
 	public void setTicketPlatform(TicketPlatformInfo ticketPlatform) {
 		this.ticketPlatform = ticketPlatform;
+	}
+
+	public List<String> getCheckedLotteryIds() {
+		return checkedLotteryIds;
+	}
+
+	public void setCheckedLotteryIds(List<String> checkedLotteryIds) {
+		this.checkedLotteryIds = checkedLotteryIds;
 	}
 
 

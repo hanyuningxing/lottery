@@ -112,7 +112,7 @@ public class JclqResultFetchParser extends SimpleAbstractFetchParser<List<JclqMa
 				postData[i] = new org.apache.commons.httpclient.NameValuePair(key,value);
 				i++;
 			}
-			postMethod.setRequestBody(postData);  
+			//postMethod.setRequestBody(postData);  
 			httpClient.executeMethod(postMethod);
 			String reStr = postMethod.getResponseBodyAsString();
 			return reStr;

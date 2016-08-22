@@ -208,6 +208,16 @@ public abstract class SchemeEntityManagerImpl<T extends Scheme> implements Schem
 			}
 		});
 	}
+	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+	public List<T> getTicketListSchemeBy(final List<String> orderIds,final Long userId){
+		return (List<T>) getSchemeDao().execute(new CriteriaExecuteCallBack() {
+			public Object execute(Criteria criteria) {
+				criteria.add(Restrictions.in("orderId", orderIds));
+				criteria.add(Restrictions.eq("sponsorId", userId));
+				return criteria.list();
+			}
+		});
+	}
 	public T saveScheme(T scheme) {
 		return getSchemeDao().save(scheme);
 	}

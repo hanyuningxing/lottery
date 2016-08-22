@@ -926,14 +926,20 @@ public class FundController extends AdminBaseController {
 					criteria.add(Restrictions.eq("m.sponsorId", user.getId()));
 				}
 			}
-			criteria.add(Restrictions.ge("m.stateModifyTime", dateStar));
-			criteria.add(Restrictions.le("m.stateModifyTime", dateEnd));
+			if(lotteryType==Lottery.DCZC){
+				criteria.add(Restrictions.ge("m.ticketTime", dateStar));
+				criteria.add(Restrictions.le("m.ticketTime", dateEnd));
+			}else{
+				criteria.add(Restrictions.ge("m.stateModifyTime", dateStar));
+				criteria.add(Restrictions.le("m.stateModifyTime", dateEnd));
+			}
 			criteria.add(Restrictions.eq("m.stateCode", "1"));
 			ProjectionList prop = Projections.projectionList();
 			prop.add(Projections.groupProperty("m.ticketSupporter"),"ticketSupporter");
 			prop.add(Projections.groupProperty("m.lotteryType"),"lotteryType");
 			prop.add(Projections.sum("m.schemeCost"),"schemeCost");
 			prop.add(Projections.sum("m.totalPrizeAfterTax"),"totalPrizeAfterTax");
+			prop.add(Projections.sum("m.prize"),"prize");
 			prop.add(Projections.property("m.ticketSupporter"),"ticketSupporter");
 			prop.add(Projections.property("m.lotteryType"),"lotteryType");
 			criteria.setProjection(prop);

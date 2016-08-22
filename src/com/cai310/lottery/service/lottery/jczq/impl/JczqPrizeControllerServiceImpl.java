@@ -73,6 +73,7 @@ public class JczqPrizeControllerServiceImpl extends PrizeControllerServiceImpl {
 				msg.setLength(0);
 				msg.append("方案[#").append(period.getLotteryType().getSchemeNumberPrefix()).append(betSchemeId).append("]处理结束，耗时").append(runTime).append("毫秒，还剩").append(
 						totalCount - count).append("个方案未处理。");
+				System.out.println("-----------执行【更新中奖】方案"+betSchemeId+"耗时"+runTime+"毫秒,还剩-----------"+(totalCount - count)+"个未处理。");
 				workHelper.logInfo(msg.toString());
 			}
 		} else {

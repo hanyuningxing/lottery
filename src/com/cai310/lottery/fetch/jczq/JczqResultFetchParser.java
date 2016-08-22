@@ -98,7 +98,7 @@ public class JczqResultFetchParser extends SimpleAbstractFetchParser<List<JczqMa
 				postData[i] = new org.apache.commons.httpclient.NameValuePair(key,value);
 				i++;
 			}
-			postMethod.setRequestBody(postData);  
+//			postMethod.setRequestBody(postData);  
 			httpClient.executeMethod(postMethod);
 			String reStr = postMethod.getResponseBodyAsString();
 			return reStr;
@@ -188,14 +188,14 @@ public class JczqResultFetchParser extends SimpleAbstractFetchParser<List<JczqMa
 	}
 	 public static void main(String[] args) {
 		 try {
-			Date matchTime = DateUtils.parseDate("12-04-20 02:11", new String[] { "yy-MM-dd HH:mm" });
+			Date matchTime = DateUtils.parseDate("16-03-24 02:11", new String[] { "yy-MM-dd HH:mm" });
 			int i = 0;
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 JczqResultFetchParser JczqResultFetchParser =  new JczqResultFetchParser();
-		 JczqResultFetchParser.fetch(20130703);
+		 JczqResultFetchParser.fetch(20160324);
 	}
 	protected TableTag getTableTag(String html, String charset) {
 		Parser parser = Parser.createParser(html, charset);

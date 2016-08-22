@@ -107,10 +107,32 @@ public class SynchronizedTicketStateManager {
 		}
 		List<Long> ticketList = null;
 		
+		//优化查询慢问题20151014
+		List<Long> tickets  = ticketEntityManager.findTicketByPrintInterfaceId(printinterfaceId);
+		Integer totalCount = tickets.size();
+		Integer successCount =null;
+		Integer failedCount =null;
+		for(Long id:tickets){
+			Ticket ticket = ticketEntityManager.getTicket(id);
+			if(ticket.isSended()&&ticket.getStateCode().equals("1")){
+				if(successCount==null){
+					successCount =0;
+				}
+				successCount+=1;
+			}
+			if(ticket.isSended()&&ticket.getStateCode().equals("2")){
+				if(failedCount==null){
+					failedCount =0;
+				}
+				failedCount+=1;
+			}
+		}
+		tickets = null;
+		
 		//该方案总拆单方案个数
-		Integer totalCount = ticketEntityManager.findCountByPrintinterfaceId(printinterfaceId);
+//		Integer totalCount = ticketEntityManager.findCountByPrintinterfaceId(printinterfaceId);
 		//出票失败方案个数
-		Integer failedCount = ticketEntityManager.findCountFailedByPrintinterfaceId(printinterfaceId);
+//		Integer failedCount = ticketEntityManager.findCountFailedByPrintinterfaceId(printinterfaceId);
 		//有一张票失败则整个方案失败
 		if(totalCount!=null&&failedCount!=null&&failedCount>0){
 			//修改前台状态为失败
@@ -135,7 +157,7 @@ public class SynchronizedTicketStateManager {
 		
 //		//该方案总拆单方案个数
 //		Integer totalCount = ticketEntityManager.findCountByPrintinterfaceId(printinterfaceId);
-		Integer successCount = ticketEntityManager.findCountSuccessByPrintinterfaceId(printinterfaceId);
+//		Integer successCount = ticketEntityManager.findCountSuccessByPrintinterfaceId(printinterfaceId);
 		//所有票都成功方案才算成功
 		if(totalCount!=null&&successCount!=null&&totalCount.equals(successCount)){
 			//修改前台状态为成功
@@ -322,6 +344,7 @@ public class SynchronizedTicketStateManager {
 	 * @throws DataException 
 	 */
 	public void synchronizationState_jc(PrintInterface printInterface,Boolean isSend) throws DataException {
+//		logger.error("-----同步开始---------");
 		Long printinterfaceId = printInterface.getId();
 		Lottery lotteryType = printInterface.getLotteryType();
 		String schemeNumber = printInterface.getSchemeNumber();
@@ -330,11 +353,32 @@ public class SynchronizedTicketStateManager {
 			throw new DataException("更新方案{"+schemeNumber+"}出票状态错误，方案号ID错误！");
 		}
 		List<Long> ticketList = null;
+		//优化查询慢问题20151014
+		List<Long> tickets  = ticketEntityManager.findTicketByPrintInterfaceId(printinterfaceId);
+		Integer totalCount = tickets.size();
+		Integer successCount =null;
+		Integer failedCount =null;
+		for(Long id:tickets){
+			Ticket ticket = ticketEntityManager.getTicket(id);
+			if(ticket.isSended()&&ticket.getStateCode().equals("1")){
+				if(successCount==null){
+					successCount =0;
+				}
+				successCount+=1;
+			}
+			if(ticket.isSended()&&ticket.getStateCode().equals("2")){
+				if(failedCount==null){
+					failedCount =0;
+				}
+				failedCount+=1;
+			}
+		}
+		tickets = null;
 		
-		//该方案总拆单方案个数
-		Integer totalCount = ticketEntityManager.findCountByPrintinterfaceId(printinterfaceId);
-		Integer successCount = ticketEntityManager.findCountSuccessByPrintinterfaceId(printinterfaceId);
-		Integer failedCount = ticketEntityManager.findCountFailedByPrintinterfaceId(printinterfaceId);
+//		Integer totalCount = ticketEntityManager.findCountByPrintinterfaceId(printinterfaceId);
+//		Integer successCount = ticketEntityManager.findCountSuccessByPrintinterfaceId(printinterfaceId);
+//		Integer failedCount = ticketEntityManager.findCountFailedByPrintinterfaceId(printinterfaceId);
+//		logger.error(printinterfaceId+"出票拆单个数----"+totalCount+"---成功个数"+successCount+"-----失败个数"+failedCount);
 		//全部出票失败算方案失败
 		if(totalCount!=null && failedCount!=null && (failedCount.equals(totalCount))){
 			//设为已打印

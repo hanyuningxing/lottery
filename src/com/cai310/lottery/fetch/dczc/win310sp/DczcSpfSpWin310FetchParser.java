@@ -34,6 +34,9 @@ public class DczcSpfSpWin310FetchParser extends OkoooAbstractFetchParser {
 			try {
 				TableColumn[] columns = row.getColumns();
 				String matchId=columns[0].getChild(1).getText();
+				if(columns.length<3){
+					continue;
+				}
 				String matchTime=columns[2].getChild(0).getText();
 				StringBuffer sb=new StringBuffer();
 				String spWinSpan=columns[13].getChildrenHTML();
@@ -54,7 +57,7 @@ public class DczcSpfSpWin310FetchParser extends OkoooAbstractFetchParser {
 				zunaoDczcSp.setSp(sb.toString());
 				list.add(zunaoDczcSp);
 			} catch (Exception e) {
-				logger.error(e.getMessage());
+				logger.info(e.getMessage()+"spf");
 				continue;
 			}
 		}
@@ -62,7 +65,7 @@ public class DczcSpfSpWin310FetchParser extends OkoooAbstractFetchParser {
 	}
 	public static void main(String[] args) {
 		DczcSpfSpWin310FetchParser DczcSpfSpWin310FetchParser=new DczcSpfSpWin310FetchParser();
-		List<ZunaoDczcSp> list=DczcSpfSpWin310FetchParser.fetch("141204");
+		List<ZunaoDczcSp> list=DczcSpfSpWin310FetchParser.fetch("151004");
 		System.out.println(list.size());
 	}
 }

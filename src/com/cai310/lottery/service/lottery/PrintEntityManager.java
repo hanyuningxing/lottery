@@ -37,6 +37,8 @@ public interface PrintEntityManager {
 	List<PrintInterface> findPrintInterfaceFromIndex(final Long index);
 	
     PrintInterface findPrintInterfaceBy(final String schemeNumber,final Lottery lotteryType);
+    
+    Long findPrintInterfaceIdBy(final String schemeNumber,final Lottery lotteryType);
     ////cyy-c 修改出票拆单读法
 	/**
 	 * 获取没有拆票的票数据

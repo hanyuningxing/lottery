@@ -103,13 +103,18 @@ public class DczcSchemeServiceImpl extends SchemeServiceImpl<DczcScheme, DczcSch
 			throw new RuntimeException("数据异常：投注方式不合法.");
 		}
 		//更新过关统计
-		try{
-		updatePassCount(period.getId());
-		}catch(Exception e){
-			Log.info("更新过关统计错误.");
-			e.printStackTrace();
-			
-		}
+//		try{
+//		List<Long> idList = schemeManager.findSchemeIdOfCanUpdateWon(period.getId());
+//		if(idList==null||idList.size()==0){
+//			System.out.println("最后一个未执行中奖的方案,更新过关统计");
+//			//当只剩最后一个未执行更新方案时更新统计 否则更新中奖太慢
+//			updatePassCount(period.getId());
+//		}
+//		}catch(Exception e){
+//			Log.info("更新过关统计错误.");
+//			e.printStackTrace();
+//			
+//		}
 	}
 
 	/**

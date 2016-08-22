@@ -69,14 +69,14 @@ public class JczqPeriodController extends PeriodController {
 			int month = temp / 100;
 			int day = temp % 100;
 			DateTime firstMatchDateTime = new DateTime(year, month, day, 0, 0, 0, 0);
-			totalCount = Days.daysBetween(firstMatchDateTime, dateTime).getDays() + 6;
+			totalCount = Days.daysBetween(firstMatchDateTime, dateTime).getDays() + 10;
 		} else {
-			totalCount = 6;
+			totalCount = 10;
 		}
 		this.pagination.setTotalCount(totalCount);
 		this.pagination.setPageSize(7);
 		List<DateTime> list = Lists.newArrayList();
-		dateTime = dateTime.plusDays(6);
+		dateTime = dateTime.plusDays(30);
 		for (int i = 0; i < this.pagination.getPageSize(); i++) {
 			list.add(dateTime.plusDays(-this.pagination.getFirst() - i - 1));
 		}

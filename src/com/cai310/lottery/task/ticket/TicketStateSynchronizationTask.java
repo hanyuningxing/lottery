@@ -1,5 +1,6 @@
 package com.cai310.lottery.task.ticket;
 
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -34,8 +35,10 @@ public class TicketStateSynchronizationTask {
 	 * 同步任务
 	 */
 	public void runTask(){
+		Date date = new Date();
 		List<Long> printInterfaceIds = ticketEntityManager.findPrintinterfaceIdByStateModifyTime();
 		PrintInterface printInterface = null;
+		String ids = "";
 		for(Long id:printInterfaceIds){
 			try{
 				printInterface = printEntityManager.getPrintInterfaceById(id);
@@ -47,6 +50,7 @@ public class TicketStateSynchronizationTask {
 						//？取得最后的ticket状态更新时间+30分=作为即时撤单的依据，避免一失败就撤单，来不及人工切换出票(待完善)，目前全部失败算失败，出票处现在还没有及时写失败状态，所以暂缓
 						
 						synchronizedTicketStateManager.synchronizationState_jc(printInterface,true);
+						ids = ids + "," + id;
 					}else{
 						synchronizedTicketStateManager.synchronizationState(printInterface,true);
 					}
@@ -56,6 +60,9 @@ public class TicketStateSynchronizationTask {
 				continue;
 			}
 		}
+		long runTime = (new Date()).getTime() - date.getTime();// 操作耗时，单位毫秒
+		logger.error("处理的id = " + ids);
+		logger.error("-----后台更新出票状态耗时(毫秒)-------"+runTime);
 		try {
 			Thread.sleep(1);
 		} catch (InterruptedException e) {

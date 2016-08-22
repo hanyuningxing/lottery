@@ -73,6 +73,16 @@ public interface SchemeEntityManager<T extends Scheme> {
 	 * @return
 	 */
 	T getTicketSchemeBy(String orderId,Long userId);
+	
+	/**
+	 * 获取出票方案
+	/**
+	 * 
+	 * @param orderIds 订单号
+	 * @param userId 用户Id
+	 * @return
+	 */
+	List<T> getTicketListSchemeBy(final List<String> orderIds,final Long userId);
 
 	/**
 	 * 保存方案

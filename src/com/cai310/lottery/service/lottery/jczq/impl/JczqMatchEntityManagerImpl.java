@@ -1,6 +1,7 @@
 package com.cai310.lottery.service.lottery.jczq.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -182,16 +183,36 @@ public class JczqMatchEntityManagerImpl implements JczqMatchEntityManager {
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 	@Override
+//	public List<JczqMatch> findMatchs(final List<String> matchKeyList) {
+//		return (List<JczqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
+//			public Object execute(Criteria criteria) {
+//				criteria.setCacheable(true);
+//				criteria.setCacheRegion(CacheConstant.H_JCZQ_MATCH_QUERY_CACHE_REGION);
+//				criteria.add(Restrictions.in("matchKey", matchKeyList));
+//				criteria.addOrder(Order.asc("matchKey"));
+//				return criteria.list();
+//			}
+//		});
+//	}
+	//优化查询
 	public List<JczqMatch> findMatchs(final List<String> matchKeyList) {
-		return (List<JczqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
+		Collections.sort(matchKeyList);
+		List<JczqMatch> matchlist = new ArrayList<JczqMatch>();
+		List<JczqMatch> list = (List<JczqMatch>) matchDao.execute(new CriteriaExecuteCallBack() {
 			public Object execute(Criteria criteria) {
 				criteria.setCacheable(true);
 				criteria.setCacheRegion(CacheConstant.H_JCZQ_MATCH_QUERY_CACHE_REGION);
-				criteria.add(Restrictions.in("matchKey", matchKeyList));
+				criteria.add(Restrictions.between("matchKey", matchKeyList.get(0),matchKeyList.get(matchKeyList.size()-1)));
 				criteria.addOrder(Order.asc("matchKey"));
 				return criteria.list();
 			}
 		});
+		for (JczqMatch jczqMatch : list) {
+			if(matchKeyList.contains(jczqMatch.getMatchKey())){
+				matchlist.add(jczqMatch);
+			}
+		}
+		return matchlist;
 	}
 	
 	@SuppressWarnings("unchecked")

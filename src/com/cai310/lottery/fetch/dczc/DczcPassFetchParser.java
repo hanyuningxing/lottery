@@ -95,9 +95,15 @@ public class DczcPassFetchParser extends SimpleAbstractFetchParser<List<DczcMatc
 					if(StringUtils.isNotBlank(matchDay)&&matchDay.indexOf("-")!=-1){
 						Date date = DateUtil.strToDate(matchDay,"yyyy-MM-dd");
 						//date = DateUtils.addDays(date, 6);
-						if("00:00".equals(matchTime)){
+//						if("00:00".equals(matchTime)){
+//							date = DateUtils.addDays(date, 1);
+//						}
+						if (matchTime.compareToIgnoreCase("10:00") >= 0 && matchTime.compareToIgnoreCase("24:00") <= 0) {
+							
+						} else{
 							date = DateUtils.addDays(date, 1);
 						}
+						
 						matchDay = DateUtil.dateToStr(date,"yyyy-MM-dd");
 					}
 					String homeTeamName = columns[4].toPlainTextString().trim();

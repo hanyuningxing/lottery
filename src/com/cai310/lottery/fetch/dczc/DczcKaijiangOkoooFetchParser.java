@@ -5,10 +5,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.CacheManager;
-import net.sf.ehcache.Element;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.htmlparser.NodeFilter;
@@ -16,23 +12,20 @@ import org.htmlparser.Parser;
 import org.htmlparser.filters.NodeClassFilter;
 import org.htmlparser.filters.OrFilter;
 import org.htmlparser.tags.InputTag;
-import org.htmlparser.tags.Span;
 import org.htmlparser.tags.TableColumn;
 import org.htmlparser.tags.TableRow;
 import org.htmlparser.tags.TableTag;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
- 
 
- 
 import com.cai310.lottery.Constant;
 import com.cai310.utils.HttpClientUtil;
 import com.google.common.collect.Maps;
  
 
-public class DczcKaijiangFetchParser  {
+public class DczcKaijiangOkoooFetchParser  {
 
-	private final static Logger logger = Logger.getLogger( DczcKaijiangFetchParser.class);
+	private final static Logger logger = Logger.getLogger( DczcKaijiangOkoooFetchParser.class);
  
 	protected  Map parserHTML(String html, String charset,String period) {
 		// TODO Auto-generated method stub
@@ -45,7 +38,7 @@ public class DczcKaijiangFetchParser  {
 		TableTag table = getTable(html,charset);
 		TableRow [] trs = table.getRows();
 		
-		for(int i=1;i<trs.length;i++){
+		for(int i=2;i<trs.length-1;i++){
 			k =new DczcKaijiang();
 			TableColumn[] tcs = trs[i].getColumns();
 			String matchKey = tcs[0].getChildrenHTML();
@@ -53,32 +46,32 @@ public class DczcKaijiangFetchParser  {
 			k.setMatchKey(matchKey);
 			k.setPeriod(period);
 			try{
-				rqspf = Double.valueOf(((Span)tcs[9].getFirstChild()).getChildrenHTML()); 
+				rqspf = Double.valueOf(tcs[9].getFirstChild().getText()); 
 			k.setRqspf(rqspf);
 			}catch(Exception e){
 				k.setRqspf(0);
 			}
 		 
 			try{
-				zjq = Double.valueOf(((Span)tcs[12].getFirstChild()).getChildrenHTML()); 
+				zjq = Double.valueOf(tcs[13].getFirstChild().getText()); 
 				k.setZjq(zjq);
 			}catch(Exception e){
 				k.setZjq(0);
 			}
 			try{
-				bifen = Double.valueOf(((Span)tcs[15].getFirstChild()).getChildrenHTML()); 
+				bifen = Double.valueOf(tcs[11].getFirstChild().getText()); 
 				k.setBifen(bifen);
 			}catch(Exception e){
 				k.setBifen(0);
 			}
 			try{
-				sxds = Double.valueOf(((Span)tcs[18].getFirstChild()).getChildrenHTML()); 
+				sxds = Double.valueOf(tcs[17].getFirstChild().getText()); 
 				k.setSxds(sxds);
 			}catch(Exception e){
 				k.setBifen(0);
 			}
 			try{
-				bqc = Double.valueOf(((Span)tcs[21].getFirstChild()).getChildrenHTML()); 
+				bqc = Double.valueOf(tcs[15].getFirstChild().getText()); 
 				k.setBqc(bqc);
 			}catch(Exception e){
 				k.setBqc(0);
@@ -108,7 +101,7 @@ public class DczcKaijiangFetchParser  {
 		for (int i = 0; i < nodeList.size(); i++) {
 			if (nodeList.elementAt(i) instanceof TableTag) {
 				TableTag tag = (TableTag) nodeList.elementAt(i);		 
-				if ("ld_table".equals(tag.getAttribute("class"))) {
+				if ("tableborder tableborder02".equals(tag.getAttribute("class"))) {
 					return tag;
 				}
 			}
@@ -171,12 +164,12 @@ public class DczcKaijiangFetchParser  {
  
 	public String getSourceUrl(String period) {
 		// TODO Auto-generated method stub
-		return "http://zx.500.com/zqdc/kaijiang.php?expect="+period;
+		return "http://www.okooo.com/danchang/kaijiang/?LotteryNo="+period;
 	}
 
 
 	public static void main(String[] args) {//20131012001
-		DczcKaijiangFetchParser parser = new DczcKaijiangFetchParser();
+		DczcKaijiangOkoooFetchParser parser = new DczcKaijiangOkoooFetchParser();
 		Map rateData = parser.fetch("151004");
 		Iterator it = rateData.entrySet().iterator();
 		while(it.hasNext()){

@@ -626,6 +626,22 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 			if(!pwd.equals(wSign.trim())){
 				throw new WebDataException("1-请求密钥验证错误");
 			}
+			
+			if(StringUtils.isNotBlank(ticketPlatformInfo.getOpenLotterys())){
+				String[] values = ticketPlatformInfo.getOpenLotterys().split(",");
+				boolean flag = false;
+				for (String v : values) {
+					if(wLotteryId.trim().equals(v)){
+						flag = true;
+						break;
+					}
+				}
+				if(!flag){
+					throw new WebDataException("6-彩种投注权限未开放， 商户"+wAgent+"投注玩法："+wLotteryId.trim()+"实际开放权限："+ticketPlatformInfo.getOpenLotterys());
+				}
+			}else{
+				throw new WebDataException("6-彩种投注权限未开放"+ticketPlatformInfo.getOpenLotterys());
+			}
 			///增加ip检查
 			String addr = Struts2Utils.getRemoteAddr();
 			if(StringUtils.isNotBlank(ticketPlatformInfo.getLimitIp())){
@@ -670,7 +686,7 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 				Long time_all =System.currentTimeMillis();
 				for (ReqParamVisitor reqParamVisitor : ticketList) {
 					reqParamVisitor_flag = reqParamVisitor;
-					System.out.println(reqParamVisitor.getOrderId()+"-----------------------开始");
+					System.out.println(reqParamVisitor.getOrderId()+"接票-----------------------开始");
 					Long time =System.currentTimeMillis();
 					try {
 						if (ticketPlatformInfo == null)
@@ -711,7 +727,7 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 						temp.put("process", "0");
 						temp.put("orderId", orderId+"");
 						flag.add(temp);
-						System.out.println("-----------------------完毕"+(System.currentTimeMillis()-time));
+						System.out.println(scheme.getLotteryType().getLotteryName()+"-----------------------完毕"+(System.currentTimeMillis()-time));
 						time=System.currentTimeMillis();
 					} catch (WebDataException e) {
 						temp = Maps.newHashMap();
@@ -775,7 +791,10 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 						continue;
 					}
 				}
-				System.out.println("-----------------------完毕"+(System.currentTimeMillis()-time_all));
+				if(ticketList!=null){
+					System.out.println(ticketList.size()+"-----------------------完毕"+(System.currentTimeMillis()-time_all));
+				}
+//				System.out.println("-----------------------完毕"+(System.currentTimeMillis()-time_all));
 				map.put("processId", "0");
 				map.put("ticket", flag);
 			} catch (WebDataException e) {
@@ -1003,9 +1022,6 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 		}
 		return null;
 	}
-	public static void main(String[] args) {
-		System.out.print(ItemBF.DRAW00.toString());
-	}
 	private String getJczqTicketCode(JczqScheme jczqScheme){
 		String awardString = jczqScheme.getPrintAwards();
 		if(StringUtils.isNotBlank(awardString)){
@@ -1212,6 +1228,8 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 	 * 
 	 */
 	public String query() {
+//		logger.error("--------------query 开始-------------------");
+		Date date = new Date();
 		Map<String, Object> map = Maps.newHashMap();
        	JsonConfig jsonConfig = new JsonConfig();  
        	
@@ -1238,11 +1256,112 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 				orderList.add(order.trim());
 			}
 			Map<String,Object> temp = null;
+			
+			user = this.userManager.getUser(ticketPlatformInfo.getUserId());
+			List<Scheme> schemes = getSchemeEntityManager(this.getLottery()).getTicketListSchemeBy(orderList,user.getId());
+			for (Scheme scheme : schemes) {
+				String id = scheme.getOrderId();
+				try{
+					if(orderList.contains(scheme.getOrderId())){
+						orderList.remove(scheme.getOrderId());
+					}
+					temp = Maps.newHashMap();
+//					if(SchemeState.REFUNDMENT.equals(scheme.getState())||SchemeState.CANCEL.equals(scheme.getState())||SchemeState.UNFULL.equals(scheme.getState())){
+//					temp.put("process", "" +TicketSchemeState.FAILD.ordinal() );
+//				}else if(scheme.getState().equals(SchemeState.FULL)){
+//					if(scheme.getSchemePrintState().equals(SchemePrintState.SUCCESS)){
+//						temp.put("process", "" +TicketSchemeState.SUCCESS.ordinal() );
+//					}else if(scheme.getSchemePrintState().equals(SchemePrintState.PRINT)||scheme.getSchemePrintState().equals(SchemePrintState.UNPRINT)){
+//						temp.put("process", "" +TicketSchemeState.FULL.ordinal() );
+//					}else if(scheme.getSchemePrintState().equals(SchemePrintState.FAILED)){
+//						temp.put("process", "" +TicketSchemeState.FAILD.ordinal() );
+//					}
+//				}else if(scheme.getState().equals(SchemeState.SUCCESS)){
+//					temp.put("process", "" +TicketSchemeState.SUCCESS.ordinal() );
+//				}else{
+//					temp.put("process", "" +TicketSchemeState.FULL.ordinal() );
+//				}
+					if (scheme.getLotteryType().getCategory().equals(LotteryCategory.FREQUENT)) {
+						temp.put("process",
+								"" + TicketSchemeState.SUCCESS.ordinal());
+					}else{
+						if (SchemeState.REFUNDMENT.equals(scheme.getState())
+								|| SchemeState.CANCEL.equals(scheme.getState())
+								|| SchemeState.UNFULL.equals(scheme.getState())) {
+							temp.put("process",
+									"" + TicketSchemeState.FAILD.ordinal());
+						} else if (scheme.getState().equals(SchemeState.FULL)) {
+							if (scheme.getSchemePrintState().equals(
+									SchemePrintState.SUCCESS)) {
+								temp.put("process",
+										"" + TicketSchemeState.SUCCESS.ordinal());
+							} else if (scheme.getSchemePrintState().equals(
+									SchemePrintState.PRINT)
+									|| scheme.getSchemePrintState().equals(
+											SchemePrintState.UNPRINT)) {
+								temp.put("process",
+										"" + TicketSchemeState.FULL.ordinal());
+							} else if (scheme.getSchemePrintState().equals(
+									SchemePrintState.FAILED)) {
+								temp.put("process",
+										"" + TicketSchemeState.FAILD.ordinal());
+							}
+						} else if (scheme.getState().equals(SchemeState.SUCCESS)) {
+							temp.put("process",
+									"" + TicketSchemeState.SUCCESS.ordinal());
+						} else {
+							temp.put("process",
+									"" + TicketSchemeState.FULL.ordinal());
+						}
+					}
+					temp.put("orderId", ""+id);
+					if(scheme instanceof JclqScheme){
+						JclqScheme jclqScheme = (JclqScheme) scheme;
+						temp.put("awards", this.getJclqOdds(jclqScheme));
+						temp.put("ticketCode", getJclqTicketCode(jclqScheme));
+					}else if(scheme instanceof JczqScheme){
+						JczqScheme jczqScheme = (JczqScheme) scheme;
+						temp.put("awards", this.getJczqOdds(jczqScheme));
+						temp.put("ticketCode", getJczqTicketCode(jczqScheme));
+					}else {
+						/*
+						String ticketCode = getKenoTicketCode(scheme.getId());
+						if (ticketCode == null) {
+							ticketCode = "";
+						}
+						*/
+						temp.put("awards", null);
+						temp.put("ticketCode", "");
+					}
+					temp.put("operateTime", com.cai310.utils.DateUtil.dateToStr(scheme.getCreateTime()));
+					flag.add(temp);
+				}catch(Exception e){
+					temp = Maps.newHashMap();
+					temp.put("process", "6");
+					temp.put("orderId", ""+id);
+					temp.put("errorMsg", "订单错误");
+					flag.add(temp);
+					logger.warn(e.getMessage(), e);
+					continue;
+				}
+			}
+			//此时orderlist只剩未查询到的方案id
 			for (String id : orderList) {
+				temp = Maps.newHashMap();
+				temp.put("process", "4");
+				temp.put("orderId", ""+id);
+				temp.put("errorMsg", "无此订单");
+				flag.add(temp);
+				continue;
+			}
+			
+			/*for (String id : orderList) {
 					Scheme scheme = null;
 					try{
 						user = this.userManager.getUser(ticketPlatformInfo.getUserId());
+						logger.error("--------------user 结束-------------------");
 						scheme = getSchemeEntityManager(this.getLottery()).getTicketSchemeBy(id,user.getId());
+						logger.error("--------------scheme 结束-------------------"+id);
 						if(null==scheme){
 								temp = Maps.newHashMap();
 								temp.put("process", "4");
@@ -1310,12 +1429,12 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 							temp.put("awards", this.getJczqOdds(jczqScheme));
 							temp.put("ticketCode", getJczqTicketCode(jczqScheme));
 						}else {
-							/*
+							
 							String ticketCode = getKenoTicketCode(scheme.getId());
 							if (ticketCode == null) {
 								ticketCode = "";
 							}
-							*/
+							
 							temp.put("awards", null);
 							temp.put("ticketCode", "");
 						}
@@ -1330,7 +1449,7 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 						logger.warn(e.getMessage(), e);
 						continue;
 					}
-			}
+			}*/
 			map.put("processId", "0");
 			
 			map.put("ticket", flag);
@@ -1380,6 +1499,8 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 		}
 		renderJson(map,jsonConfig);
 		ticketLogger = ticketLog(flag.toString(),ticketLogger);
+		long runTime = (new Date()).getTime() - date.getTime();// 操作耗时，单位毫秒
+		logger.error("-----出票状态查询耗时(毫秒)-------"+runTime);
 		return null;
 	}
 	
@@ -3113,4 +3234,21 @@ public abstract class TicketBaseController<T extends Scheme,E extends SchemeDTO>
 		this.matchDate = matchDate;
 	}
     
+	public static void main(String[] args) throws UnsupportedEncodingException {
+//		List<String> list = new ArrayList<String>();
+//		list.add("123");
+//		list.add("456");
+//		list.add("789");
+//		for (int i = 0; i < 10; i++) {
+//			if(list.contains("123")){
+//				list.remove("123");
+//			}
+//		}
+//		for (String string : list) {
+//			System.out.println(string);
+//		}
+		String param = "101"+"{\"wLotteryId\":\"6\",\"ticket\":[{\"value\":\"07,08,09+07,09,04\",\"type\":0,\"mode\":1,\"periodNumber\":\"16085\",\"units\":2,\"cost\":4,\"passType\":0,\"multiple\":1,\"playType\":1,\"orderId\":\"1300009211\"}]}"+"7"+"F59BD65F7EDAFB087A81D4DCA06C4910";
+		String pwd = SecurityUtil.md5(param.getBytes("UTF-8")).toUpperCase().trim();
+		System.out.println(pwd);
+	}
 }

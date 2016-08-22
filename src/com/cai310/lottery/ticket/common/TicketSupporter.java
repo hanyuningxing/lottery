@@ -22,7 +22,9 @@ public enum TicketSupporter {
 	YUECAI("粤彩"),//11
 	WIN310("热点"),//12热点
 	ZHONG("中彩"),
-	QIU310("鸿");
+	QIU310("鸿"),
+	LOCAL("本地自动"),
+	BEIDAN("北单");
 	
 	private final String supporterName;
 	
