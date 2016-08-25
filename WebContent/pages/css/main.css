@@ -565,3 +565,15 @@ line-height:20px; color:#464545; font-weight:bold;}
 
 
 .hc1_kjhm_bg{ padding-left:6px;}
+
+.prompt {
+    width: 948px;
+    background-color: #ededed;
+    border: solid 1px #ccc;
+    margin: 5px auto;
+    font-family: "宋体";
+    font-size: 12px;
+    color: #333;
+    padding: 0 20px;
+    line-height: 15px;
+}
