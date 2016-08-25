@@ -4,6 +4,8 @@
 </@override>
 <@override name="style">
 	<link href="<@c.url value= "/styles/trade/css/trade_public.css"/>" rel="stylesheet" type="text/css" />
+	<link href="<@c.url value="/pages/css/main.css"/>" rel="stylesheet" type="text/css" />
+	<link href="<@c.url value="/pages/css/sitety.css"/>" rel="stylesheet" type="text/css" />
 </@override>
 <@override name="content">
 	<div class="hemaint k3px">

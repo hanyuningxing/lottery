@@ -3,7 +3,8 @@
 	<@block name="Description"></@block>
 	<@block name="title"></@block>
 	<@block name="decorator"><meta name="decorator" content="trade" /></@block>
-	<@block name="style"><#--  <link href="<@c.url value="/pages/css/main.css"/>" rel="stylesheet" type="text/css" /> --></@block>
+	<@block name="style"><link href="<@c.url value="/pages/css/main.css"/>" rel="stylesheet" type="text/css" /></@block>
+	<@block name="style"><link href="<@c.url value="/pages/css/sitety.css"/>" rel="stylesheet" type="text/css" /></@block>
 	<@block name="head"></@block>
 </head>
 
