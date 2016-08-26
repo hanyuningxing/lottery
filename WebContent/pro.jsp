@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="org.apache.commons.lang.xwork.StringUtils" %>
+<%@ page import="org.apache.commons.lang.StringUtils" %>
 <%@ page import="com.cai310.lottery.common.Lottery" %>
 <% 
 String wAction = request.getParameter("wAction");
