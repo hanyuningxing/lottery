@@ -92,7 +92,7 @@
           </tr>
         </table>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	        <td style="text-align:left"><#include "${base}/common/message.ftl" /></td>
+	        <td style="text-align:left"><#include "/common/message.ftl" /></td>
 	     </tr>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="con_table">
           <tr>                                                                                                            

@@ -2,6 +2,7 @@
 <meta name="menuItem" content="addUser"/>
 <script type="text/javascript">window.BASESITE='${base}';</script>
 <script type="text/javascript" src="/jquery/jquery-1.8.3.js"></script>
+<#assign lotteryTypeArr=stack.findValue("@com.cai310.lottery.common.Lottery@values()") />
 <div class="navgraybg" >
   <div class="choseban" style="float:left;">
   </div>
@@ -162,6 +163,20 @@
 					            </tr>					            
 				            </#if>
 			            </#if>
+			            <tr bgcolor="#FFFFFF">
+			              <td width="85" align="center" bgcolor="#F5f5f5">授权投注彩种：</td>
+					       <td bgcolor="#FFFFFF"><span class="ssq_tr_2">
+		                    <#list lotteryTypeArr as lot>
+	              	             <input type="checkbox" name="checkedLotteryIds" value="${lot.ordinal()}" <#if ticketPlatform??&&ticketPlatform.allOpenList??&& (ticketPlatform.allOpenList![])?size gt 0>
+		              	             <#list ticketPlatform.allOpenList as openLottery>
+		              	                  <#if (lot.ordinal()+"")== openLottery>
+		              	                     checked="true"
+                                          </#if>
+		              	             </#list>
+		              	          </#if>>${lot.lotteryName!}
+							</#list>
+			              </span></td>
+			            </tr>
 					    <tr bgcolor="#FFFFFF">
 					              <td width="85" align="center" bgcolor="#F5f5f5">用户类型：</td>
 					              <td bgcolor="#FFFFFF"><span class="ssq_tr_2">

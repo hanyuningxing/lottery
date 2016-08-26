@@ -320,7 +320,7 @@
 		     		<span id="span_updateSupporter_${ticket.id}" <#if !ticket.isPause()>style="display:none"</#if>>
 				     	<select id="supporter_${ticket.id}" name="ticketSupporter">
 						 <#list ticketSupporterArr as supporter>
-						 	<#if supporter=='CAI310' || supporter=='LIANG'>
+						 	<#if supporter=='CAI310' || supporter=='LIANG' || supporter=='LOCAL'|| supporter=='BEIDAN'>
 						    	<option <#if ticket.ticketSupporter?? && ticket.ticketSupporter==supporter>selected="selected"</#if> value="${supporter}">${supporter.supporterName}</option>
 						    </#if>
 						 </#list>
@@ -338,7 +338,7 @@
     			<button id="btn_batch_pause" type="button" onclick="pauseSendOfBatch();">批量暂停出票</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     			<select id="supporter_batch" name="supporter_batch">
 					 <#list ticketSupporterArr as supporter>
-					 	<#if supporter=='CAI310' || supporter=='LIANG'>
+					 	<#if supporter=='CAI310' || supporter=='LIANG' || supporter=='LOCAL'>
 					    	<option value="${supporter}">${supporter.supporterName}</option>
 					    </#if>
 					 </#list>

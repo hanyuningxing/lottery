@@ -1,5 +1,5 @@
 <title>推广管理</title>
-<meta name="menu" content="lottryUser"/>
+<meta name="menu" content="popu"/>
 <meta name="menuItem" content="popuList"/>
 <script src="${base}/js/admin/user.js" type="text/javascript"></script>
 <script src="${base}/js/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>

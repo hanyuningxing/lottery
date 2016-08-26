@@ -301,22 +301,22 @@
 	<bean name="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
-				<!-- 竞彩足球-->
+				<!-- 竞彩足球
 				<ref local="jczqFetchTaskTrigger" />
 			    <ref local="jczqAutoSpTrigger" />
-			    <ref local="jczqAutoHandleTransactionTrigger" /> 
-			    <!-- 竞彩篮球-->
+			    <ref local="jczqAutoHandleTransactionTrigger" />--> 
+			    <!-- 竞彩篮球
 			    <ref local="jclqFetchTaskTrigger" />
 			    <ref local="jclqAutoSpTrigger" />
-			    <ref local="jclqAutoHandleTransactionTrigger" />
+			    <ref local="jclqAutoHandleTransactionTrigger" />-->
 			    
 			    <!-- 首页生成
 			   <ref local="makeIndexTaskTrigger"/> -->
 			    
-			    <!-- 单场-->
+			    <!-- 单场
 			    <ref local="dezcPersistenceSpTaskTrigger" />
 			    <ref local="dezcFetchSpTaskTrigger" />
-			    <ref local="dczcAutoHandleTransactionTaskTrigger" /> 
+			    <ref local="dczcAutoHandleTransactionTaskTrigger" />--> 
 			    <!-- 自动跟单
 			    <ref local="autoFollowTaskTrigger" /> -->
 			    <!-- 江西11选5	 
@@ -332,8 +332,8 @@
 				<ref local="xjel11to5SaleWorkerJobSimpleTrigger" />-->
 				 <!--快乐扑克
 				<ref local="klpkSaleWorkerJobSimpleTrigger" />-->
-				<!-- 同步出票-->
-				<ref local="jobSimpleTrigger_syan" />
+				<!-- 同步出票
+				<ref local="jobSimpleTrigger_syan" />-->
 				
 			</list> 
 		</property>

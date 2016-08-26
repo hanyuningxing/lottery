@@ -50,14 +50,14 @@ ifNotGranted——是一个由逗号分隔的权限列表，用户必须不拥�
 				"labelName":"进球彩",
 				"url":"/admin/lottery/sczc/period!list.action"
 			},
-<#-- 			"DCZC":{
+ 			"DCZC":{
 				"labelName":"北京单场",
 				"url":"/admin/lottery/dczc/period!list.action"
-			},-->
-<#-- 			"SSQ":{
+			},
+ 			"SSQ":{
 				"labelName":"双色球",
 				"url":"/admin/lottery/ssq/period!list.action"
-			},-->
+			},
 			"DLT":{
 				"labelName":"超级大乐透",
 				"url":"/admin/lottery/dlt/period!list.action"
@@ -136,13 +136,52 @@ ifNotGranted——是一个由逗号分隔的权限列表，用户必须不拥�
 			"fundetail":{
 				"labelName":" 资金明细",
 				"url":"/admin/user/user!fundetailList.action"
+			},
+			"user":{
+				"labelName":" 用户管理",
+				"url":"/admin/fund/fund!userList.action"
+			},
+			"checkDrawing":{
+				"labelName":" 提款订单审核",
+				"url":"/admin/user/user!checkDrawingList.action"
+			},
+			"user_drawingList":{
+				"labelName":"订单审核记录",
+				"url":"/admin/user/user!drawingList.action"
+			},
+			
+			"passDrawing":{
+				"labelName":"提款订单管理",
+				"url":"/admin/fund/fund!passDrawingList.action"
+			},
+			
+			"admin_drawingList":{
+				"labelName":"订单管理记录",
+				"url":"/admin/fund/fund!drawingList.action"
+			},
+			
+			"fundetail":{
+				"labelName":" 资金明细",
+				"url":"/admin/fund/fund!fundetailList.action"
+			},
+			"fundcount":{
+				"labelName":" 资金明细报表",
+				"url":"/admin/fund/fund!countFund.action"
+			},
+			"fundBalance":{
+				"labelName":" 财务平衡报表",
+				"url":"/admin/fund/fund!fundBalance.action"
+			},
+			"userSubscription":{
+				"labelName":" 用户投注报表",
+				"url":"/admin/fund/fund!userSubscription.action"
 			}
 		}
 	},
 	"fund":{
 		"labelName":"财务管理",
 		"roleId":2,
-		"url":"/admin/fund/fund!fundetailList.action",
+		"url":"/admin/fund/fund!userList.action",
 		"items":{
 			"user":{
 				"labelName":" 用户管理",
@@ -216,6 +255,61 @@ ifNotGranted——是一个由逗号分隔的权限列表，用户必须不拥�
 				"labelName":" 操作记录",
 				"url":"/admin/security/log.action"
 			}
+		}
+	},
+	"popu":{
+		"labelName":"推广管理",
+		"roleId":8,
+		"url":"/admin/user/user!popuList.action",
+		"items":{
+			"popuList":{
+				"labelName":"访问记录",
+				"url":"/admin/user/user!popuList.action"
+			},
+			"mediaList":{
+				"labelName":"媒体管理",
+				"url":"/admin/user/user!mediaList.action"
+			}
+		}
+	},
+	"index":{
+		"labelName":"首页/新闻",
+		"roleId":4,
+		"url":"/admin/info/news!newsInfoList.action",
+		"items":{
+			"indexInfoEdit":{
+				"labelName":"新增文章",
+				"url":"/admin/info/news!edit.action"
+			},
+			"indexInfoList":{
+				"labelName":"查看文章",
+				"url":"/admin/info/news!newsInfoList.action"
+			},
+			"staticIndex":{
+				"labelName":"首页生成",
+				"url":"/admin/info/index!staticIndex.action"
+			},
+			"indexMobileEdit":{
+				"labelName":"新增手机新闻",
+				"url":"/admin/info/news!editMobileNews.action"
+			},
+			"mobileIndex":{
+				"labelName":"手机新闻及公告",
+				"url":"/admin/info/news!mobileIndex.action"
+			},
+			"tagsIndex":{
+				"labelName":"标签页列表",
+				"url":"/admin/info/news!tagsIndex.action"
+			},
+			"tagForm":{ 
+				"labelName":"标签页生成",
+				"url":"/admin/info/news!publicTag.action"
+			},
+			"channelNotice":{
+				"labelName":"频道通知",
+				"url":"/admin/info/news!channelNoticeNewsList.action"
+			}
+			
 		}
 	},
 	"member":{
@@ -364,6 +458,10 @@ ifNotGranted——是一个由逗号分隔的权限列表，用户必须不拥�
 			      		                                         <li><a href="<@c.url value=value.url />" class="<#if currentMenu == key>now</#if>" style="<#if key_index == menuCount>width:80px;</#if>">${value.labelName!}</a></li>
 			      		                                      </#if>
 			      		                                   <#elseif value.roleId==3>
+		      											  	 <#if A_SUPER>
+		      											  		<li><a href="<@c.url value=value.url />" class="<#if currentMenu == key>now</#if>" style="<#if key_index == menuCount>width:80px;</#if>">${value.labelName!}</a></li>
+	      		                                       		</#if>
+			      		                                   <#elseif value.roleId==4>
 		      											  	 <#if A_SUPER>
 		      											  		<li><a href="<@c.url value=value.url />" class="<#if currentMenu == key>now</#if>" style="<#if key_index == menuCount>width:80px;</#if>">${value.labelName!}</a></li>
 	      		                                       		</#if>

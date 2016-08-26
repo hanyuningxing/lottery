@@ -53,7 +53,7 @@
 			<td>
 				<a href="<@c.url value='/admin/lottery/${data.lotteryType.key}/period!edit.action?id=${data.id}' />">编辑</a>
 				<a href="<@c.url value='/admin/lottery/${data.lotteryType.key}/sales-manage.action?id=${data.id}' />">销售管理</a>
-		  		<a href="<@c.url value='/admin/lottery/${data.lotteryType.key}/scheme!list.action?queryForm.periodNumber=${data.periodNumber}&queryForm.order=ID&queryForm.descOrder=true' />" >方案管理</a>
+		  		<a href="<@c.url value='/admin/lottery/${data.lotteryType.key}/scheme!list.action?queryForm.periodNumber=${data.periodNumber}&queryForm.order=ID&queryForm.descOrder=true&queryForm.ticketState=UNPRINT' />" >方案管理</a>
 		  		<#if lotteryType.category=='JC'>
 		  			<a href="<@c.url value='/admin/lottery/${lotteryType.key}/period!matchManage.action?id=${data.id}' />">对阵管理</a>
 		  		</#if>

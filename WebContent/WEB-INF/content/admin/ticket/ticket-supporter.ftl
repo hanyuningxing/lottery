@@ -64,7 +64,9 @@
 	    		<input type="submit" name="submitForm" value="保 存"/>
 	    	<#elseif data.lotteryType=='DCZC'>
 	    	<input type="radio" name="supporters[${data_index}]" <#if data.ticketSupporter?? && data.ticketSupporter=='LIANG'>checked</#if> value="10">&nbsp;量彩&nbsp;&nbsp;&nbsp;
-	    	<input type="submit" name="submitForm" value="保 存"/>
+	    	<input type="radio" name="supporters[${data_index}]" <#if data.ticketSupporter?? && data.ticketSupporter=='CAI310'>checked</#if> value="6">&nbsp;本地&nbsp;&nbsp;&nbsp;
+	    	<input type="radio" name="supporters[${data_index}]" <#if data.ticketSupporter?? && data.ticketSupporter=='BEIDAN'>checked</#if> value="16">&nbsp;北体彩&nbsp;&nbsp;&nbsp;	    	
+	    		<input type="submit" name="submitForm" value="保 存"/>
 	    	<#elseif data.lotteryType=='SEVEN'>
 	    	<input type="radio" name="supporters[${data_index}]" <#if data.ticketSupporter?? && data.ticketSupporter=='LIANG'>checked</#if> value="10">&nbsp;量彩&nbsp;&nbsp;&nbsp;
 	    	<input type="submit" name="submitForm" value="保 存"/>

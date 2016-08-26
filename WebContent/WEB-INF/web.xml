@@ -3,7 +3,16 @@
   <display-name>彩票系统</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:/applicationContext*.xml</param-value>
+    <param-value>classpath*:/applicationContext.xml
+	,classpath*:/applicationContext-cache.xml
+	,classpath*:/applicationContext-controller.xml
+	,classpath*:/applicationContext-jcaptcha.xml
+	,classpath*:/applicationContext-mail.xml
+	,classpath*:/applicationContext-rmi-ticket.xml
+	,classpath*:/applicationContext-security.xml
+	,classpath*:/applicationContext-task.xml
+	,classpath*:/applicationContext-task-user.xml
+	</param-value>
   </context-param>
   <filter>
     <filter-name>encodingFilter</filter-name>

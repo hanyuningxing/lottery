@@ -57,35 +57,35 @@
 							               <td bgcolor="#F5f5f5">
 							                    <#if unprint??&&unprint.get(data)??>
 							                       <#list unprint.get(data) as ticket>
-							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'<@c.url value="/info/task!findScheme.action?lottery=${data}&type=0&commitTime=${ticket.commitTime!''}" />','查看');return false;">查看</a></br>
+							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'/info/task!findScheme.action?lottery=${data}&type=0&commitTime=${ticket.commitTime!''}','查看');return false;">查看</a></br>
 							                       </#list>
 							                    </#if>
 							               </td>
 							               <td bgcolor="#F5f5f5">
 							                    <#if print??&&print.get(data)??>
 							                        <#list print.get(data) as ticket>
-							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'<@c.url value="/info/task!findScheme.action?lottery=${data}&type=1&commitTime=${ticket.commitTime!''}" />','查看');return false;">查看</a></br>
+							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'/info/task!findScheme.action?lottery=${data}&type=1&commitTime=${ticket.commitTime!''}','查看');return false;">查看</a></br>
 							                      </#list>
 												</#if>
 							               </td>
 							               <td bgcolor="#F5f5f5">
 							                    <#if failed??&&failed.get(data)??>
 							                        <#list failed.get(data) as ticket>
-							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'<@c.url value="/info/task!findScheme.action?lottery=${data}&type=2&commitTime=${ticket.commitTime!''}" />','查看');return false;">查看</a></br>
+							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'/info/task!findScheme.action?lottery=${data}&type=2&commitTime=${ticket.commitTime!''}','查看');return false;">查看</a></br>
 							                      </#list>
 												</#if>
 							               </td>
 							               <td bgcolor="#F5f5f5">
 							                    <#if upprint_success??&&upprint_success.get(data)??>
 							                        <#list upprint_success.get(data) as ticket>
-							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'<@c.url value="/info/task!findScheme.action?lottery=${data}&type=3&commitTime=${ticket.commitTime!''}" />','查看');return false;">查看</a></br>
+							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'/info/task!findScheme.action?lottery=${data}&type=3&commitTime=${ticket.commitTime!''}','查看');return false;">查看</a></br>
 							                      </#list>
 												</#if>
 							               </td>
 							               <td bgcolor="#F5f5f5">
 							                    <#if printed_canecl??&&printed_canecl.get(data)??>
 							                        <#list printed_canecl.get(data) as ticket>
-							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'<@c.url value="/info/task!findScheme.action?lottery=${data}&type=4&commitTime=${ticket.commitTime!''}" />','查看');return false;">查看</a></br>
+							                             <#if ticket.commitTime??>${ticket.commitTime?string("MM-dd HH:mm:ss")}</#if>&nbsp;&nbsp;${ticket.units!}个&nbsp;<a href="#" onclick = "oprMethod(740,400,'/info/task!findScheme.action?lottery=${data}&type=4&commitTime=${ticket.commitTime!''}','查看');return false;">查看</a></br>
 							                      </#list>
 												</#if>
 							               </td>

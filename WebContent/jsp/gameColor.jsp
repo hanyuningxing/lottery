@@ -7,7 +7,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.HashMap"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="org.apache.commons.lang.xwork.StringUtils"%>
+<%@ page import="org.apache.commons.lang.StringUtils"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
